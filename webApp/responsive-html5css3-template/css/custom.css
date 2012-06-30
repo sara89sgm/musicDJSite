@@ -3,6 +3,26 @@
  */
  
 /* Header */
-#logo {
-	
+#logoSec {
+	width:20.0%;
+		margin:1.3%;
+	float:left;
 }
+
+#player{
+	clear: both; 
+	width:56.0%;
+		margin:1.3%;
+	float:left;
+}
+
+#login{
+	width:15.0%;
+		margin:1.3%;
+		float:left;
+}
+
+#mainNav{
+	color: #FFFFFF;
+}
+

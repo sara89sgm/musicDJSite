@@ -47,7 +47,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-caption {width: 96%; padding: 2%; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
 
 /* Direction Nav */
-.flex-direction-nav li a {width: 48px; height: 48px; margin: -13px 0 0; display: block; background: url(../img/galleryControls.png) no-repeat 0 0; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px;}
+.flex-direction-nav li a {width: 150px; height: 150px; margin: -13px 0 0; display: block; background: url(../img/galleryControls.png) no-repeat 0 0; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px;}
 .flex-direction-nav li .next {background-position: -48px 0; right: -5%;}
 .flex-direction-nav li .prev {left: -5%;}
 .flex-direction-nav li a.prev:hover{background-position:0 -48px;}
