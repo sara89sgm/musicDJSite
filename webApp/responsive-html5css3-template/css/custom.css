@@ -31,6 +31,28 @@
 
  float: left; 
   position: relative; 
-  align:center;
+  text-align:center;
  width:75%; 
  }
+ 
+ .listMix{
+ border:solid 5px #000000;
+-moz-border-radius: 18px;
+-webkit-border-radius: 18px;
+border-radius: 18px;
+height:500px;
+overflow: scroll;
+}
+
+ .listMixElem{
+ width:85%;
+ height:100px;
+ overflow:hidden;
+ padding: 15px;
+  margin: 0px auto;
+ margin-top:15px;
+
+ border:solid 5px #000000;
+-moz-border-radius: 18px;
+-webkit-border-radius: 18px;
+border-radius: 18px;}

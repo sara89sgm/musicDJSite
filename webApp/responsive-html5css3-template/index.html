@@ -1,143 +1,216 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Responsive HTML5/CSS3 template</title>
-	<meta charset="utf-8" />
-	<meta name = "viewport" content = "width=device-width, maximum-scale = 1, minimum-scale=1" />
-	<link href="skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
-	<link rel="stylesheet" href="css/flexslider.css" type="text/css" />
-		<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css' />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
-  	<script src="js/jquery.flexslider.js"></script>
-  	<script src="js/jquery.roundabout.min.js"></script>
-	<script src="js/default.js"></script>
-	<style>
-   .roundabout-holder {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      height: 9em;
-      width: 9em;
-   }
-   .roundabout-moveable-item {
-      height: 8em;
-      width: 8em;
-      cursor: pointer;
-      background-color: #ccc;
-      border: 1px solid #999;
-   }
-   .roundabout-in-focus {
-      cursor: auto;
-   }
+<title>Responsive HTML5/CSS3 template</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, maximum-scale = 1, minimum-scale=1" />
+<link href="skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet"
+	type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/default.css"
+	media="all" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans'
+	rel='stylesheet' type='text/css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="js/jquery.roundabout-shapes.min.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.roundabout.min.js"></script>
+<script src="js/default.js"></script>
+<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
+<style>
+.roundabout-holder {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 9em;
+	width: 9em;
+}
+
+.roundabout-moveable-item {
+	height: 8em;
+	width: 8em;
+	cursor: pointer;
+	background-color: #ccc;
+	border: 1px solid #999;
+}
+
+.roundabout-in-focus {
+	cursor: auto;
+}
 </style>
 
- <script type="text/javascript">
+<script type="text/javascript">
+	var listSongs = new Array();
+	var actual = 0;
+	Parse.initialize(
+			"j53BRLScogSsHOLMxnKITApQMPNOOZy4z69ngzpe",
+			"fKjMX0Wh1yqX0CyZdY4nxASHRHFQS63WkXf6yfcD");
+	listSongs[0] = 'http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3';
+	listSongs[1] = 'http://houseanthems.com/wp-content/uploads/2012/06/Take-A-Walk-The-M-Machine-Remix.mp3';
+	listSongs[2] = 'http://houseanthems.com/wp-content/uploads/2012/06/Chris-Lake-John-Dahlback-I-Saw-This-Before-Original-Mix.mp3';
+	listSongs[3] = 'http://houseanthems.com/wp-content/uploads/2012/06/Rhythm-Masters-MYNC-Feat.-Wynter-Gordon-I-Feel-Love-Aviciis-Forgotten-Remix.mp3'
+	listSongs[4] = 'http://houseanthems.com/wp-content/uploads/2012/06/Tombo-Original-Mix.mp3';
 
- var listSongs = new Array();
- var actual=0;
- $(document).ready(function(){
-listSongs[0]='http://houseanthems.com/wp-content/uploads/2012/06/CLMD_-_Black_Eyes__Blue_Original_Mix.mp3';
-listSongs[1]='http://houseanthems.com/wp-content/uploads/2012/06/Take-A-Walk-The-M-Machine-Remix.mp3';
-	listSongs[2]='http://houseanthems.com/wp-content/uploads/2012/06/Chris-Lake-John-Dahlback-I-Saw-This-Before-Original-Mix.mp3';
+	$(document)
+			.ready(
+					function() {
+						$("#roundb").roundabout({
+
+							clickToFocusCallback : function() {
+								changeSong();
+							},
+							shape : 'figure8'
+
+						});
+
+						$("#roundb").roundabout("animateToChild", 0);
+
+						function changeSong() {
+
+							var num = $("#roundb")
+									.roundabout("getChildInFocus");
+
+							$("#mp3Source").attr("src", listSongs[num])
+									.detach().appendTo('#audioPlayer');
+							$("#audioPlayer").load();
+						}
+						
+						$('a.more').click(function(e){
+						
+						    if($(this).parent().hasClass("open")){
+						        $(this).parent().animate({"height":100}).removeClass("open");
+						        $(this).html("More...");
+						    }else{
+						        $(this).parent().animate({"height":300}).addClass("open");
+						        $(this).html("Less...");
+						    }
+						    e.preventDefault();
+						});
+						
+					});
 	
-		
-		        $("#roundb").roundabout({
-		  
-		        	clickToFocusCallback: function(){ changeSong();},
-		        	
-		        });
-		     
-		        $("#roundb").roundabout("animateToChild", 0);
-		        
-		   
-		 function changeSong(){
-			 
-			 var num= $("#roundb").roundabout("getChildInFocus");
-			 
-			 $("#mp3Source").attr("src", listSongs[num]).detach().appendTo('#audioPlayer');
-			 $("#audioPlayer").load();
-		 }
-	});
-
-</script>
-
-
 	
+	
+	
+	
+	function login() {
+		var user = new Parse.User();
+		user.set("username", "my name");
+		user.set("password", "my pass");
+		user.set("email", "email@example.com");
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="js/respond.min.js"></script>
-	<![endif]-->
+		// other fields can be set just like with Parse.Object
+		user.set("phone", "415-392-0202");
+
+		user.signUp(null, {
+			success : function(user) {
+				// Hooray! Let them use the app now.
+			},
+			error : function(user, error) {
+				// Show the error message somewhere and let the user try again.
+				alert("Error: " + error.code + " " + error.message);
+			}
+		});
+	}</script>
 
 </head>
 <body>
-	<div id="pagewidth" ">
+	<div id="pagewidth"">
 		<header id="header">
 			<div class="center">
 				<nav id="mainNav">
-				<div id="logoSec">HELLOOOOOOO</div>
-				<div id="twocols"> 
-				
-				<div id="player">
-				
+					<div id="logoSec">HELLOOOOOOO</div>
+					<div id="twocols">
 
-    <ul id="roundb">
-        <li> <img src="img/bep.jpg"/></li>
-        <li> <img src="img/passion.jpg"/></li>
-        <li><img src="img/second.jpg"/></li>
+						<div id="player">
 
-       
-    </ul>
 
-		
-<audio id="audioPlayer"  controls="controls" autoplay="autoplay">        
-    
-    <source id="mp3Source" type="audio/mp3" src="http://houseanthems.com/wp-content/uploads/2012/06/CLMD_-_Black_Eyes__Blue_Original_Mix.mp3"/>
-</audio>
+							<ul id="roundb" style="align: center">
+								<li><img src="img/bep.jpg" /></li>
+								<li><img src="img/passion.jpg" /></li>
+								<li><img src="img/second.jpg" /></li>
+								<li><img src="img/clmd.jpg" /></li>
+								<li><img src="img/four.jpg" /></li>
 
-</div>
-				<div id="login">LOGINNNNNN</div>
+							</ul>
+
+
+							<audio id="audioPlayer" controls="controls" autoplay="autoplay">
+
+								<source id="mp3Source" type="audio/mp3"
+									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
+							</audio>
+
+						</div>
+						<div id="login">
+							<button id="loginB" name="Login" onclick="login();">Login</button>
+						</div>
 					</div>
 				</nav>
 			</div>
 		</header>
 		<div id="content">
-			
+
 			<section id="twoColumnLayout" class="row grey">
 				<div class="center">
 					<div class="columns">
 						<div class="half">
-							<div class="imgHolder alignLeft"><img src="img/content01.jpg" alt="image" /></div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
-							<p>Ut scelerisque, sapien in luctus ultrices, magna ante convallis</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
-							<p>Ut scelerisque, sapien in luctus ultrices, magna ante convallis orci, vel iaculis massa sapien sed risus.</p>
-							<ul>
-								<li>Lorem ipsum dolor sit amet, consectetur </li>
-								<li>adipiscing elit. In luctus, tortor vel</li>
-							</ul>
-							<p>Ut scelerisque, sapien in luctus ultrices, <a href="#">magna ante convallis</a> orci, vel iaculis massa sapien sed risus.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+							<div class="listMix">
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" /> <a class="more">More</a>
+								</div>
+
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" align="left" /> <a
+										class="more" style="float: rigth;">More</a>
+								</div>
+
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" />
+								</div>
+
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" />
+								</div>
+							</div>
 						</div>
+
 						<div class="half">
-							<div class="imgHolder fullWidth"><img src="img/content02.jpg" alt="image" /></div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus, tortor vel vehicula pharetra, massa tellus elementum nunc, eu pulvinar urna risus a orci.</p>
+							<div class="listMix">
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" />
+								</div>
+
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" />
+								</div>
+
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" />
+								</div>
+
+								<div class="listMixElem">
+									<img src="img/bep.jpg" height="80px" />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-			
 		</div>
-		<footer id="footer">
-			<div class="center">
-				<span class="copy">Created by <a href="http://webcodebuilder.com">WebCodeBuilder.com</a></span>
-				Subscribe to our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us on <a href="https://twitter.com/#!/webcodebuilder">Twitter</a>
-			</div>
-		</footer>
+		</section>
+
+	</div>
+	<footer id="footer">
+		<div class="center">
+			<span class="copy">Created by <a
+				href="http://webcodebuilder.com">WebCodeBuilder.com</a></span> Subscribe to
+			our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
+			on <a href="https://twitter.com/#!/webcodebuilder">Twitter</a>
+		</div>
+	</footer>
 	</div>
 </body>
 </html>
