@@ -32,6 +32,7 @@ div.jp-video {
 	border-bottom:1px solid #180a1f;
 	background-color:#3a2a45;
 	position:relative;
+	float:left;
 }
 div.jp-audio {
 	width:201px;
