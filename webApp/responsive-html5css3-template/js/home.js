@@ -1,8 +1,8 @@
 var listSongs = new Array();
 	var actual = 0;
-	Parse.initialize(
-			"j53BRLScogSsHOLMxnKITApQMPNOOZy4z69ngzpe",
-			"fKjMX0Wh1yqX0CyZdY4nxASHRHFQS63WkXf6yfcD");
+	var lat;
+	var lng;
+	Parse.initialize("fPpoRZuYudGmOvMJuiZzdT3frVNThbfkT5e0xL42", "BJ1q1MDocxdhpLp1tUuti1K3lK8A8n3fdwUjjBA8");
 	listSongs[0] = 'http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3';
 	listSongs[1] = 'http://houseanthems.com/wp-content/uploads/2012/06/Take-A-Walk-The-M-Machine-Remix.mp3';
 	listSongs[2] = 'http://houseanthems.com/wp-content/uploads/2012/06/Chris-Lake-John-Dahlback-I-Saw-This-Before-Original-Mix.mp3';
@@ -45,28 +45,88 @@ var listSongs = new Array();
 						    e.preventDefault();
 						});
 						
+						if (navigator.geolocation) {
+							  navigator.geolocation.getCurrentPosition(success, error);
+							} else {
+							  error('not supported');
+							}
+						
 					});
 	
 	
+	function success(position) {
+		  lng=position.coords.longitude;
+		  lat=position.coords.latitude;
+		  
+		}
+
+		function error(msg) {
+		  var s = document.querySelector('#status');
+		  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+		  s.className = 'fail';
+		  
+		  console.log("error geolocation");
+		}
+
+		
 	
 	
-	
-	function login() {
+	function signUp() {
 		var user = new Parse.User();
-		user.set("username", "my name");
-		user.set("password", "my pass");
+		user.set("name", "Sara");
+		user.set("password", "123456");
 		user.set("email", "email@example.com");
+		user.set("lat", lat);
+		user.set("lng", lng);
 
 		// other fields can be set just like with Parse.Object
-		user.set("phone", "415-392-0202");
-
+	
+		
 		user.signUp(null, {
 			success : function(user) {
-				// Hooray! Let them use the app now.
+				// Redirect to logged page
 			},
 			error : function(user, error) {
 				// Show the error message somewhere and let the user try again.
 				alert("Error: " + error.code + " " + error.message);
 			}
+		});
+	}
+	
+	function login(){
+		
+		Parse.User.logIn("myname", "mypass", {
+			  success: function(user) {
+			    // Do stuff after successful login.
+			  },
+			  error: function(user, error) {
+			    // The login failed. Check error to see why.
+			  }
+			});
+		
+	}
+	
+	function logout(){
+		Parse.User.logOut();
+
+	}
+	
+	
+	function createRequestMix(){
+		var Request = Parse.Object.extend("Request");
+		var request = new Request();
+		var currentUser = Parse.User.current();
+		request.set("emailUser", currentUser.get("email") );
+		request.set("playerName", "Sean Plott");
+		request.set("cheatMode", false);
+
+		request.save(null, {
+		  success: function(gameScore) {
+		    // The object was saved successfully.
+		  },
+		  error: function(gameScore, error) {
+		    // The save failed.
+		    // error is a Parse.Error with an error code and description.
+		  }
 		});
 	}
