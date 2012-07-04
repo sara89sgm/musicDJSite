@@ -73,7 +73,14 @@ var listSongs = new Array();
 		  
 		}
 
-		
+		function error(msg) {
+		  var s = document.querySelector('#status');
+		  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+		  s.className = 'fail';
+		  
+		  console.log("error geolocation");
+		}
+
 	
 	
 	function signUp() {
