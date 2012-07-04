@@ -75,53 +75,13 @@ var listSongs = new Array();
 
 		function error(msg) {
 		  var s = document.querySelector('#status');
-		  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+		  //s.innerHTML = typeof msg == 'string' ? msg : "failed";
 		  s.className = 'fail';
 		  
 		  console.log("error geolocation");
 		}
 
-	
-	
-	function signUp() {
-		var user = new Parse.User();
-		user.set("name", "Sara");
-		user.set("password", "123456");
-		user.set("email", "email@example.com");
-		user.set("lat", lat);
-		user.set("lng", lng);
 
-		// other fields can be set just like with Parse.Object
-	
-		
-		user.signUp(null, {
-			success : function(user) {
-				// Redirect to logged page
-			},
-			error : function(user, error) {
-				// Show the error message somewhere and let the user try again.
-				alert("Error: " + error.code + " " + error.message);
-			}
-		});
-	}
-	
-	function login(){
-		
-		Parse.User.logIn("myname", "mypass", {
-			  success: function(user) {
-			    // Do stuff after successful login.
-			  },
-			  error: function(user, error) {
-			    // The login failed. Check error to see why.
-			  }
-			});
-		
-	}
-	
-	function logout(){
-		Parse.User.logOut();
-
-	}
 	
 	
 	function createRequestMix(){

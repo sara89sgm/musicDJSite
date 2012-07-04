@@ -60,28 +60,67 @@
 					</audio>
 				</div>
 				<div id="login">
+<<<<<<< HEAD
 				<a href="#login-box" class="login-window" id="loginA">Login </a>
 				<a href="#login-box2" class="login-window" id="loginB">Sing Up </a>
+=======
+				<a href="#login-box2" class="login-window" id="loginA">Login </a>
+				<a href="#login-box" class="login-window" id="loginB">Sing Up </a>
+				
+>>>>>>> login and sign up working
 				</div>
 				
 				<div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp">
           <form method="post" class="signin" action="#">
                 <fieldset class="textbox">
             	<label class="username">
-                <span>Username or email</span>
+                <span>Name</span>
                 <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                <label class="username">
+                <span>Email</span>
+                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
                 </label>
                 <label class="password">
                 <span>Password</span>
                 <input id="password" name="password" value="" type="password" placeholder="Password">
                 </label>
-                <button class="submit button" type="button">Sign in</button>
+                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
                 <p>
-                <a class="forgot" href="#">Forgot your password?</a>
+               
                 </p>        
                 </fieldset>
           </form>
+          </div>
+          <div id="signedUp" >
+          <p class="username"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
+</div>
+
+
+				<div id="login-box2" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp2">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	
+                <label class="username">
+                <span>Email</span>
+                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="login()">Log in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+                 </div>
 </div>
 <!--  HEADER END  -->
 			</header>

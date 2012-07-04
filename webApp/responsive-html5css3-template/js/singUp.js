@@ -30,4 +30,52 @@ $(document).ready(function() {
 	}); 
 	return false;
 	});
+	$("#signedUP").hide();
 });
+
+
+
+function signUp() {
+	var user = new Parse.User();
+
+	user.set("name", $("#username").val());
+	user.set("password", $("#password").val());
+	user.set("username", $("#email").val());
+	user.set("lat", lat);
+	user.set("lng", lng);
+
+	// other fields can be set just like with Parse.Object
+
+	
+	user.signUp(null, {
+		success : function(user) {
+			alert("done");
+			$("#formSingUp").hide();
+			$("#signedUP").show();
+		},
+		error : function(user, error) {
+			// Show the error message somewhere and let the user try again.
+			alert("Error: " + error.message);
+		}
+	});
+}
+
+function login(){
+	
+	Parse.User.logIn($("#emailL").val(), $("#passwordL").val(), {
+		  success: function(user) {
+			 
+			  $('#mask , .login-popup').fadeOut(300 , function() {
+					$('#mask').remove(); });
+		  },
+		  error: function(user, error) {
+			  alert("Error: " + error.message);
+		  }
+		});
+	
+}
+
+function logout(){
+	Parse.User.logOut();
+
+}
