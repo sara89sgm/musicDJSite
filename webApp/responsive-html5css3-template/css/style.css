@@ -286,12 +286,34 @@ Section Requestsamix Styling
 section#requestamix {
 	width: 85%;
 	margin: 0 0 3em 0;
+	padding: 1em;
 }
+section#requestamix #track {
+	width: 45%;
+	float: left;
+	margin: 0 0 0em 0;
+}
+
 section#requestamix h2 {
 	width: 100%;
 	text-align: center;
+	margin: 0 0 1em 0;
 }
-
+section#requestamix input, section#requestamix textarea {
+	font-family: Verdana, sans-serif;
+	max-width: 440px;
+	width: 92%;
+	margin: 0 0 2em 0;
+}
+section#requestamix input[type="text"], section#requestamix textarea {
+	background: ;
+	border: 2px solid #000;
+	display: block;
+	font-size: .7em;
+	padding: .4em;
+	color: ;
+	font-size: 1em;
+}
 /* -------------------------------------------------------------
 footer Styling
 ------------------------------------------------------------------*/
