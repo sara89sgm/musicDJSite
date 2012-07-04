@@ -230,8 +230,9 @@ section ul li {
 	padding: .5em;
 }
 section ul li span.respond {
+	float: right;
+	margin: 5.5em -7em 0 0em;
 	background: #fff;
-	border: 2px solid #000;
 	cursor: pointer;
 	border: 2px solid #000;
 	color: #1C397B;
@@ -256,10 +257,6 @@ section ul li a.more {
 	float: left;
 	margin: 6.4em .5em 0 -3em;
 	cursor: pointer;
-}
-section ul li span.respond {
-	float: right;
-	margin: 5.5em -7em 0 0em;
 }
 section ul li a.aaa, section ul li a.bbb, section ul li a.ccc {
 	float: right;
@@ -288,29 +285,35 @@ section#requestamix {
 	width: 85%;
 	margin: 0 0 3em 0;
 	padding: 1em;
+	border: 2px solid #000;
 }
 section#requestamix #track {
-	width: 45%;
+	width: 40%;
 	float: left;
-	margin: 0 0 0em 0;
+	margin: 0 15% 0em 0;
+}
+section#requestamix #trackinfo {
+	width: 40%;
+	float: left;
+	margin: 0 0% 0em 0;
 }
 
 section#requestamix h2 {
-	width: 100%;
+	width: 10%;
 	text-align: center;
-	margin: 0 0 1em 0;
+	margin: 0em 0% 0 42%;
 }
 section#requestamix input, section#requestamix textarea {
 	font-family: Verdana, sans-serif;
-	max-width: 440px;
-	width: 92%;
+	max-width: ;
+	width: 100%;
 	margin: 0 0 2em 0;
 }
 section#requestamix .tags {
 	float: left;
 	font-family: Verdana, sans-serif;
-	max-width: 50px;
-	width: 40%;
+	max-width:;
+	width: 50px;
 	margin: 0 .5em 2em 0;
 }
 
@@ -326,12 +329,34 @@ section#requestamix input[type="text"], section#requestamix textarea {
 .styled-select select {
 	float: right;
 	background: transparent;
-	width: 200px;	
+	width: 180px;	
 	padding: 5px;
 	font-size: 16px;
 	border: 1px solid #ccc;
 	height: 34px;
-	margin: 0 4em 0 0;
+	margin: 0 -1em 0 0;
+}
+section#requestamix .addcoverimg {
+	float: left;
+	margin: 1em 0 0 0em;
+	background: #fff;
+	border: 2px solid #000;
+	color: #1C397B;
+	padding: .3em 1em;
+	-o-box-shadow: 5px 5px 5px #000;
+	-moz-box-shadow: 5px 5px 5px #000;
+	-webkit-box-shadow: 5px 5px 5px #000;
+	box-shadow: 5px 5px 5px #000;
+}
+section#requestamix .showimg {
+	background: url(../img/passion.jpg) no-repeat;
+	background-size: 100%;
+	width: 40px;
+	height: 40px;
+	text-indent: -9999px;
+	cursor: pointer;
+	float: left;
+
 }
 /* -------------------------------------------------------------
 footer Styling
