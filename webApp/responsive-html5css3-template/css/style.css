@@ -285,6 +285,7 @@ Section Requestsamix Styling
 ------------------------------------------------------------------*/
 section#requestamix {
 	width: 85%;
+	margin: 0 0 3em 0;
 }
 section#requestamix h2 {
 	width: 100%;
