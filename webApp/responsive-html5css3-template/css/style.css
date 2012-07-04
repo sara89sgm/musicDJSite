@@ -12,9 +12,6 @@ Date: 2012
   			 v2.0 | 20110126
   			 License: none (public domain)
 
--------------------- TEMPLATE NOTES ------------------
-
-
 ------------------------- END INFO NOTES ---------------------- */
 
 html, body, div, span, applet, object, iframe,
@@ -118,21 +115,9 @@ nav h1 {
 	font-size: 2em;
 	margin: 0 0 .5em 0;
 }
-nav span, section ul li span.respond {
-	background: #fff;
-	border: 2px solid #000;
-	cursor: pointer;
-	border: 2px solid #000;
+nav span {
 	color: #1C397B;
 	padding: .3em 1.5em;
-	-o-box-shadow: 5px 5px 5px #000;
-	-moz-box-shadow: 5px 5px 5px #000;
-	-webkit-box-shadow: 5px 5px 5px #000;
-	box-shadow: 5px 5px 5px #000;
-}
-nav span:hover, section ul li span.respond:hover {
-	background: #1C397B;
-	color: #fff;
 }
 nav span.b, nav span.c, nav span.d {
 	display: none;
@@ -240,6 +225,23 @@ section ul li {
 	margin: 1em;
 	padding: .5em;
 }
+section ul li span.respond {
+	background: #fff;
+	border: 2px solid #000;
+	cursor: pointer;
+	border: 2px solid #000;
+	color: #1C397B;
+	padding: .3em 1.5em;
+	-o-box-shadow: 5px 5px 5px #000;
+	-moz-box-shadow: 5px 5px 5px #000;
+	-webkit-box-shadow: 5px 5px 5px #000;
+	box-shadow: 5px 5px 5px #000;
+}
+section ul li span.respond:hover {
+	background: #1C397B;
+	color: #fff;
+}
+
 section ul li h3 {
 	font-size: 1.5em;
 	float: left;
