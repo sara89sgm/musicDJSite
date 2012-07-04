@@ -12,7 +12,7 @@ var listSongs = new Array();
 	$(document)
 			.ready(
 					function() {
-						$("#roundb").roundabout({
+						$("#roundb").jcoverflip({
 
 							clickToFocusCallback : function() {
 								changeSong();
