@@ -46,6 +46,9 @@ overflow: scroll;
 -webkit-border-radius: 18px;
 border-radius: 18px;}
 
+#roundb {
+	width: 70%;
+}
 .roundabout-holder {
 	list-style: none;
 	padding: 0;
