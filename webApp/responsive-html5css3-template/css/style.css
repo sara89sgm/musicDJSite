@@ -153,13 +153,14 @@ nav ul li.d:hover {
 	padding: 1em 0 1em 0;
 }
 #loginA, #loginB {
+	display: block;
 	background: #fff;
 	border: 2px solid #000;
 	font-size: 1em;
 	width: 90%;
-	height: 35px;
+	height: 15px;
 	padding: 7px 0 13px 0;
-	margin: 1.5em 5% 0 15%;
+	margin: 1em 5% 0 15%;
 	-o-box-shadow: 5px 5px 5px #000;
 	-moz-box-shadow: 5px 5px 5px #000;
 	-webkit-box-shadow: 5px 5px 5px #000;
