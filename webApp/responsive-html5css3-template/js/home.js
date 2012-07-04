@@ -12,6 +12,19 @@ var listSongs = new Array();
 	$(document)
 			.ready(
 					function() {
+
+						$("li.a").hover(
+								  function () {
+								   $("#exp").empty();
+								   $("#exp").append($(this).text());
+								   $("#exp").attr("href","#"+$(this).text());
+								  }, 
+								  function () {
+									  $("#exp").empty();
+									   $("#exp").append("Request a mix");
+								  }
+								);
+						
 						$("#roundb").roundabout({
 
 							clickToFocusCallback : function() {
@@ -68,17 +81,6 @@ var listSongs = new Array();
 		  console.log("error geolocation");
 		}
 
-		$("li.a").hover(
-				  function () {
-				   $("#exp").empty();
-				   $("#exp").append($(this).text());
-				   $("#exp").attr("href","#"+$(this).text());
-				  }, 
-				  function () {
-					  $("#exp").empty();
-					   $("#exp").append("Request a mix");
-				  }
-				);
 	
 	
 	function signUp() {
