@@ -1,124 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Responsive HTML5/CSS3 template</title>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, maximum-scale = 1, minimum-scale=1" />
-<link href="skin/pink.flag/jplayer.pink.flag.css" rel="stylesheet"
-	type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/default.css"
-	media="all" />
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" />
-<link rel="stylesheet" href="css/custom.css" type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=PT+Sans'
-	rel='stylesheet' type='text/css' />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/jquery.jcoverflip.js"></script>
-<script src="js/default.js"></script>
-<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
-<script src="js/home.js"></script>
-
-
-
-</head>
-<body>
-	<div id="pagewidth"">
-		<header id="header">
-			<div class="center">
-				<nav id="mainNav">
-					<div id="logoSec">HELLOOOOOOO</div>
-					<div id="twocols">
-
-						<div id="player">
-
-
-							<ul id="roundb" style="align: center">
-								<li><img src="img/bep.jpg" /></li>
-								<li><img src="img/passion.jpg" /></li>
-								<li><img src="img/second.jpg" /></li>
-								<li><img src="img/clmd.jpg" /></li>
-								<li><img src="img/four.jpg" /></li>
-
-							</ul>
-
-
-							<audio id="audioPlayer" controls="controls" autoplay="autoplay">
-
-								<source id="mp3Source" type="audio/mp3"
-									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
-							</audio>
-
-						</div>
-						<div id="login">
-							<button id="loginB" name="Login" onclick="login();">Login</button>
-						</div>
-					</div>
+	<head>
+		<title>Responsive HTML5/CSS3 template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/custom.css" type="text/css" />
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="js/jquery.roundabout-shapes.min.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<script src="js/jquery.roundabout.js"></script>
+		<script src="js/default.js"></script>
+		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
+		<script src="js/home.js"></script>
+	</head>
+	<body>
+<!--  WRAP START -->
+		<div id="wrap">
+<!--  HEADER START  -->
+			<header>
+<!--  NAV START  -->
+				<nav>
+					<h1>name here</h1>
+					<ul>
+						<a href="index.html"><li class="a">music</li></a>
+						<a href="page1.html"><li class="b">music</li></a>
+						<a href="page2.html"><li class="c">music</li></a>
+						<a href="page3.html"><li class="d">music</li></a>
+					</ul>
+					<span class="a">request a mix 1</span>
+					<span class="b">request a mix 2</span>
+					<span class="c">request a mix 3</span>
+					<span class="d">request a mix 4</span>
 				</nav>
-			</div>
-		</header>
-		<div id="content">
-
-			<section id="twoColumnLayout" class="row grey">
-				<div class="center">
-					<div class="columns">
-						<div class="half">
-							<div class="listMix">
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" /> <a class="more">More</a>
-								</div>
-
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" align="left" /> <a
-										class="more" style="float: rigth;">More</a>
-								</div>
-
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" />
-								</div>
-
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" />
-								</div>
-							</div>
-						</div>
-
-						<div class="half">
-							<div class="listMix">
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" />
-								</div>
-
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" />
-								</div>
-
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" />
-								</div>
-
-								<div class="listMixElem">
-									<img src="img/bep.jpg" height="80px" />
-								</div>
-							</div>
-						</div>
-					</div>
+<!--  NAV END  -->
+				<div id="player">
+					<ul id="roundb">
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+					</ul>
+					<audio id="audioPlayer" controls="controls" autoplay="autoplay">
+						<source id="mp3Source" type="audio/mp3"
+									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
+					</audio>
 				</div>
+				<div id="login">
+					<button id="loginA" name="Login" onclick="login();">Login</button>
+					<button id="loginB" name="Signup" onclick="login();">Signup</button>
+				</div>
+<!--  HEADER END  -->
+			</header>
+<!--  CONTENT START  -->
+			<div id="content">
+				<section id="requests">
+					<span class="sortBy">sort by</span><h2>requests</h2>
+					<ul>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+					</ul>
+				</section>
+				<section id="responses">
+					<span class="sortBy">sort by</span><h2>responses</h2>
+					<ul>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="icons" class="aaa" href="page1.html"></a><a id="icons" class="bbb" href="page1.html"></a><a id="icons" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+					</ul>				</section>
+<!--  CONTENT END  -->
+			</div>
+			<footer>
+				<p>Subscribe to
+					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
+					on <a href="https://twitter.com/#!/webcodebuilder">Twitter</a>
+				</p>
+			</footer>
+<!--  WRAP END -->
 		</div>
-		</section>
-
-	</div>
-	<footer id="footer">
-		<div class="center">
-			<span class="copy">Created by <a
-				href="http://webcodebuilder.com">WebCodeBuilder.com</a></span> Subscribe to
-			our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
-			on <a href="https://twitter.com/#!/webcodebuilder">Twitter</a>
-		</div>
-	</footer>
-	</div>
-</body>
+	</body>
 </html>

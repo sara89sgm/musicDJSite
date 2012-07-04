@@ -21,19 +21,8 @@
  position:relative; 
   }
  
-#login{
- width:25%; 
- float:right; 
- position:relative; 
- }
- 
-#player{
 
- float: left; 
-  position: relative; 
-  text-align:center;
- width:75%; 
- }
+
  
  .listMix{
  border:solid 5px #000000;
@@ -67,10 +56,10 @@ border-radius: 18px;}
 
 .roundabout-moveable-item {
 	height: 8em;
-	width: 8em;
+	width: 10em;
 	cursor: pointer;
-	background-color: #ccc;
-	border: 1px solid #999;
+	background-color: #;
+	border: 1px solid #;
 }
 
 .roundabout-in-focus {
