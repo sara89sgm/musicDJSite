@@ -36,7 +36,7 @@ var listSongs = new Array();
 						$('a.more').click(function(e){
 						
 						    if($(this).parent().hasClass("open")){
-						        $(this).parent().animate({"height":100}).removeClass("open");
+						        $(this).parent().animate({"height":125}).removeClass("open");
 						        $(this).html("More...");
 						    }else{
 						        $(this).parent().animate({"height":300}).addClass("open");
