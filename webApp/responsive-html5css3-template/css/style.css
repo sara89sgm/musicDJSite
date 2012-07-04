@@ -290,24 +290,30 @@ section#requestamix {
 section#requestamix #track {
 	width: 40%;
 	float: left;
-	margin: 0 15% 0em 0;
+	margin: 0 13% 0em 3%;
 }
 section#requestamix #trackinfo {
 	width: 40%;
 	float: left;
-	margin: 0 0% 0em 0;
+	margin: 0 4% 0em 0;
 }
 
 section#requestamix h2 {
 	width: 10%;
-	text-align: center;
-	margin: 0em 0% 0 42%;
+	margin: 0em 0% 2em 0%;
 }
 section#requestamix input, section#requestamix textarea {
 	font-family: Verdana, sans-serif;
 	max-width: ;
 	width: 100%;
 	margin: 0 0 2em 0;
+	background: ;
+	border: 2px solid #000;
+	display: block;
+	font-size: .7em;
+	padding: .4em;
+	color: ;
+	font-size: 1em;
 }
 section#requestamix .tags {
 	float: left;
@@ -318,13 +324,7 @@ section#requestamix .tags {
 }
 
 section#requestamix input[type="text"], section#requestamix textarea {
-	background: ;
-	border: 2px solid #000;
-	display: block;
-	font-size: .7em;
-	padding: .4em;
-	color: ;
-	font-size: 1em;
+	
 }
 .styled-select select {
 	float: right;
@@ -338,7 +338,7 @@ section#requestamix input[type="text"], section#requestamix textarea {
 }
 section#requestamix .addcoverimg {
 	float: left;
-	margin: 1em 0 0 0em;
+	margin: 3em 0 0 -14em;
 	background: #fff;
 	border: 2px solid #000;
 	color: #1C397B;
@@ -348,15 +348,14 @@ section#requestamix .addcoverimg {
 	-webkit-box-shadow: 5px 5px 5px #000;
 	box-shadow: 5px 5px 5px #000;
 }
-section#requestamix .showimg {
+section#requestamix #trackinfo .showimg {
 	background: url(../img/passion.jpg) no-repeat;
 	background-size: 100%;
 	width: 40px;
 	height: 40px;
 	text-indent: -9999px;
 	cursor: pointer;
-	float: left;
-
+	clear:;
 }
 /* -------------------------------------------------------------
 footer Styling
