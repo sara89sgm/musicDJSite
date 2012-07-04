@@ -261,7 +261,7 @@ section ul li span.respond {
 	float: right;
 	margin: 5.5em -7em 0 0em;
 }
-section ul li a#icons {
+section ul li a.aaa, section ul li a.bbb, section ul li a.ccc {
 	float: right;
 	background: url(../img/passion.jpg) no-repeat;
 	background-size: 100%;
@@ -306,6 +306,14 @@ section#requestamix input, section#requestamix textarea {
 	width: 92%;
 	margin: 0 0 2em 0;
 }
+section#requestamix .tags {
+	float: left;
+	font-family: Verdana, sans-serif;
+	max-width: 50px;
+	width: 40%;
+	margin: 0 .5em 2em 0;
+}
+
 section#requestamix input[type="text"], section#requestamix textarea {
 	background: ;
 	border: 2px solid #000;
@@ -314,6 +322,16 @@ section#requestamix input[type="text"], section#requestamix textarea {
 	padding: .4em;
 	color: ;
 	font-size: 1em;
+}
+.styled-select select {
+	float: right;
+	background: transparent;
+	width: 200px;	
+	padding: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 34px;
+	margin: 0 4em 0 0;
 }
 /* -------------------------------------------------------------
 footer Styling
