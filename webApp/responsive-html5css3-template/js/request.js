@@ -23,5 +23,11 @@ $(document).ready(function() {
         }
         
     });
+	
+	   $('.droparea').droparea([options]);
 });
+
+function doRequest(){
+	
+}
 
