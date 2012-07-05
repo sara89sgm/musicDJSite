@@ -1,3 +1,7 @@
+var songs = new Object();
+
+
+
 $(document).ready(function() {
 	$("input.spotify_song_search").autocomplete({
         source: function(request, response) {
@@ -10,9 +14,13 @@ $(document).ready(function() {
             });
         },
         select: function(el, ui) {
-                console.log(ui);
-            $("#track").attr("href",ui.item.track.href).text("Listen");
-        },
+        	
+        	id=$(this).attr('id');
+        	
+        	songs[id]=ui.item.track.href;
+                console.log(id+"href:"+ui.item.track.href);
+           
+        }
         
     });
 });
