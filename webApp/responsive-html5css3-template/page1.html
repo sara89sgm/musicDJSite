@@ -23,20 +23,19 @@
 <!--  WRAP START -->
 		<div id="wrap">
 <!--  HEADER START  -->
-			<header>
+				<header>
 <!--  NAV START  -->
 				<nav>
-					<h1>FUUZIK</h1>
+				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
+					
 					<ul>
-						<a href="index.html"><li class="a">music</li></a>
-						<a href="page1.html"><li class="b">music</li></a>
-						<a href="page2.html"><li class="c">music</li></a>
-						<a href="page3.html"><li class="d">music</li></a>
+						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
 					</ul>
-					<span class="a">request a mix 1</span>
+					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
 					<span class="b">request a mix 2</span>
 					<span class="c">request a mix 3</span>
 					<span class="d">request a mix 4</span>
+					-->
 				</nav>
 <!--  NAV END  -->
 				<div id="player">
@@ -60,9 +59,63 @@
 					</audio>
 				</div>
 				<div id="login">
-					<a href="#login-box" class="login-window" id="loginA">Login </a>
-					<a href="#login-box2" class="login-window" id="loginB">Sign Up </a>
+				<a href="#login-box2" class="login-window" id="loginA">Login </a>
+				<a href="#login-box" class="login-window" id="loginB">Sing Up </a>
+				
 				</div>
+				
+				<div id="login-box" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="username">
+                <span>Name</span>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                <label class="username">
+                <span>Email</span>
+                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="password" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+          <div id="signedUp" >
+          <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
+</div>
+
+
+				<div id="login-box2" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp2">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	
+                <label class="username">
+                <span>Email</span>
+                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="login()">Log in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+                 </div>
+</div>
 <!--  HEADER END  -->
 			</header>
 <!--  CONTENT START  -->

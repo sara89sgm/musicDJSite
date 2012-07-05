@@ -1,5 +1,5 @@
 /* -------------------- INFO -------------------- * /
-/*  
+ 
 Author: Julio Peral 
 URL: jeplon.co.uk 
 Date: 2012
@@ -92,7 +92,7 @@ header Styling
 ------------------------------------------------------------------*/
 header {
 	width: 100%;
-	height: 11em;
+	height: 13em;
 	background: #fff; 	
 	overflow: hidden;
 	padding: .5em;
@@ -123,29 +123,45 @@ nav span.b, nav span.c, nav span.d {
 	display: none;
 }
 nav ul li {
-	background: url(../img/passion.jpg) no-repeat;
 	background-size: 100%;
 	display: inline-block;
-	width: 40px;
-	height: 40px;
+	width: 42px;
+	height: 42px;
 	text-indent: -9999px;
 	cursor: pointer;
-	margin: 0 0 1em 0;
 }
+
+nav ul li.a {
+	background: url(../img/buttons/mixpurple-01.png) no-repeat;
+	background-size: 100%;
+}
+nav ul li.b {
+	background: url(../img/buttons/notificationpurple-01.png) no-repeat;
+	background-size: 100%;
+}
+nav ul li.c {
+	background: url(../img/buttons/headphonespurple-01.png) no-repeat;
+	background-size: 100%;
+}
+nav ul li.d {
+	background: url(../img/buttons/lightbulbpurple-01.png) no-repeat;
+	background-size: 100%;
+}
+
 nav ul li.a:hover {
-	background: url(../img/bep.jpg) no-repeat;
+	background: url(../img/buttons/mixgrey-01.png) no-repeat;
 	background-size: 100%;
 }
 nav ul li.b:hover {
-	background: url(../img/second.jpg) no-repeat;
+	background: url(../img/buttons/notificationsgrey-01.png) no-repeat;
 	background-size: 100%;
 }
 nav ul li.c:hover {
-	background: url(../img/four.jpg) no-repeat;
+	background: url(../img/buttons/headphonesgrey-01.png) no-repeat;
 	background-size: 100%;
 }
 nav ul li.d:hover {
-	background: url(../img/bep.jpg) no-repeat;
+	background: url(../img/buttons/lightbulbgrey-01.png) no-repeat;
 	background-size: 100%;
 }
 #login {
@@ -186,6 +202,12 @@ nav ul li.d:hover {
 	height: auto;
 	float:;
 }
+
+#logo {
+	
+
+}
+
 /* -------------------------------------------------------------
 Content Styling
 ------------------------------------------------------------------*/
