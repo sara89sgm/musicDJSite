@@ -46,6 +46,8 @@ function logged(){
 
 
 
+
+
 function signUp() {
 	var user = new Parse.User();
 
