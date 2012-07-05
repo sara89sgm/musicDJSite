@@ -8,7 +8,11 @@
 	opacity: 0.8;
 	z-index: 999;
 }
-
+.popupMessage{
+	color:#999; 
+	font-size:11px; 
+	line-height:18px;
+}
 /* You can customize to your needs  */
 .login-popup{
 	display:none;
