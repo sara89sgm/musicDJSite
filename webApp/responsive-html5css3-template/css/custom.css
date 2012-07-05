@@ -69,6 +69,7 @@ overflow: scroll;
 -webkit-border-radius: 18px;
 border-radius: 18px;}
 
+/* CAROUSEL */
 #roundb {
 	width: 70%;
 }
@@ -90,4 +91,17 @@ border-radius: 18px;}
 
 .roundabout-in-focus {
 	cursor: auto;
+}
+
+/* FILE LOADER */
+
+.droparea div, .droparea input {
+position: absolute;
+top:0;
+width: 100%;
+height: 100%;
+}
+.droparea input {
+cursor: pointer; 
+opacity: 0; 
 }

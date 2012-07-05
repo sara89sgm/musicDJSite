@@ -28,6 +28,31 @@ $(document).ready(function() {
 });
 
 function doRequest(){
+	if(logged()){
+		var Request = Parse.Object.extend("Request");
+		var request = new Request();
+
+		request.set("track1", $("#entry_1").val());
+		request.set("track2", $("#entry_2").val());
+		request.set("track3", $("#entry_3").val());
+		request.set("track4", $("#entry_4").val());
+		request.set("track5", $("#entry_5").val());
+		var currentUser = Parse.User.current();
+		request.set("userId", currentUser.username);
 	
+
+		request.save(null, {
+		  success: function(gameScore) {
+		    // The object was saved successfully.
+		  },
+		  error: function(gameScore, error) {
+		    // The save failed.
+		    // error is a Parse.Error with an error code and description.
+		  }
+		});
+	}
+	else{
+		
+	}
 }
 
