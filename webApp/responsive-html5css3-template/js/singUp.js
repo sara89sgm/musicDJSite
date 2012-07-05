@@ -33,6 +33,17 @@ $(document).ready(function() {
 	$("#signedUP").hide();
 });
 
+function logged(){
+	
+	var currentUser = Parse.User.current();
+	if (currentUser) {
+	    return true;
+	} else {
+	    return false;
+	}
+	
+}
+
 
 
 function signUp() {
@@ -49,7 +60,7 @@ function signUp() {
 	
 	user.signUp(null, {
 		success : function(user) {
-			alert("done");
+		
 			$("#formSingUp").hide();
 			$("#signedUP").show();
 		},
