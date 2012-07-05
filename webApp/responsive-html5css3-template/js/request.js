@@ -12,7 +12,8 @@ $(document).ready(function() {
         select: function(el, ui) {
                 console.log(ui);
             $("#track").attr("href",ui.item.track.href).text("Listen");
-        }
+        },
+        
     });
 });
 
