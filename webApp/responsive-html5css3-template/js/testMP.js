@@ -30,7 +30,7 @@ var listSongs = new Array();
 							clickToFocusCallback : function() {
 								changeSong();
 							},
-							shape : 'figure8'
+							shape : 'square'
 
 						});
 
@@ -80,9 +80,9 @@ var listSongs = new Array();
 		}
 
 		function error(msg) {
-		  var s = document.querySelector('#status');
+		//  var s = document.querySelector('#status');
 		  //s.innerHTML = typeof msg == 'string' ? msg : "failed";
-		  s.className = 'fail';
+		//  s.className = 'fail';
 		  
 		  console.log("error geolocation");
 		}

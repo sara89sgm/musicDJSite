@@ -24,7 +24,7 @@ $(document).ready(function() {
         
     });
 	
-	   $('.droparea').droparea([options]);
+	 //  $('.droparea').droparea([options]);
 });
 
 function doRequest(){
