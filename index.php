@@ -12,8 +12,8 @@
 			if (!class_exists('S3'))require_once('S3.php');
 			
 			//AWS access info
-			if (!defined('awsAccessKey')) define('awsAccessKey', 'CHANGE THIS');
-			if (!defined('awsSecretKey')) define('awsSecretKey', 'CHANGE THIS TOO');
+			if (!defined('awsAccessKey')) define('awsAccessKey', 'AKIAITXOXYKBQBBYQN6A');
+			if (!defined('awsSecretKey')) define('awsSecretKey', 'oQ3oHXoVuTF/5t6Xc4tAv2O0/UZUbyzqCqlbe6ks');
 			
 			//instantiate the class
 			$s3 = new S3(awsAccessKey, awsSecretKey);
@@ -29,7 +29,7 @@
 				$s3->putBucket("yourbucket", S3::ACL_PUBLIC_READ);
 				
 				//move the file
-				if ($s3->putObjectFile($fileTempName, "yourbucket", $fileName, S3::ACL_PUBLIC_READ)) {
+				if ($s3->putObjectFile($fileTempName, "fuuzik", $fileName, S3::ACL_PUBLIC_READ)) {
 					echo "<strong>We successfully uploaded your file.</strong>";
 				}else{
 					echo "<strong>Something went wrong while uploading your file... sorry.</strong>";
@@ -45,11 +45,11 @@
 <h1>All uploaded files</h1>
 <?php
 	// Get the contents of our bucket
-	$contents = $s3->getBucket("yourbucket");
+	$contents = $s3->getBucket("fuuzik");
 	foreach ($contents as $file){
 	
 		$fname = $file['name'];
-		$furl = "http://yourbucket.s3.amazonaws.com/".$fname;
+		$furl = "http://fuuzik.s3-website-eu-west-1.amazonaws.com/".$fname;
 		
 		//output a link to the file
 		echo "<a href=\"$furl\">$fname</a><br />";
