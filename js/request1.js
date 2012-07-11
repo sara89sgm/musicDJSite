@@ -1,14 +1,13 @@
-<<<<<<< HEAD
-function requested(){
-
-      
-              alert("DS");
-=======
-function requestDO(){
+ $("#request").click(function() {
 
       
               
->>>>>>> 788eefe4610e095aec678a6ea980dd8dc1f3c7a8
+		
+Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+
+function requestDO(){
+
+
 
 var Request = Parse.Object.extend("Request");
 var Request = new Request();
@@ -38,5 +37,5 @@ request.save(null, {
   }
 });
 
- }
+ })
 
