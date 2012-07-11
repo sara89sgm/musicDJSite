@@ -60,10 +60,22 @@ if (window.location.href.match(/html5/i)) {
   // for testing IE 9, etc.
   soundManager.useHTML5Audio = true;
 }
+
+function checkCookie()
+{
+var requestID=getCookie("requestID");
+  if (requestID!=null && requestID!="")
+  {
+  alert("Cookie written properly , request ID is"+requestID);
+  }
+  else{
+  alert("Something went wrong");
+  }
+}
 		
 </script>
 	</head>	
-	<body>
+	<body onload='checkCookie();'>
 <!--  WRAP START -->
 		<div id="wrap">
 <!--  HEADER START  -->

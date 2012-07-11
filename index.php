@@ -1,196 +1,59 @@
-<!DOCTYPE html>
-<html>
-	<head>
-     
-		<title>Responsive HTML5/CSS3 template</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
-		<link rel="stylesheet" href="css/custom.css" type="text/css" />
-		<link rel="stylesheet" href="css/singup.css" type="text/css" />
-		<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="js/jquery.roundabout-shapes.min.js"></script>
-		<script src="js/jquery.flexslider.js"></script>
-		<script src="js/jquery.roundabout.js"></script>
-		<script src="js/default.js"></script>
-		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
-		<script src="js/home.js"></script>
-		<script src="js/singUp.js"></script>
-        <script src="js/facebook.js"></script>
-     
-	</head>
-	<body>
-    
-     
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>S3 tutorial</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
 
-<!--  WRAP START -->
-		<div id="wrap">
-<!--  HEADER START  -->
-			<header>
-<!--  NAV START  -->
-				<div id="fb-root"></div>
-                <nav>
-				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
-					
-					<ul>
-						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
-					</ul>
-					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
-					<span class="b">request a mix 2</span>
-					<span class="c">request a mix 3</span>
-					<span class="d">request a mix 4</span>
-					-->
-				</nav>
-<!--  NAV END  -->
-				<div id="player">
-					<ul id="roundb">
-						<li><img src="img/bep.jpg" width="600" height="600" /></li>
-						<li><img src="img/four.jpg" width="473" height="473" /></li>
-						<li><img src="img/passion.jpg" width="473" height="473" /></li>
-						<li><img src="img/second.jpg" width="473" height="473" /></li>
-						<li><img src="img/bep.jpg" width="600" height="600" /></li>
-						<li><img src="img/four.jpg" width="473" height="473" /></li>
-						<li><img src="img/passion.jpg" width="473" height="473" /></li>
-						<li><img src="img/second.jpg" width="473" height="473" /></li>
-						<li><img src="img/bep.jpg" width="600" height="600" /></li>
-						<li><img src="img/four.jpg" width="473" height="473" /></li>
-						<li><img src="img/passion.jpg" width="473" height="473" /></li>
-						<li><img src="img/second.jpg" width="473" height="473" /></li>
-					</ul>
-					<audio id="audioPlayer" controls="controls" autoplay="autoplay">
-						<source id="mp3Source" type="audio/mp3"
-									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
-					</audio>
-				</div>
-				<div id="login">
-				<a href="#login-box2" class="login-window" id="loginA">Login </a>
-				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
-                <div id="fb-login-button">Login With Facebook</div>
+<body>
+    	<?php
+			//include the S3 class
+			if (!class_exists('S3'))require_once('S3.php');
+			
+			//AWS access info
+			if (!defined('awsAccessKey')) define('awsAccessKey', 'CHANGE THIS');
+			if (!defined('awsSecretKey')) define('awsSecretKey', 'CHANGE THIS TOO');
+			
+			//instantiate the class
+			$s3 = new S3(awsAccessKey, awsSecretKey);
+			
+			//check whether a form was submitted
+			if(isset($_POST['Submit'])){
+			
+				//retreive post variables
+				$fileName = $_FILES['theFile']['name'];
+				$fileTempName = $_FILES['theFile']['tmp_name'];
 				
-				</div>
+				//create a new bucket
+				$s3->putBucket("yourbucket", S3::ACL_PUBLIC_READ);
 				
-				<div id="login-box" class="login-popup">
-        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-        
-        <div id="formSingUp">
-        <div id="fb-login-button">Login With Facebook</div>
-          <form method="post" class="signin" action="#">
-                <fieldset class="textbox">
-            	<label class="username">
-                <span>Name</span>
-                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
-                </label>
-                <label class="username">
-                <span>Email</span>
-                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
-                </label>
-                <label class="password">
-                <span>Password</span>
-                <input id="password" name="password" value="" type="password" placeholder="Password">
-                </label>
-                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
-                <p>
-               
-                </p>        
-                </fieldset>
-          </form>
-          </div>
-          <div id="signedUp" >
-          <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
-</div>
-
-
-				<div id="login-box2" class="login-popup">
-        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-        <div id="formSingUp2">
-        <div id="fb-login-button">Login With Facebook</div>
-          <form method="post" class="signin" action="#">
-                <fieldset class="textbox">
-            	
-                <label class="username">
-                <span>Email</span>
-                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
-                </label>
-                <label class="password">
-                <span>Password</span>
-                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
-                </label>
-                <button class="submit button" type="button" onclick="login()">Log in</button>
-                <p>
-               
-                </p>        
-                </fieldset>
-          </form>
-          </div>
-                 </div>
-</div>
-<!--  HEADER END  -->
-			</header>
-<!--  CONTENT START  -->
-			<div id="content">
-				<section id="requests">
-					<span class="sortBy">sort by</span><h2>requests</h2>
-					<ul>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-					</ul>
-				</section>
-				<section id="responses">
-					<span class="sortBy">sort by</span><h2>responses</h2>
-					<ul>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-					</ul>
-				</section>
-<!--  CONTENT END  -->
-			</div>
-			<footer>
-				<p>Subscribe to
-					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
-					on <a href="https://twitter.com/#!/Fuuzik">Twitter</a>
-				</p>
-			</footer>
-
-<!--  WRAP END -->
-		</div>
-	</body>
+				//move the file
+				if ($s3->putObjectFile($fileTempName, "yourbucket", $fileName, S3::ACL_PUBLIC_READ)) {
+					echo "<strong>We successfully uploaded your file.</strong>";
+				}else{
+					echo "<strong>Something went wrong while uploading your file... sorry.</strong>";
+				}
+			}
+		?>
+<h1>Upload a file</h1>
+<p>Please select a file by clicking the 'Browse' button and press 'Upload' to start uploading your file.</p>
+   	<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      <input name="theFile" type="file" />
+      <input name="Submit" type="submit" value="Upload">
+	</form>
+<h1>All uploaded files</h1>
+<?php
+	// Get the contents of our bucket
+	$contents = $s3->getBucket("yourbucket");
+	foreach ($contents as $file){
+	
+		$fname = $file['name'];
+		$furl = "http://yourbucket.s3.amazonaws.com/".$fname;
+		
+		//output a link to the file
+		echo "<a href=\"$furl\">$fname</a><br />";
+	}
+?>
+</body>
 </html>

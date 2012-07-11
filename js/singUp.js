@@ -91,18 +91,26 @@ function login(){
 	
 }
 
+function facebooklogin (){
+	Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+
+
+}
+
 function logout(){
 	Parse.User.logOut();
 
 }
 
 
-
-Parse.FacebookUtils.logIn("user_likes,email", {
-  success: function(user) {
-    // Handle successful login
-  },
-  error: function(user, error) {
-    // Handle errors and cancellation
-  }
-});
