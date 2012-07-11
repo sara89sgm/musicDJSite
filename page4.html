@@ -1,0 +1,171 @@
+<head>
+		<title>Responsive HTML5/CSS3 template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/custom.css" type="text/css" />
+		<link rel="stylesheet" href="css/singup.css" type="text/css" />
+		<link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="js/360-player/360player.css" />
+		<link rel="stylesheet" type="text/css" href="js/360-player/360player-visualization.css" />
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="js/jquery.roundabout-shapes.min.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<script src="js/jquery.roundabout.js"></script>
+		<script src="js/default.js"></script>
+		<script src="js/request.js"></script>
+		<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script type="text/javascript" src="js/360-player/script/berniecode-animator.js"></script>
+		<script type="text/javascript" src="js/soundmanager2-jsmin.js"></script>
+		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
+		<script src="js/testMP.js"></script>
+		<script src="js/360-player/script/360player.js"></script>	
+		<script type="text/javascript">
+		soundManager.setup({
+  // path to directory containing SM2 SWF
+  		url: 'js/soundmanager/swf/'
+		});
+
+threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i)?false:true);
+threeSixtyPlayer.config.showHMSTime = true;
+
+// enable some spectrum stuffs
+
+threeSixtyPlayer.config.useWaveformData = true;
+threeSixtyPlayer.config.useEQData = true;
+
+// enable this in SM2 as well, as needed
+
+if (threeSixtyPlayer.config.useWaveformData) {
+  soundManager.flash9Options.useWaveformData = true;
+}
+if (threeSixtyPlayer.config.useEQData) {
+  soundManager.flash9Options.useEQData = true;
+}
+if (threeSixtyPlayer.config.usePeakData) {
+  soundManager.flash9Options.usePeakData = true;
+}
+
+if (threeSixtyPlayer.config.useWaveformData || threeSixtyPlayer.flash9Options.useEQData || threeSixtyPlayer.flash9Options.usePeakData) {
+  // even if HTML5 supports MP3, prefer flash so the visualization features can be used.
+  soundManager.preferFlash = true;
+}
+
+// favicon is expensive CPU-wise, but can be used.
+if (window.location.href.match(/hifi/i)) {
+  threeSixtyPlayer.config.useFavIcon = true;
+}
+
+if (window.location.href.match(/html5/i)) {
+  // for testing IE 9, etc.
+  soundManager.useHTML5Audio = true;
+}
+		
+</script>
+	</head>	
+	<body>
+<!--  WRAP START -->
+		<div id="wrap">
+<!--  HEADER START  -->
+	<header>
+<!--  NAV START  -->
+				<nav>
+				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
+					
+					<ul>
+						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
+					</ul>
+					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
+					<span class="b">request a mix 2</span>
+					<span class="c">request a mix 3</span>
+					<span class="d">request a mix 4</span>
+					-->
+				</nav>
+<!--  NAV END  -->
+					<div class="roundb+player"> 
+					<ul id="roundb">
+						<li>AAA</li>
+						<li>BBB</li>
+						<li>CCC</li>
+					</ul>
+					</div>
+				
+				<div id="login">
+				<a href="#login-box2" class="login-window" id="loginA">Login </a>
+				<a href="#login-box" class="login-window" id="loginB">Sing Up </a>
+				
+				</div>
+				
+				<div id="login-box" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="username">
+                <span>Name</span>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                <label class="username">
+                <span>Email</span>
+                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="password" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+          <div id="signedUp" >
+          <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
+</div>
+
+
+				<div id="login-box2" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp2">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	
+                <label class="username">
+                <span>Email</span>
+                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="login()">Log in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+                 </div>
+</div>
+<!--  HEADER END  -->
+			</header>
+	</div>
+	
+		
+	
+			<footer>
+				<p>Subscribe to
+					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
+					on <a href="https://twitter.com/#!/Fuuzik">Twitter</a>
+				</p>
+			</footer>
+
+<!--  WRAP END -->
+		
+		</div>
+		
+		
+	</body>
+</html>	
+			

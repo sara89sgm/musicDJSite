@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Responsive HTML5/CSS3 template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/custom.css" type="text/css" />
+		<link rel="stylesheet" href="css/singup.css" type="text/css" />
+		<link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css" type="text/css" />
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="js/jquery.roundabout-shapes.min.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<script src="js/jquery.roundabout.js"></script>
+		<script src="js/default.js"></script>
+         
+		<script src="js/request.js"></script>
+		<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
+		<script src="js/home.js"></script>
+       
+          
+       
+	</head>
+	<body>
+<!--  WRAP START -->
+		<div id="wrap">
+<!--  HEADER START  -->
+				<header>
+<!--  NAV START  -->
+				<nav>
+				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
+					
+					<ul>
+						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
+					</ul>
+					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
+					<span class="b">request a mix 2</span>
+					<span class="c">request a mix 3</span>
+					<span class="d">request a mix 4</span>
+					-->
+				</nav>
+<!--  NAV END  -->
+				<div id="player">
+					<ul id="roundb">
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+					</ul>
+					<audio id="audioPlayer" controls="controls" autoplay="autoplay">
+						<source id="mp3Source" type="audio/mp3"
+									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
+					</audio>
+				</div>
+				<div id="login">
+				<a href="#login-box2" class="login-window" id="loginA">Login </a>
+				<a href="#login-box" class="login-window" id="loginB">Sing Up </a>
+				
+				</div>
+				
+				<div id="login-box" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="username">
+                <span>Name</span>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                <label class="username">
+                <span>Email</span>
+                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="password" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+          <div id="signedUp" >
+          <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
+</div>
+
+
+				<div id="login-box2" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp2">
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	
+                <label class="username">
+                <span>Email</span>
+                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="login()">Log in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+                 </div>
+</div>
+<!--  HEADER END  -->
+			</header>
+<!--  CONTENT START  -->
+			<div id="content">
+				<section id="requestamix">
+					<h2>request a mix or a remix</h2>
+<p>enter a song for a remix or up to five for a mix. </p>
+					<div id="track">
+						<input type="text" name="" value="enter track 1" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" />
+						<input type="text" name="" value="enter track 3" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_2" title="" />
+						<input type="text" name="" value="enter track 3" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_3" title="" />
+						<input type="text" name="" value="enter track 4" onblur="this.value=!this.value?'enter track 4':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_4" title="" />
+						<input type="text" name="" value="enter track 5" onblur="this.value=!this.value?'enter track 5':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_5" title="" />
+					</div>
+					<div id="trackinfo">
+						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
+						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
+<!--  TAGS INPUT  -->
+
+						<input id="tag1" type="text" name="" value="tag 1" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<input id="tag2" type="text" name="" value="tag 2" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<input id="tag3" type="text" name="" value="tag 3" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<div class="styled-select">
+							<select id="genre">
+								<option>Genre</option>
+								<option>House</option>
+								<option>Electro</option>
+								<option>Dubstep</option>
+                                <option>Drum & Bass</option>
+							</select>
+						</div>
+						
+						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
+						<div id="request"><button class="submit" type="submit"  >Submit</button></div>
+					</div>
+				</section>
+<!--  CONTENT END  -->
+			</div>
+			<footer>
+				<p>Subscribe to
+					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
+					on <a href="https://twitter.com/#!/Fuuzik">Twitter</a>
+				</p>
+			</footer>
+<!--  WRAP END -->
+		</div>
+        
+        <script scr="js/request1.js"></script>
+	</body>
+</html>
