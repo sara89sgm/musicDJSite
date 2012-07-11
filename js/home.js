@@ -176,9 +176,37 @@ var sortBy="added";
 	alert('loading requests');
 	// query from DB
 	// iterate over and do:
-	// requstList.push(new RequestTile(id,title,description , likes,tags,cover);
+	// requstList.push(new RequestTile(id,added,title,description , likes,tags,cover);
 	//  
-	RequestList.push(new RequestTile(22,25,"ROL","some desc low",22, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
+		Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+		var Request = Parse.Object.extend("Request");
+		var query = new Parse.Query(Request);
+		query.equalTo();
+		query.find({
+		success: function(results) {
+		for(i=0 ; i<results.length ; i++){
+		
+		//
+		var tags= new Array();
+		tags[0]=results[i].get('tag1');
+		tags[1]=results[i].get('tag2');
+		tags[2]=results[i].get('tag3');
+		RequestList.push(new RequestTile(results[i].get('id'),
+										 results[i].get(''),
+										 results[i].get(''),
+										 results[i].get(''),
+										 results[i].get(''),
+										 results[i].get(''),
+										 results[i].get(''),
+										 "ROL","some desc low",
+		22, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
+		}
+		},
+		error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+	}
+	});
+	}
 	RequestList.push(new RequestTile(28,24,"ROL2","some desc med",122, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
 	RequestList.push(new RequestTile(63,23,"ROL3","otherdesc high",202, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
 	alert('added to array');
