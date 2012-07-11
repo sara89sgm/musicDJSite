@@ -1,7 +1,10 @@
-function requestDO(){
+ $("#request").click(function() {
 
       
               
+		
+Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+
 
 var Request = Parse.Object.extend("Request");
 var Request = new Request();
@@ -31,5 +34,5 @@ request.save(null, {
   }
 });
 
- }
+ })
 
