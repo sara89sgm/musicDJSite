@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>S3 tutorial</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>File upload</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
     </head>
 
 <body>
@@ -30,19 +30,19 @@
 				
 				//move the file
 				if ($s3->putObjectFile($fileTempName, "fuuzik", $fileName, S3::ACL_PUBLIC_READ)) {
-					echo "<strong>We successfully uploaded your file.</strong>";
+					echo "<strong>Booya!</strong>";
 				}else{
-					echo "<strong>Something went wrong while uploading your file... sorry.</strong>";
+					echo "<strong>fuck this shit</strong>";
 				}
 			}
 		?>
-<h1>Upload a file</h1>
-<p>Please select a file by clicking the 'Browse' button and press 'Upload' to start uploading your file.</p>
+<h1>Upload the dammnnn file!!</h1>
+<p>Please select blabla..</p>
    	<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
       <input name="theFile" type="file" />
       <input name="Submit" type="submit" value="Upload">
 	</form>
-<h1>All uploaded files</h1>
+<h1>List query checker</h1>
 <?php
 	// Get the contents of our bucket
 	$contents = $s3->getBucket("fuuzik");
