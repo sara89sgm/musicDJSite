@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>S3 tutorial</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>Upload Test</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
     </head>
 
 <body>
@@ -36,27 +36,22 @@ if ($s3->putObjectFile($fileTempName, "fuuzik", $fileName, S3::ACL_PUBLIC_READ))
   
 ?>  
 
-<form action="" method="post" enctype="multipart/form-data">
-<input name="theFile" type="file" />
-<input name="Submit" type="file" />
-<input name="Submit" type="submit" value="Upload">
-</form>
+ 	<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      <input name="theFile" type="file" />
+      <input name="Submit" type="submit" value="Upload">
+	</form>
 
-
-
-<?php  
-// Get the contents of our bucket  
-$bucket_contents = $s3->getBucket("fuuzik");  
-  
-foreach ($bucket_contents as $file){  
-  
-    $fname = $file['name'];  
-    $furl = "http://fuuzik.s3-website-eu-west-1.amazonaws.com/".$fname;  
-      
-    //output a link to the file  
-    echo "<a href=\"$furl\">$fname</a><br />";  
-}  
-?>  
+<?php
+	// Get the contents of our bucket
+	$contents = $s3->getBucket("fuuzik");
+	foreach ($contents as $file){
+	
+		$fname = $file['name'];
+		$furl = "http://fuuzik.s3-website-eu-west-1.amazonaws.com/".$fname;
+		
+		//output a link to the file
+		echo "<a href=\"$furl\">$fname</a><br />";
+	}
+?> 
 </body>
 </html>
-
