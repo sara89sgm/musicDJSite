@@ -1,196 +1,134 @@
+<?php
+/* Be sure to edit the file included below with your AMAZON S3 settings! */
+require_once "config.php";
+
+$isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
+
+if ( !isset($S3_BUCKET) || $S3_BUCKET == 'AWS_BUCKET' ) {
+  echo "Um, sorry, I need my configuration file. :( ";
+  exit(0);
+}
+
+/*
+  Flash 10.1 issue, omitted the below from the policy
+        {"success_action_redirect": "' . $SUCCESS_REDIRECT . '"},
+*/
+
+$MAX_FILE_SIZE = 50 * 1048576;
+$expTime = time() + (1 * 60 * 60);
+$expTimeStr = gmdate('Y-m-d\TH:i:s\Z', $expTime);
+$policyDoc = '{
+        "expiration": "' . $expTimeStr . '",
+        "conditions": [
+        {"bucket": "' . $S3_BUCKET . '"},
+        ["starts-with", "$key", ""],
+        {"acl": "public-read"},
+        ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
+        {"success_action_status": "201"},
+        ["starts-with", "$Filename", ""],
+        ["starts-with", "$Content-Type", "image/"]
+      ]
+}';
+
+$policyDoc = implode(explode('\r', $policyDoc));
+$policyDoc = implode(explode('\n', $policyDoc));
+$policyDoc64 = base64_encode($policyDoc);
+$sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_KEY, TRUE));
+
+?>
 <!DOCTYPE html>
 <html>
-	<head>
-     
-		<title>Responsive HTML5/CSS3 template</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
-		<link rel="stylesheet" href="css/custom.css" type="text/css" />
-		<link rel="stylesheet" href="css/singup.css" type="text/css" />
-		<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="js/jquery.roundabout-shapes.min.js"></script>
-		<script src="js/jquery.flexslider.js"></script>
-		<script src="js/jquery.roundabout.js"></script>
-		<script src="js/default.js"></script>
-		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
-		<script src="js/home.js"></script>
-		<script src="js/singUp.js"></script>
-        <script src="js/facebook.js"></script>
-     
-	</head>
-	<body>
-    
-     
+<head>
+<title>SWFUpload Demos - Simple Demo</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="swfupload/swfupload.js"></script>
+<script type="text/javascript" src="swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="js/fileprogress.js"></script>
+<script type="text/javascript" src="js/handlers.js"></script>
+<script type="text/javascript">
 
-<!--  WRAP START -->
-		<div id="wrap">
-<!--  HEADER START  -->
-			<header>
-<!--  NAV START  -->
-				<div id="fb-root"></div>
-                <nav>
-				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
-					
-					<ul>
-						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
-					</ul>
-					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
-					<span class="b">request a mix 2</span>
-					<span class="c">request a mix 3</span>
-					<span class="d">request a mix 4</span>
-					-->
-				</nav>
-<!--  NAV END  -->
-				<div id="player">
-					<ul id="roundb">
-						<li><img src="img/bep.jpg" width="600" height="600" /></li>
-						<li><img src="img/four.jpg" width="473" height="473" /></li>
-						<li><img src="img/passion.jpg" width="473" height="473" /></li>
-						<li><img src="img/second.jpg" width="473" height="473" /></li>
-						<li><img src="img/bep.jpg" width="600" height="600" /></li>
-						<li><img src="img/four.jpg" width="473" height="473" /></li>
-						<li><img src="img/passion.jpg" width="473" height="473" /></li>
-						<li><img src="img/second.jpg" width="473" height="473" /></li>
-						<li><img src="img/bep.jpg" width="600" height="600" /></li>
-						<li><img src="img/four.jpg" width="473" height="473" /></li>
-						<li><img src="img/passion.jpg" width="473" height="473" /></li>
-						<li><img src="img/second.jpg" width="473" height="473" /></li>
-					</ul>
-					<audio id="audioPlayer" controls="controls" autoplay="autoplay">
-						<source id="mp3Source" type="audio/mp3"
-									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
-					</audio>
-				</div>
-				<div id="login">
-				<a href="#login-box2" class="login-window" id="loginA">Login </a>
-				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
-                <div id="fb-login-button">Login With Facebook</div>
+    var isMacUser = <?php echo ($isMacUser ? 'true' : 'false'); ?>;
+    var successURL = '<?php echo ($SUCCESS_REDIRECT); ?>';
+
+		var swfu;
+
+		window.onload = function() {
+			var settings = {
+				flash_url : "swfupload/swfupload.swf",
+				flash9_url : "swfupload/swfupload_fp9.swf",
+				//upload_url: "upload.php",
+        upload_url: "http://<?=$S3_BUCKET?>.s3.amazonaws.com/",
+        post_params: {"AWSAccessKeyId":"<?=AWS_ACCESS_KEY_ID?>", "key":"${filename}", "acl":"public-read", "policy":"<?=$policyDoc64?>", "signature":"<?=$sigPolicyDoc?>","success_action_status":"201", "content-type":"image/"},
+
+        http_success : [201],
+        assume_success_timeout : <?php echo ($isMacUser ? 5 : 0); ?>,
+
+
+        // File Upload Settings
+        file_post_name: 'file',
+        file_size_limit : "100 MB",    // 100 MB
+        file_types : "*.*",
+        file_types_description : "All Files",
+        file_upload_limit : "10",
+        file_queue_limit : 3,
+
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					cancelButtonId : "btnCancel"
+				},
+				debug: false,
+
+				// Button settings
+				button_image_url: "images/TestImageNoText_65x29.png",
+				button_width: "65",
+				button_height: "29",
+				button_placeholder_id: "spanButtonPlaceHolder",
+				button_text: '<span class="theFont">Hello</span>',
+				button_text_style: ".theFont { font-size: 16; }",
+				button_text_left_padding: 12,
+				button_text_top_padding: 3,
+
+        moving_average_history_size: 10,
 				
-				</div>
-				
-				<div id="login-box" class="login-popup">
-        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-        
-        <div id="formSingUp">
-        <div id="fb-login-button">Login With Facebook</div>
-          <form method="post" class="signin" action="#">
-                <fieldset class="textbox">
-            	<label class="username">
-                <span>Name</span>
-                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
-                </label>
-                <label class="username">
-                <span>Email</span>
-                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
-                </label>
-                <label class="password">
-                <span>Password</span>
-                <input id="password" name="password" value="" type="password" placeholder="Password">
-                </label>
-                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
-                <p>
-               
-                </p>        
-                </fieldset>
-          </form>
-          </div>
-          <div id="signedUp" >
-          <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
+				// The event handler functions are defined in handlers.js
+				swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				queue_complete_handler : queueComplete	// Queue plugin event
+			};
+
+			swfu = new SWFUpload(settings);
+	     };
+	</script>
+</head>
+<body>
+<div id="header">
+	<h1 id="logo"><a href="../">SWFUpload</a></h1>
+	<div id="version">v2.5.0</div>
 </div>
 
+<div id="content">
+	<h2>Simple Demo</h2>
+	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
+		<p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
 
-				<div id="login-box2" class="login-popup">
-        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-        <div id="formSingUp2">
-        <div id="fb-login-button">Login With Facebook</div>
-          <form method="post" class="signin" action="#">
-                <fieldset class="textbox">
-            	
-                <label class="username">
-                <span>Email</span>
-                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
-                </label>
-                <label class="password">
-                <span>Password</span>
-                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
-                </label>
-                <button class="submit button" type="button" onclick="login()">Log in</button>
-                <p>
-               
-                </p>        
-                </fieldset>
-          </form>
-          </div>
-                 </div>
-</div>
-<!--  HEADER END  -->
-			</header>
-<!--  CONTENT START  -->
-			<div id="content">
-				<section id="requests">
-					<span class="sortBy">sort by</span><h2>requests</h2>
-					<ul>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page4.html" onclick='alert("clicked");setCookie("requestID","22",365);'></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-					</ul>
-				</section>
-				<section id="responses">
-					<span class="sortBy">sort by</span><h2>responses</h2>
-					<ul>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-						<li>
-							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
-						</li>
-					</ul>
-				</section>
-<!--  CONTENT END  -->
+			<div class="fieldset flash" id="fsUploadProgress">
+			<span class="legend">Upload Queue</span>
 			</div>
-			<footer>
-				<p>Subscribe to
-					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
-					on <a href="https://twitter.com/#!/Fuuzik">Twitter</a>
-				</p>
-			</footer>
+		<div id="divStatus">0 Files Uploaded</div>
+			<div>
+				<span id="spanButtonPlaceHolder"></span>
+				<input id="btnCancel" type="button" value="Cancel All Uploads" onclick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
+			</div>
 
-<!--  WRAP END -->
-		</div>
-	</body>
+	</form>
+</div>
+</body>
 </html>
