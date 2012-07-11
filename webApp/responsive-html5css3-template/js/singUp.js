@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	$('a.login-window').click(function() {
 		
+		
+		
                 //Getting the variable's value from a link 
 		var loginBox = $(this).attr('href');
 
@@ -19,6 +21,7 @@ $(document).ready(function() {
 		// Add the mask to body
 		$('body').append('<div id="mask"></div>');
 		$('#mask').fadeIn(300);
+	
 		
 		return false;
 	});
@@ -92,3 +95,14 @@ function logout(){
 	Parse.User.logOut();
 
 }
+
+
+
+Parse.FacebookUtils.logIn("user_likes,email", {
+  success: function(user) {
+    // Handle successful login
+  },
+  error: function(user, error) {
+    // Handle errors and cancellation
+  }
+});

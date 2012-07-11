@@ -12,6 +12,8 @@ var listSongs = new Array();
 	$(document)
 			.ready(
 					function() {
+						
+		
 
 						$("li.a").hover(
 								  function () {

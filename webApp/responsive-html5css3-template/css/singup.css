@@ -37,6 +37,11 @@ img.btn_close { Position the close button
 	margin: -28px -28px 0 0;
 }
 
+fb-login-button { Position the facebook button
+	float: right; 
+	margin: -28px -40px 0 0;
+}
+
 fieldset { 
 	border:none; 
 }
