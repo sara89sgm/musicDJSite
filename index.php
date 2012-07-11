@@ -1,8 +1,3 @@
-<html>
-<head>
-<title> FILE UPLOAD </title>
-</head>
-<body>
 
 <?php  
 //include the S3 class                
@@ -31,7 +26,6 @@ if ($s3->putObjectFile($fileTempName, "fuuzik", $fileName, S3::ACL_PUBLIC_READ))
 
   
 ?>  
-TEST:
 
 <form action="" method="post" enctype="multipart/form-data">
 <input name="theFile" type="file" />
@@ -41,7 +35,6 @@ TEST:
 
 
 
-LIST OF WHAT's In there
 <?php  
 // Get the contents of our bucket  
 $bucket_contents = $s3->getBucket("fuuzik");  
@@ -57,5 +50,3 @@ foreach ($bucket_contents as $file){
 ?>  
 
 
-</body>
-</html>
