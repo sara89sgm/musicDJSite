@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+     
 		<title>Responsive HTML5/CSS3 template</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
@@ -16,14 +17,20 @@
 		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
 		<script src="js/home.js"></script>
 		<script src="js/singUp.js"></script>
+        <script src="js/facebook.js"></script>
+     
 	</head>
 	<body>
+    
+     
+
 <!--  WRAP START -->
 		<div id="wrap">
 <!--  HEADER START  -->
 			<header>
 <!--  NAV START  -->
-				<nav>
+				<div id="fb-root"></div>
+                <nav>
 				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
 					
 					<ul>
@@ -58,13 +65,16 @@
 				</div>
 				<div id="login">
 				<a href="#login-box2" class="login-window" id="loginA">Login </a>
-				<a href="#login-box" class="login-window" id="loginB">Sing Up </a>
+				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
+                <div id="fb-login-button">Login With Facebook</div>
 				
 				</div>
 				
 				<div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        
         <div id="formSingUp">
+        <div id="fb-login-button">Login With Facebook</div>
           <form method="post" class="signin" action="#">
                 <fieldset class="textbox">
             	<label class="username">
@@ -94,6 +104,7 @@
 				<div id="login-box2" class="login-popup">
         <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
         <div id="formSingUp2">
+        <div id="fb-login-button">Login With Facebook</div>
           <form method="post" class="signin" action="#">
                 <fieldset class="textbox">
             	

@@ -287,9 +287,53 @@ section ul li a.more {
 	margin: 6.4em .5em 0 -3em;
 	cursor: pointer;
 }
-section ul li a.aaa, section ul li a.bbb, section ul li a.ccc {
+section ul li a.aaa {
 	float: right;
-	background: url(../img/passion.jpg) no-repeat;
+	background: url(../img/pin-01.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+
+section ul li a.aaa:hover {
+	float: right;
+	background: url(../img/pingrey-01.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+
+ section ul li a.bbb {
+	float: right;
+	background: url(../img/flag-01.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+
+section ul li a.bbb:hover {
+	float: right;
+	background: url(../img/flaggrey-01.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+ section ul li a.ccc {
+	float: right;
+	background: url(../img/mix-01.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+
+section ul li a.ccc:hover {
+	float: right;
+	background: url(../img/mixgrey-01.png) no-repeat;
 	background-size: 100%;
 	width: 30px;
 	height: 30px;

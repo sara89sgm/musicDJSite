@@ -37,6 +37,11 @@ img.btn_close { Position the close button
 	margin: -28px -28px 0 0;
 }
 
+fb-login-button { Position the facebook button
+	float: right; 
+	margin: -28px -40px 0 0;
+}
+
 fieldset { 
 	border:none; 
 }
@@ -93,3 +98,5 @@ form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #
 	width:214px;
 }
 .button:hover { background:#ddd; }
+
+.request {}

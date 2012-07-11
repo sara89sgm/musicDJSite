@@ -2,7 +2,7 @@ var listSongs = new Array();
 	var actual = 0;
 	var lat;
 	var lng;
-	Parse.initialize("fPpoRZuYudGmOvMJuiZzdT3frVNThbfkT5e0xL42", "BJ1q1MDocxdhpLp1tUuti1K3lK8A8n3fdwUjjBA8");
+	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 	listSongs[0] = 'http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3';
 	listSongs[1] = 'http://houseanthems.com/wp-content/uploads/2012/06/Take-A-Walk-The-M-Machine-Remix.mp3';
 	listSongs[2] = 'http://houseanthems.com/wp-content/uploads/2012/06/Chris-Lake-John-Dahlback-I-Saw-This-Before-Original-Mix.mp3';
@@ -12,6 +12,8 @@ var listSongs = new Array();
 	$(document)
 			.ready(
 					function() {
+						
+		
 
 						$("li.a").hover(
 								  function () {

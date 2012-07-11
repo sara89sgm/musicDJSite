@@ -1,6 +1,7 @@
+
+
+
 var songs = new Object();
-
-
 $(document).ready(function() {
 	$("input.spotify_song_search").autocomplete({
         source: function(request, response) {
@@ -77,6 +78,4 @@ for (i=0;i<ARRcookies.length;i++)
     }
   }
 }
-
-
 
