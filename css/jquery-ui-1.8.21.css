@@ -1,0 +1,30 @@
+ .ui-menu {
+
+
+	background:#390;
+	position:static;
+	height:100px;
+	width:100px;
+	
+	overflow:scroll;
+}
+
+
+.searchSpotify {
+	
+	position:static;
+	float:left;
+
+
+
+ }	
+.ui-autocomplete { 
+
+ cursor: default;
+ position:static;
+
+ float:left;
+
+ }	
+ 
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
