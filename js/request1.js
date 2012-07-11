@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 function requested(){
 
       
               alert("DS");
+=======
+function requestDO(){
+
+      
+              
+>>>>>>> 788eefe4610e095aec678a6ea980dd8dc1f3c7a8
 
 var Request = Parse.Object.extend("Request");
 var Request = new Request();
