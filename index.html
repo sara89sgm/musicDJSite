@@ -19,17 +19,6 @@
 		<script src="js/singUp.js"></script>
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
-        <script>
-        
-        function OnChange(dropdown)
-{
-    var myindex  = dropdown.selectedIndex
-    var SelValue = dropdown.options[myindex].value
-    alert("now Sorting by "+SelValue);
-    
-    return true;
-}
-        </script>
      
 	</head>
 	<body>
@@ -177,10 +166,13 @@
             <div id="fb-root"></div>
 				<section id="requests">
 					<h4> Sort By </h4>
+					<form>
 					<select name=select1 onchange='OnChange(this.form.select1);'>
 					<option>likes</option>
-					<option>DateAdded</option>
+					<option>added</option>
 					</select>
+					</form>
+					<div id='requestslist'>
 					<ul>
 						<li>
 							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page4.html" onclick='alert("clicked");setCookie("requestID","22",365);'></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
@@ -204,6 +196,7 @@
 							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
 						</li>
 					</ul>
+					</div>
 				</section>
 				<section id="responses">
 					<span class="sortBy">sort by</span><h2>responses</h2>

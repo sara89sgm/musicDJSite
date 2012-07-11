@@ -12,8 +12,8 @@ var listSongs = new Array();
 	$(document)
 			.ready(
 					function() {
-						
-		
+						alert("what?");
+						loadRequests();
 
 						$("li.a").hover(
 								  function () {
@@ -134,51 +134,108 @@ for (i=0;i<ARRcookies.length;i++)
 
 
 
-	function loadRequests(){
-	
-	
-
-}
-
-
-
-
 			
 //======================================================================== Classes:
 
 // this is the object constructed after the database query .. it handles generating it's HTML
 // it also inserts itself into the list and registers it's button to link to the correct reqID
 
-	function RequestTile(id, title, desciption, likes,tags,cover){
+	function RequestTile(id, added,title, description, likes,tags,cover){
 		this.id = id;
 		this.title= title;
-		this.desciption= description;
+		this.added=added;
+		this.description= description;
 		this.likes = likes;
 		this.tags = new Array();
 		this.tags[0]= tags[0];
 		this.tags[1]= tags[1];
 		this.tags[2]= tags[2];
 		this.cover = cover;
-		this.writeHTML = writeHTML();
-		this.Draw = Draw;
-		this.respond();
+		this.wHTML = wHTML;
+		this.respond =respond;
 		}
 	
 	
-	function writeHTML(){
-		var html="<li>";
-		//html+= "<img src="+this.cover+" width="600" height="600" /> <a class='aaa' onclick='likeOrunlike();'></a><a class='bbb' onclick=\"flag();'><a class='ccc' onclick=fuuz(); ></a><h3>"+this.title+"</h3><a class='more'>More</a> <span class='respond'> respond</span>";
+	function wHTML() {
+	// ditching the onClick stuff on anchor ..
+		var html = "<li><img src=" + this.cover + " width='600' height='600' /> <a class='aaa' href='page1.html'></a><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a><h3>" + this.title + "</h3><a class='more'>More</a> <span class='respond' > respond</span>";
 		return html;
 	}
 	
 	
-	function Draw(){
+	
+	
+var RequestList = new Array();
+var sortBy="added"; 
+
+//======================================================================== REquest logic tier
+
+
+	function loadRequests(){
+	
+	alert('loading requests');
+	// query from DB
+	// iterate over and do:
+	// requstList.push(new RequestTile(id,title,description , likes,tags,cover);
+	//  
+	RequestList.push(new RequestTile(22,25,"ROL","some desc low",22, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
+	RequestList.push(new RequestTile(28,24,"ROL2","some desc med",122, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
+	RequestList.push(new RequestTile(63,23,"ROL3","otherdesc high",202, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
+	alert('added to array');
+	render();
+}
+
+
+	function render(){
+		alert('rendering');
+		RequestList.sort(dynamicSort(sortBy));
+		var finalHtml ="<ul>";
+		for (i = 0 ; i < RequestList.length ;i++)
+		{
+			finalHtml=finalHtml+RequestList[i].wHTML();		
+		}
+		finalHtml=finalHtml+"</ul>";
+		alert(finalHtml);
+		// fade out effect :
+		$('#requestslist').fadeOut("slow", function(){
+		
+		
+   		 var div = $("<div id='requestslist'>"+finalHtml+"</div>").hide(); 
+  		 $(this).replaceWith(div);
+    	 $('#requestslist').fadeIn("slow");
+});
+		
+		//put it on the screen:
+		//$('requestslist).replaceWith(finalHtml);
+		
 		
 	}
-	
-	
-	
-	
-	
+
+
+// method to be used for comparing feeding it a particular property .. to be used on sortBy or on refresh
+// usage: LIST.sort(dynamicSort("title"));
+function dynamicSort(property) {
+    return function (a,b) {
+        return (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+    }
+}
+
+
+   
+        function OnChange(dropdown)
+{
+    var myindex  = dropdown.selectedIndex
+    var SelValue = dropdown.options[myindex].value
+    alert("now Sorting by "+SelValue);
+    var sortBy=SelValue;
+    render();
+    return true;
+}
+
+function respond(){
+	alert("responded with id:" + this.id);
+}
+
+
 	
 	
