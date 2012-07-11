@@ -29,12 +29,11 @@ var listSongs = new Array();
 
 							clickToFocusCallback : function() {
 								changeSong();
-							},
-							shape : 'square'
+							}
 
 						});
 
-						$("#roundb").roundabout("animateToChild", 0);
+						$("#roundb").roundabout();
 
 
 					

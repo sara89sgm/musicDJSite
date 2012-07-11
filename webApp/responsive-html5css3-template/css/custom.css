@@ -73,29 +73,7 @@ overflow: scroll;
 -webkit-border-radius: 18px;
 border-radius: 18px;}
 
-/* CAROUSEL */
-#roundb {
-	width: 70%;
-}
-.roundabout-holder {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	height: 9em;
-	width: 9em;
-}
 
-.roundabout-moveable-item {
-	height: 8em;
-	width: 10em;
-	cursor: pointer;
-	background-color: #;
-	border: 1px solid #;
-}
-
-.roundabout-in-focus {
-	cursor: auto;
-}
 
 /* FILE LOADER */
 
