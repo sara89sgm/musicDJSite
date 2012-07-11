@@ -1,473 +1,197 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="shortcut icon" href="/favidcon.ico" type="image/x-icon" />
-	<title>fuuzik - making music interactive</title>
-  <meta name="fuuzik" content="fuuzik Sign Up">
-  <meta property="fb:app_id" content="386827401378707" />
-  <meta property="og:image" content="http://www.fuuzik.com/logocopy.png"/>
-  <meta property="og:title" content="fuuzik - making music interactive"
-
-  <meta name="viewport" content="width=device-width">
-		
-	
-    <div id="fb-root"></div>
-
-  
-<style>
-#fb-login-button{ position: fixed;
-    top: 1em;
-  right: 1em;
-  z-index: 101;}
-
-#fb-like{
-	 position: fixed;
-    top: 1em;
-  left: 1em;
-  z-index: 100;
-}
-
-img.bg {
-	/* Set rules to fill background */
-	min-height: 100%;
-	min-width: 1024px;
-	
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
-	
-	/* Set up positioning */
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-	img.bg {
-		left: 50%;
-		margin-left: -512px;   /* 50% */
-	}
-}
-#divd
- {
-   
-   position: absolute;
-
-   top: 80%; 
-   
-   
-}
-#logo { 
-   position: absolute;
-
-   top: 40%; 
-}
-   input.rounded {
-	   width:385px;
-
-  border: 1.5px solid #AAA
-;
-   
-  /* Safari 5, Chrome support border-radius without vendor prefix.
-   * FF 3.0/3.5/3.6, Mobile Safari 4.0.4 require vendor prefix.
-   * No support in Safari 3/4, IE 6/7/8, Opera 10.0.
-   */
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  
-  /* Chrome, FF 4.0 support box-shadow without vendor prefix.
-   * Safari 3/4/5 and FF 3.5/3.6 require vendor prefix.
-   * No support in FF 3.0, IE 6/7/8, Opera 10.0, iPhone 3.
-   * change the offsets, blur and color to suit your design.
-   */
-  -moz-box-shadow: 5px 5px 6px #D5DBDB
-;
-  -webkit-box-shadow: 5px 5px 6px #D5DBDB
-;
-  box-shadow: 5px 5px 6px #D5DBDB
-;
-  
-  /* using a bigger font for demo purposes so the box isn't too small */
-  font-size: 25px;
-  
-  /* with a big radius/font there needs to be padding left and right
-   * otherwise the text is too close to the radius.
-   * on a smaller radius/font it may not be necessary
-   */
-  padding: 5px 15px;
-  
-  /* only needed for webkit browsers which show a rectangular outline;
-   * others do not do outline when radius used.
-   * android browser still displays a big outline
-   */
-  outline: 0;
-
-  /* this is needed for iOS devices otherwise a shadow/line appears at the
-   * top of the input. depending on the ratio of radius to height it will
-   * go all the way across the full width of the input and look really messy.
-   * ensure the radius is no more than half the full height of the input, 
-   * and the following is set, and everything will render well in iOS.
-   */
-  -webkit-appearance: none;
-  
-}
-
-input.rounded:focus {
-  
-  /* supported IE8+ and all other browsers tested.
-   * optional, but gives the input focues when selected.
-   * change to a color that suits your design.
-   */
-  border-color: #ccc
-;
-  
-}
-
-.classname {
-	-moz-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9d9d9), color-stop(1, #bfbfbf) );
-	background:-moz-linear-gradient( center top, #d9d9d9 5%, #bfbfbf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#bfbfbf');
-	background-color:#d9d9d9;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	border:1px solid #ccc;
-	display:inline-block;
-	color:#363636;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:18px;
-	font-weight:bold;
-	padding:7px 15px;
-	text-decoration:none;
-	text-shadow:1px 1px 0px #e0e0e0;
-}.classname:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bfbfbf), color-stop(1, #d9d9d9) );
-	background:-moz-linear-gradient( center top, #bfbfbf 5%, #d9d9d9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#d9d9d9');
-	background-color:#bfbfbf;
-}.classname:active {
-	position:relative;
-	top:1px;
-	font:
-}
-#page-wrap { position: relative; width: 400px; margin: 50px auto; padding: 20px; background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
-
- }
- 
- input, textarea { 		
-		padding: 8px; 
-		margin: 4px 0 20px 0; 
-		background: #fff; 
-		width: 220px; 
-		font-size: 14px; 
-		color: #555; 
-		border: 2px #ccc solid;
-		font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-		
-		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
-		-webkit-box-shadow: 0px 0px 4px #ccc;
-		-moz-box-shadow: 0px 0px 4px #ccc ; 
-		box-shadow: 0px 0px 4px #ccc ;
-		
-		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
-		-webkit-transition: background 0.1s linear;							
-	}
-	input:hover, textarea:hover { 
-		background: #eee; 
-	}
-	
-
-
-	
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-a {
-	text-decoration:none;
-}
-
-
-
-
-
-
-
-
-#modal {
-	visibility:hidden;
-	width:360px;
-	height:112px;
-	padding:8px;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	background:rgba(0,0,0,.3);
-
-	-webkit-border-radius:8px;
-	-moz-border-radius:8px;
-	border-radius:8px;
-
-	position:absolute !important;
-	top:63% !important;
-	left:50% !important;
-	margin-top:-94px !important;
-	margin-left:-188px !important;
-	z-index:101;
-}
-
-
-
-
-#content {
-	width:360px;
-	height:112px;
-
-	background:#fcfcfc;
-
-	-webkit-box-shadow:0px 1px 3px rgba(0,0,0,.25);
-	-moz-box-shadow:0px 1px 3px rgba(0,0,0,.25);
-	box-shadow:0px 1px 3px rgba(0,0,0,.25);
-
-	-webkit-border-radius:0px 0px 4px 4px;
-	-moz-border-radius:0px 0px 4px 4px;
-	border-radius:0px 0px 4px 4px;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-}
-
-#content p {
-	font-size:14px;
-	font-weight:normal;
-	text-align:center;
-	line-height:22px;
-	color:#555555;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-
-	width:100%;
-	float: left;
-
-	margin:19px 0;
-}
-
-
-
-
-.reveal-modal-bg { 
-	position: fixed; 
-	height: 100%;
-	width: 100%;
-	background: #000;
-	background: rgba(0,0,0,.8);
-	z-index: 100;
-	display: none;
-	top: 0;
-	left: 0; 
-}
-
-
-
-@media only screen and (max-width: 767px) {
-        
-	#modal {
-		width:284px;
-		height:128px;
-		padding:8px;
-
-		margin-left:-150px !important;
-		margin-top:-78px;
-	}
-	
-	#content {
-		width:284px;
-		height:128px;
-   	}
-   	#content p {
-   		width:284px;
-   		font-size:0.688em;
-   	}
- 
-   	
-</style>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
-
-	<script src="jquery.reveal.js"></script>
-
-    
-
-	
+	<head>
+     
+		<title>Responsive HTML5/CSS3 template</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/custom.css" type="text/css" />
+		<link rel="stylesheet" href="css/singup.css" type="text/css" />
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="js/jquery.roundabout-shapes.min.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<script src="js/jquery.roundabout.js"></script>
+		<script src="js/default.js"></script>
+		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
+		<script src="js/home.js"></script>
+		<script src="js/singUp.js"></script>
+        <script src="js/facebook.js"></script>
+     
 	</head>
-<div align="left" id="fb-like" class="fb-like" data-href="http://www.fuuzik.com" data-send="true" data-width="300" data-show-faces="true"></div>
-
-<body>
-
-    <script>
-  window.fbAsyncInit = function() {
-    Parse.FacebookUtils.init({
-      appId      : '386827401378707', // App ID
-      channelUrl : 'http://www.fuuzik.com/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
-
-    // Additional initialization code here
-  };
-
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
-</script>
-<img src="DSC_0130.jpeg" class="bg">
-
-<div id="page-wrap">
-<script type="text/javascript">
-$(document).ready(function(e) {
-	
-	$('#btnValidate').click(function() {
-        var sEmail = $('#email').val();
-        if ($.trim(sEmail).length == 0) {
-            alert('Please enter valid email address');
-            e.preventDefault();
-        }
-        if (validateEmail(sEmail)) {           
-		
-
-Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
-
-var Signup = Parse.Object.extend("Signup");
-var signup = new Signup();
-signup.save({email: $("#email").val()}, {
-  success: function(object) {
+	<body>
     
-  }
-  
-  
-});
+     
 
-function facebooklogin (){
-	Parse.FacebookUtils.logIn(null, {
-  success: function(user) {
-    if (!user.existed()) {
-      alert("User signed up and logged in through Facebook!");
-    } else {
-      alert("User logged in through Facebook!");
-    }
-  },
-  error: function(user, error) {
-    alert("User cancelled the Facebook login or did not fully authorize.");
-  }
-});
-
-
-}
-	
-
-
-
-             	$('#modal').reveal({ // The item which will be opened with reveal
-				  	animation: 'fade',                   // fade, fadeAndPop, none
-					animationspeed: 600,                       // how fast animtions are
-					closeonbackgroundclick: true,              // if you click background will modal close?
-					dismissmodalclass: 'close'    // the class of a button or element that will close an open modal
+<!--  WRAP START -->
+		<div id="wrap">
+<!--  HEADER START  -->
+			<header>
+<!--  NAV START  -->
+				<div id="fb-root"></div>
+                <nav>
+				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
 					
-				});
-					
-			return false;
+					<ul>
+						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
+					</ul>
+					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
+					<span class="b">request a mix 2</span>
+					<span class="c">request a mix 3</span>
+					<span class="d">request a mix 4</span>
+					-->
+				</nav>
+<!--  NAV END  -->
+				<div id="player">
+					<ul id="roundb">
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+						<li><img src="img/bep.jpg" width="600" height="600" /></li>
+						<li><img src="img/four.jpg" width="473" height="473" /></li>
+						<li><img src="img/passion.jpg" width="473" height="473" /></li>
+						<li><img src="img/second.jpg" width="473" height="473" /></li>
+					</ul>
+					<audio id="audioPlayer" controls="controls" >
+						<source id="mp3Source" type="audio/mp3"
+									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
+					</audio>
+				</div>
+				<div id="login">
+				<a href="#login-box2" class="login-window" id="loginA">Login </a>
+				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
+                
+				
+				</div>
+				
+				<div id="login-box" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
         
-		}
-        else {
-            alert('Invalid Email Address');
-            e.preventDefault();
-        }
-    });
-});
-	
-	
-	
-  
-
-function validateEmail(sEmail) {
-    var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-    if (filter.test(sEmail)) {
-        return true;
-    }
-    else {
-        return false;
-    }
-};
-</script>
-
-
-<div class="fb-login-button" onClick="facebooklogin()">Login with Facebook</div>
-
-
-<div align="center" ><div><img src="launchlogotext-01.png" width="354" height="387"></div></div>
-
-
-<div  align="center">
-
-<div align="center" >
- 
-
-
- <form method="post">   
- 
- <input class="input" placeholder="Enter Email To Find Out More" id="email" type="email"><br />
-
-
-<div align="center"><button class="classname" id="btnValidate" value="signup" onClick="login()">Sign Up</button></div>
- </form>
-
-         
-            
-       
-</div>
-       
-
-
-
-
-<div align="center" id="modal">
-	
-
-	<div align="center" id="content">
-		<p>Thanks for signing up to Fuuzik!<br/> We will be in touch very soon when our site is ready.<br/>
-        The Fuuzik Team</p>
-
-		
-	</div>
+        <div id="formSingUp">
+        <div class="fb-login-button" onClick="facebooklogin()">Sign Up With Facebook</div>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="username">
+                <span>Name</span>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                <label class="username">
+                <span>Email</span>
+                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="password" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="signUp()">Sign in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+          <div id="signedUp" >
+          <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
 </div>
 
 
+				<div id="login-box2" class="login-popup">
+        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <div id="formSingUp2">
+        <div class="fb-login-button" onClick="facebooklogin()">Login With Facebook</div>
+          <form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	
+                <label class="username">
+                <span>Email</span>
+                <input id="emailL" name="email" value="" type="text" autocomplete="on" placeholder="Email">
+                </label>
+                <label class="password">
+                <span>Password</span>
+                <input id="passwordL" name="password" value="" type="password" placeholder="Password">
+                </label>
+                <button class="submit button" type="button" onclick="login()">Log in</button>
+                <p>
+               
+                </p>        
+                </fieldset>
+          </form>
+          </div>
+                 </div>
+</div>
+<!--  HEADER END  -->
+			</header>
+<!--  CONTENT START  -->
+			<div id="content">
+            <div id="fb-root"></div>
+				<section id="requests">
+					<span class="sortBy">sort by</span><h2>requests</h2>
+					<ul>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page4.html" onclick='alert("clicked");setCookie("requestID","22",365);'></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+					</ul>
+				</section>
+				<section id="responses">
+					<span class="sortBy">sort by</span><h2>responses</h2>
+					<ul>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+						<li>
+							<img src="img/bep.jpg" width="600" height="600" />   <a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a><h3>title</h3><a class="more">More</a> <span class="respond">respond</span>
+						</li>
+					</ul>
+				</section>
+<!--  CONTENT END  -->
+			</div>
+			<footer>
+				<p>Subscribe to
+					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
+					on <a href="https://twitter.com/#!/Fuuzik">Twitter</a>
+				</p>
+			</footer>
 
-
-
-
-	
-
-	
-
-</body>
+<!--  WRAP END -->
+		</div>
+	</body>
 </html>
-
-
-
