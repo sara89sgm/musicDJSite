@@ -12,6 +12,7 @@
 	color:#999; 
 	font-size:11px; 
 	line-height:18px;
+	display:none;
 }
 /* You can customize to your needs  */
 .login-popup{
@@ -37,11 +38,15 @@ img.btn_close { Position the close button
 	margin: -28px -28px 0 0;
 }
 
-fb-login-button { Position the facebook button
+facebook { Position the facebook button
 	float: right; 
 	margin: -28px -40px 0 0;
+	background:url(/img/Facebook.png) no-repeat;
+	background-size: 100%;
 }
 
+
+	
 fieldset { 
 	border:none; 
 }
