@@ -134,18 +134,22 @@ nav ul li {
 nav ul li.a {
 	background: url(../img/buttons/mixpurple-01.png) no-repeat;
 	background-size: 100%;
+	
 }
 nav ul li.b {
-	background: url(../img/buttons/notificationpurple-01.png) no-repeat;
-	background-size: 100%;
-}
-nav ul li.c {
-	background: url(../img/buttons/headphonespurple-01.png) no-repeat;
-	background-size: 100%;
-}
-nav ul li.d {
 	background: url(../img/buttons/lightbulbpurple-01.png) no-repeat;
 	background-size: 100%;
+	margin-left:10px;
+}
+nav ul li.c {
+	background: url(../img/buttons/notificationpurple-01.png) no-repeat;
+	background-size: 100%;
+	margin-left:10px;
+}
+nav ul li.d {
+	background: url(../img/logocopy.png) no-repeat;
+	background-size: 100%;
+	margin-left:10px;
 }
 
 nav ul li.a:hover {
@@ -153,15 +157,15 @@ nav ul li.a:hover {
 	background-size: 100%;
 }
 nav ul li.b:hover {
-	background: url(../img/buttons/notificationsgrey-01.png) no-repeat;
+	background: url(../img/buttons/lightbulbgrey-01.png) no-repeat;
 	background-size: 100%;
 }
 nav ul li.c:hover {
-	background: url(../img/buttons/headphonesgrey-01.png) no-repeat;
+	background: url(../img/buttons/notificationgrey-01.png) no-repeat;
 	background-size: 100%;
 }
 nav ul li.d:hover {
-	background: url(../img/buttons/lightbulbgrey-01.png) no-repeat;
+	background: url(../img/logogrey.png) no-repeat;
 	background-size: 100%;
 }
 
@@ -291,7 +295,7 @@ section ul li a.more {
 }
 section ul li a.aaa {
 	float: right;
-	background: url(../img/pin-01.png) no-repeat;
+	background: url(../img/logocopy.png) no-repeat;
 	background-size: 100%;
 	width: 30px;
 	height: 30px;
@@ -302,7 +306,7 @@ section ul li a.aaa {
 
 section ul li a.aaa:hover {
 	float: right;
-	background: url(../img/pingrey-01.png) no-repeat;
+	background: url(../img/logogrey.png) no-repeat;
 	background-size: 100%;
 	width: 30px;
 	height: 30px;
@@ -328,7 +332,7 @@ section ul li a.bbb:hover {
 }
  section ul li a.ccc {
 	float: right;
-	background: url(../img/mix-01.png) no-repeat;
+	background: url(../img/buttons/mixpurple-01.png) no-repeat;
 	background-size: 100%;
 	width: 30px;
 	height: 30px;
@@ -338,6 +342,23 @@ section ul li a.bbb:hover {
 section ul li a.ccc:hover {
 	float: right;
 	background: url(../img/mixgrey-01.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+section ul li a.ccd {
+	float: right;
+	background: url(../img/chillipepperslike.png) no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	margin: 0 0 0 .5em;
+}
+
+section ul li a.ccd:hover {
+	float: right;
+	background: url(../img/chillipeppersgray.png) no-repeat;
 	background-size: 100%;
 	width: 30px;
 	height: 30px;

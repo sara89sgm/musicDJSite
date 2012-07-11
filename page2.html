@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html>
 	<head>
+     
 		<title>Responsive HTML5/CSS3 template</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, maximum-scale = 1, minimum-scale=1" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 		<link rel="stylesheet" href="css/custom.css" type="text/css" />
+		<link rel="stylesheet" href="css/singup.css" type="text/css" />
 		<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="js/jquery.roundabout-shapes.min.js"></script>
 		<script src="js/jquery.flexslider.js"></script>
-		<script src="js/jquery.roundabout.min.js"></script>
+		<script src="js/jquery.roundabout.js"></script>
 		<script src="js/default.js"></script>
 		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
 		<script src="js/home.js"></script>
+		<script src="js/singUp.js"></script>
+        <script src="js/facebook.js"></script>
+        <script src="js/facebookparse.js"></script>
+     
 	</head>
 	<body>
+    
+     <div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({
+     appId      : '386827401378707', // App ID
+      channelUrl : 'http://www.fuuzik.com/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+   
+   
+</script>
+
 <!--  WRAP START -->
 		<div id="wrap">
 <!--  HEADER START  -->
-					<header>
+			<header>
 <!--  NAV START  -->
-				<nav>
-				<img src='img/purplefuziclogo.png' width="215" height="118"> </img> 
+				<div id="fb-root"></div>
+                <nav>
+				<img src='img/purplefuziclogo.png' width="215" height="118" onClick="window.location.href='index.html'"> </img> 
 					
 					<ul>
-						<li class="a"><a href="index.html"></a></li><li class="b"><a href="page1.html"></a></li><li class="c"><a href="page2.html"></a></li><li class="d"><a href="page3.html"></a></li>
+						<li class="a" onClick="window.location.href='page1.html'"></li><li class="b" onClick="window.location.href='page2.html'"></li><li class="c" onClick="window.location.href='page3.html'"></li><li class="d" onClick="window.location.href='page4.html'"></li>
 					</ul>
 					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
 					<span class="b">request a mix 2</span>
@@ -49,20 +83,27 @@
 						<li><img src="img/passion.jpg" width="473" height="473" /></li>
 						<li><img src="img/second.jpg" width="473" height="473" /></li>
 					</ul>
-					<audio id="audioPlayer" controls="controls" autoplay="autoplay">
+					<audio id="audioPlayer" controls="controls" >
 						<source id="mp3Source" type="audio/mp3"
 									src="http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3" />
 					</audio>
 				</div>
 				<div id="login">
 				<a href="#login-box2" class="login-window" id="loginA">Login </a>
-				<a href="#login-box" class="login-window" id="loginB">Sing Up </a>
+				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
+                
 				
 				</div>
 				
 				<div id="login-box" class="login-popup">
-        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <a href="#" class="close"></a>
+        
         <div id="formSingUp">
+          <fb:login-button size="medium"
+                 onlogin="facebooklogin()">
+  Connect with Facebook
+</fb:login-button>
+        
           <form method="post" class="signin" action="#">
                 <fieldset class="textbox">
             	<label class="username">
@@ -84,15 +125,21 @@
                 </fieldset>
           </form>
           </div>
-          <div id="signedUp" >
+          <div id="signedUp" style="display:none" >
           <p class="popupMessage"> You are now signed Up, go to the Login and customize your Fuuzik profile! </p>          </div>
 </div>
 
 
 				<div id="login-box2" class="login-popup">
-        <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        <a href="#" class="close"></a>
         <div id="formSingUp2">
-          <form method="post" class="signin" action="#">
+        
+        <fb:login-button size="medium"
+                 onlogin="facebooklogin()">
+  Connect with Facebook
+</fb:login-button>
+        
+           <form method="post" class="signin" action="#">
                 <fieldset class="textbox">
             	
                 <label class="username">
