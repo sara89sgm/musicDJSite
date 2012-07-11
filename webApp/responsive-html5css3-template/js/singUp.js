@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	
+	
+
+
+	
 	$('a.login-window').click(function() {
 		
 		
@@ -91,18 +96,11 @@ function login(){
 	
 }
 
+
+
 function logout(){
 	Parse.User.logOut();
 
 }
 
 
-
-Parse.FacebookUtils.logIn("user_likes,email", {
-  success: function(user) {
-    // Handle successful login
-  },
-  error: function(user, error) {
-    // Handle errors and cancellation
-  }
-});
