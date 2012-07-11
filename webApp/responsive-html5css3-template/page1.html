@@ -14,10 +14,14 @@
 		<script src="js/jquery.flexslider.js"></script>
 		<script src="js/jquery.roundabout.js"></script>
 		<script src="js/default.js"></script>
+         
 		<script src="js/request.js"></script>
 		<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
 		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
 		<script src="js/home.js"></script>
+       
+          
+       
 	</head>
 	<body>
 <!--  WRAP START -->
@@ -132,23 +136,24 @@
 					</div>
 					<div id="trackinfo">
 						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
-						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="textarea1" title="">Please type your message here...</textarea>
+						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
 <!--  TAGS INPUT  -->
 
 						<input id="tag1" type="text" name="" value="tag 1" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
 						<input id="tag2" type="text" name="" value="tag 2" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
 						<input id="tag3" type="text" name="" value="tag 3" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
 						<div class="styled-select">
-							<select>
-								<option>Here is the first option</option>
-								<option>The option 1</option>
-								<option>The option 2</option>
-								<option>The option 3</option>
+							<select id="genre">
+								<option>Genre</option>
+								<option>House</option>
+								<option>Electro</option>
+								<option>Dubstep</option>
+                                <option>Drum & Bass</option>
 							</select>
 						</div>
 						
-						<input type="file" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/>
-						<input class="submit" type="submit" name="submit" value="submit" />
+						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
+						<div id="request"><button class="submit" type="submit"  >Submit</button></div>
 					</div>
 				</section>
 <!--  CONTENT END  -->
@@ -161,5 +166,7 @@
 			</footer>
 <!--  WRAP END -->
 		</div>
+        
+        <script scr="js/request1.js"></script>
 	</body>
 </html>
