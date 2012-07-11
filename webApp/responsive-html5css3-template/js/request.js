@@ -16,6 +16,8 @@ $(document).ready(function() {
         select: function(el, ui) {
         	
         	id=$(this).attr('id');
+			
+			
         	
         	songs[id]=ui.item.track.href;
                 console.log(id+"href:"+ui.item.track.href);
@@ -26,6 +28,9 @@ $(document).ready(function() {
 	
 	 //  $('.droparea').droparea([options]);
 });
+
+
+
 
 function doRequest(){
 	if(logged()){

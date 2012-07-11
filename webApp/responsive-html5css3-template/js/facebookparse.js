@@ -1,5 +1,5 @@
 function facebooklogin (){
-		alert("sdfsdf");
+		
 	Parse.FacebookUtils.logIn("user_likes,email", {
   success: function(user) {
 	  
