@@ -29,7 +29,7 @@
 				$s3->putBucket("fuuzik", S3::ACL_PUBLIC_READ);
 				
 				//move the file
-				if ($s3->putObjectFile($fileTempName, "fuuzik", $fileName, S3::ACL_PUBLIC_READ)) {
+				if ($s3->putObjectFile($fileTempName, "theFile", $fileName, S3::ACL_PUBLIC_READ)) {
 					echo "<strong>We successfully uploaded your file.</strong>";
 				}else{
 					echo "<strong>Something went wrong while uploading your file... sorry.</strong>";
@@ -49,7 +49,7 @@
 	foreach ($contents as $file){
 	
 		$fname = $file['name'];
-		$furl = "http://fuuzik.s3-website-eu-west-1.amazonaws.com/".$fname;
+		$furl = "http://fuuzik.s3-website-eu-west-1.s3.amazonaws.com/".$fname;
 		
 		//output a link to the file
 		echo "<a href=\"$furl\">$fname</a><br />";
