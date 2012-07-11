@@ -167,7 +167,7 @@ for (i=0;i<ARRcookies.length;i++)
 	
 	function writeHTML(){
 		var html="<li>";
-		html+= "<img src="+this.cover+" width="600" height="600" /> <a class='aaa' onclick='likeOrunlike();'></a><a class='bbb' onclick=\"flag();'><a class='ccc' onclick=fuuz(); ></a><h3>"+this.title+"</h3><a class='more'>More</a> <span class='respond'> respond</span>";
+		//html+= "<img src="+this.cover+" width="600" height="600" /> <a class='aaa' onclick='likeOrunlike();'></a><a class='bbb' onclick=\"flag();'><a class='ccc' onclick=fuuz(); ></a><h3>"+this.title+"</h3><a class='more'>More</a> <span class='respond'> respond</span>";
 		return html;
 	}
 	
