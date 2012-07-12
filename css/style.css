@@ -279,12 +279,13 @@ section ul li {
 }
 section ul li span.respond {
 	float: right;
-	margin: 5.5em -7em 0 0em;
+	margin-right:50px;
+	
 	background: #fff;
 	cursor: pointer;
 	border: 2px solid #000;
 	color: #1C397B;
-	padding: .3em 1.5em;
+	padding: 0em 1.5em;
 	-o-box-shadow: 5px 5px 5px #000;
 	-moz-box-shadow: 5px 5px 5px #000;
 	-webkit-box-shadow: 5px 5px 5px #000;
