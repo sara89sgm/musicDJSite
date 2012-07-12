@@ -1,5 +1,5 @@
 function requested(){
- Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+ 
 
 var Request = Parse.Object.extend("Request");
 var request = new Request();
@@ -14,8 +14,10 @@ request.set("genre", $("#genre").val());
 request.set("tag1", $("#tag1").val());
 request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
+request.set("cover", $("reqID").val());
+
 var currentUser = Parse.User.current();
-		request.set("userId", currentUser.username);
+		request.set("by", currentUser.username);
 request.save(null, {
  
   success: function(object) {
@@ -23,5 +25,24 @@ request.save(null, {
   }
   
   
+});
+}
+
+function like(reqID){
+	
+alert("like");
+
+var Request = Parse.Object.extend("Request");
+var query = new Parse.Query(Request);
+query.equalTo(reqID);
+query.find({
+success: function(results) {
+
+var Like = results[0].get("like") ++;
+
+},
+error: function(error) {
+alert("Error: " + error.code + " " + error.message);
+}
 });
 }

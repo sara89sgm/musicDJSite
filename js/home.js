@@ -108,29 +108,40 @@ var listSongs = new Array();
 	
 	
 //====================== METHODS FOR SAVING SESSION
-function setCookie(c_name,value,exdays)
-{
-var exdate=new Date();
-exdate.setDate(exdate.getDate() + exdays);
-var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-document.cookie=c_name + "=" + c_value;
+function setCookie()
+{ 
+
+alert("settting cookie");
+document.cookie="yourname=" + prompt("What is your name?");
 }
 
-function getCookie(c_name)
-{
-var i,x,y,ARRcookies=document.cookie.split(";");
-for (i=0;i<ARRcookies.length;i++)
-{
-  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-  x=x.replace(/^\s+|\s+$/g,"");
-  if (x==c_name)
+function handlecookie(){
+	
+	var temp = getCookie(ssdf)
+function cookie(){
+function getCookieValue(key)
+{alert("getcookie");
+    currentcookie = document.cookie;
+    if (currentcookie.length > 0)
     {
-    return unescape(y);
+        firstidx = currentcookie.indexOf(key + "=");
+        if (firstidx != -1)
+        {
+            firstidx = firstidx + key.length + 1;
+            lastidx = currentcookie.indexOf(";",firstidx);
+            if (lastidx == -1)
+            {
+                lastidx = currentcookie.length;
+            }
+            return unescape(currentcookie.substring(firstidx, lastidx));
+        }
     }
-  }
+    return "";
 }
 
+alert(getCookieValue("yourname"));
+
+}}
 
 
 
@@ -211,7 +222,7 @@ var sortBy="added";
 	RequestList.push(new RequestTile(63,23,"ROL3","otherdesc high",202, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
 	alert('added to array');
 	render();
-}
+
 
 
 	function render(){
@@ -265,5 +276,4 @@ function respond(){
 }
 
 
-	
 	
