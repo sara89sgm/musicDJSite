@@ -194,7 +194,8 @@ var sortBy="added";
 		success: function(results) {
 		for(i=0 ; i<results.length ; i++){
 			var tags= new Array();
-	 	    tags[0]=results[i].get('tag1');
+			alert("inloop");
+			tags[0]=results[i].get('tag1');
 		    tags[1]=results[i].get('tag2');
 		    tags[2]=results[i].get('tag3');
 		    var date= new Date(results[i].get('createdAt'));
