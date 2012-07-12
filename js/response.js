@@ -1,6 +1,7 @@
-function response(){
- Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+var myvar = "<?php echo $fileName;?>";
 
+function response(){
+ alert("responding");
 var Response = Parse.Object.extend("Response");
 var response = new Response();
 response.set("track1", $("#entry_1").val());
@@ -14,12 +15,12 @@ response.set("genre", $("#genre").val());
 response.set("tag1", $("#tag1").val());
 response.set("tag2", $("#tag2").val());
 response.set("tag3", $("#tag3").val());
-var currentUser = Parse.User.current();
-		response.set("userId", currentUser.username);
+response.set("by", "User");
+response.set("mix", "https://s3-eu-west-1.amazonaws.com/fuuzik/"+myvar);
 response.save(null, {
  
   success: function(object) {
-    alert("sdfsd");
+    alert("Done");
   }
   
   
