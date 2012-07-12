@@ -158,12 +158,14 @@ for (i=0;i<ARRcookies.length;i++)
 	
 	function wHTML() {
 	// ditching the onClick stuff on anchor ..
+	alert("wHTML feeder called");
 	var dateago = prettyDate(this.added);
 			var html = "<li><img src=" + this.cover 
 		+ " width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
 		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
-		"<h3>" + this.title + "</h3><h4 style='{font-style:italic};'>By:"
-		+"PLACEHOLDER"+"</h4>"+dateago +"<a class='more'>More</a> <span class='respond' > respond</span>";
+		"<h3>" + this.title + "</h3><h4 style='{font-style:italic};'>By:"+
+				+"PLACEHOLDER"+"</h4>"+dateago +"<a class='more'>More</a> <span class='respond' > respond</span>";
+		alert("it looks like this:"+html;
 		return html;
 	}
 	
