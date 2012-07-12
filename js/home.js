@@ -190,7 +190,7 @@ var sortBy="added";
 		// Create date object done
 		// tag array done
 		// write them all done
-		// test ..
+		// test .. 
 		
 		var tags= new Array();
 		tags[0]=results[i].get('tag1');
@@ -205,7 +205,7 @@ var sortBy="added";
 										 results[i].get('description'),
 										 results[i].get('likes'),
 										 tags,
-										 results[i].get('cover'),));
+										 results[i].get('cover')));
 		}
 		},
 		error: function(error) {
