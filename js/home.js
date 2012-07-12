@@ -172,7 +172,7 @@ alert(getCookieValue("yourname"));
 	alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added);
 	//alert(dateago);
-			var html = "<li><img src=" + this.cover +
+			var html = "<li><img src=" + "img/bep.png"+    // this.cover 
 		+ " width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
 		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
 		"<h3>" + this.title + "</h3><br><h4 style='{font-style:italic};'>By:"+
