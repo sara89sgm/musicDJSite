@@ -1,4 +1,4 @@
-var myvar = "<?php echo $fileName;?>";
+
 
 function saveresponse(){
  alert("responding");
