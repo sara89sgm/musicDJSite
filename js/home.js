@@ -180,6 +180,7 @@ var sortBy="added";
 		query.equalTo();
 		query.find({
 		success: function(results) {
+		alert(results.length);
 		 for(i=0 ; i<results.length ; i++){
 		
 	 	// Adaptation needed:
