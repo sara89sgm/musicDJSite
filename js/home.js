@@ -194,7 +194,6 @@ var sortBy="added";
 		success: function(results) {
 		for(i=0 ; i<results.length ; i++){
 			var tags= new Array();
-			alert("inloop");
 			tags[0]=results[i].get('tag1');
 		    tags[1]=results[i].get('tag2');
 		    tags[2]=results[i].get('tag3');
@@ -208,14 +207,14 @@ var sortBy="added";
 										 tags,
 										 results[i].get('cover')));
 		 }
+		render();
+	
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
 	    }
 	});
 	
-	alert('added to array');
-	render();
 	}
 
 
