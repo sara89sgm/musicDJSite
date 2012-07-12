@@ -229,10 +229,10 @@
 <br/><br/><br/>
 <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
       <input name="theFile" type="file" />
-      <<input name="Submit" type="submit" value="Upload">
+      <input name="Submit" onclick="response();" type="submit" value="Upload">
 	</form>
     
-    <button class="submit" onclick="response();" type="submit">Request</button>
+    
 
 			
 
