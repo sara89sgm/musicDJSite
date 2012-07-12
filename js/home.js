@@ -2,7 +2,6 @@ var listSongs = new Array();
 	var actual = 0;
 	var lat;
 	var lng;
-	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 	listSongs[0] = 'http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3';
 	listSongs[1] = 'http://houseanthems.com/wp-content/uploads/2012/06/Take-A-Walk-The-M-Machine-Remix.mp3';
 	listSongs[2] = 'http://houseanthems.com/wp-content/uploads/2012/06/Chris-Lake-John-Dahlback-I-Saw-This-Before-Original-Mix.mp3';
@@ -12,7 +11,7 @@ var listSongs = new Array();
 	$(document)
 			.ready(
 					function() {
-						alert("what?");
+						Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 						loadRequests();
 
 						$("li.a").hover(
@@ -178,7 +177,6 @@ var sortBy="added";
 	alert('loading requests');
 	// requstList.push(new RequestTile(id,added,by,title,description , likes,tags,cover);
 	//  
-		Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 		var Request = Parse.Object.extend("Request");
 		var query = new Parse.Query(Request);
 		query.equalTo();
