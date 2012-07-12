@@ -15,9 +15,7 @@ request.set("tag1", $("#tag1").val());
 request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
 request.set("cover", $("reqID").val());
-
-var currentUser = Parse.User.current();
-		request.set("by", currentUser.username);
+request.set("by", "User");
 request.save(null, {
  
   success: function(object) {
