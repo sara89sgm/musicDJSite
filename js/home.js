@@ -165,7 +165,8 @@ for (i=0;i<ARRcookies.length;i++)
 		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
 		"<h3>" + this.title + "</h3><h4 style='{font-style:italic};'>By:"+
 				+"PLACEHOLDER"+"</h4>"+dateago +"<a class='more'>More</a> <span class='respond' > respond</span>";
-		alert("it looks like this:"+html;
+	
+		alert("it looks like this:"+html);
 		return html;
 	}
 	
