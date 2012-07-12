@@ -169,7 +169,7 @@ alert(getCookieValue("yourname"));
 	
 	function wHTML() {
 	// ditching the onClick stuff on anchor ..
-	alert("wHTML feeder called");
+	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added);
 	//alert(dateago);
 			var html = "<li><img src=" + "'img/bep.png'"+    // this.cover 
@@ -178,7 +178,7 @@ alert(getCookieValue("yourname"));
 		"<h3>" + this.title + "</h3><br><h4 style='{font-style:italic};'>By:"+
 				+"PLACEHOLDER"+"</h4><br>"+"PLACEHOLDDATE" +"<a class='more'>More</a> <span class='respond' > respond</span>";
 	
-		alert("it looks like this:"+html);
+		//alert("it looks like this:"+html);
 		return html;
 	}
 	
