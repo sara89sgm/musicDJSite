@@ -150,7 +150,8 @@ alert(getCookieValue("yourname"));
 // this is the object constructed after the database query .. it handles generating it's HTML
 // it also inserts itself into the list and registers it's button to link to the correct reqID
 
-	function RequestTile(id, added,by,title, description, likes,tags,cover){
+	function RequestTile(id, added,by,title, description, likes,tags,cover,track1,track2,track3,track4,track5){
+		// 5 tracks is just quick(not even that quick) hack .. should use array like for tags
 		this.id = id;
 		this.title= title;
 		this.by=by;
@@ -162,22 +163,28 @@ alert(getCookieValue("yourname"));
 		this.tags[1]= tags[1];
 		this.tags[2]= tags[2];
 		this.cover = cover;
+		this.track1=track1;
+		this.track2=track2;
+		this.track3=track3;
+		this.track4=track4;
+		this.track5=track5;
 		this.wHTML = wHTML;
 		this.respond = respond;
+		this.render = render;
 		}
 	
 	
 	function wHTML() {
 	// ditching the onClick stuff on anchor ..
 	//alert("wHTML feeder called");
-	//var dateago = prettyDate(this.added);
+	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html = "<li><img src=" + "'img/bep.png'"+    // this.cover 
-		+ " width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
+			var html = "<li><img src=" + "'img/bep.png'"+    // this.cover
+			+" width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
 		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
-		"<h3>" + this.title + "</h3><br><h4 style='{font-style:italic};'>By:"+
-				+"PLACEHOLDER"+"</h4><br>"+"PLACEHOLDDATE" +"<a class='more'>More</a> <span class='respond' > respond</span>";
-	
+		"<h3>" + this.title + "</h3><br><h4 style='{font-style:italic};'>By:"+this.by+
+				+"user"+"</h4><br>"+"2 days ago" +"<a class='more'>More</a> <span class='respond' > respond</span>"+
+				"tracklist :<ul><li>"+this.track1+"</li>"; // do the same for track2 etc ..
 		//alert("it looks like this:"+html);
 		return html;
 	}
@@ -198,6 +205,7 @@ var sortBy="added";
 			tags[0]=results[i].get('tag1');
 		    tags[1]=results[i].get('tag2');
 		    tags[2]=results[i].get('tag3');
+		    
 		    var date= new Date(results[i].get('createdAt'));
 		    RequestList.push(new RequestTile(results[i].get('id'),
 										 date,
@@ -206,7 +214,12 @@ var sortBy="added";
 										 results[i].get('description'),
 										 results[i].get('likes'),
 										 tags,
-										 results[i].get('cover')));
+										 results[i].get('track1'),
+										 results[i].get('track2'),
+										 results[i].get('track3'),
+										 results[i].get('track4'),
+										 results[i].get('track5'),
+										 ));
 		 }
 		 
 		render();
@@ -249,6 +262,122 @@ var sortBy="added";
 		
 	}
 
+//========== RESponse section:
+
+function renderRES{
+		alert('renderingresp');
+		RequestList.sort(dynamicSort(sortBy));
+		var finalHtml ="<ul>";
+		
+		// 1. Check sort is correct/
+		// 2. more field fills up description and expands
+		for (i = 0 ; i < RequestList.length ;i++)
+		{
+			finalHtml=finalHtml+ResponseList[i].wHTMLRES();		
+		}
+		finalHtml=finalHtml+"</ul>";
+		alert(finalHtml);
+		// fade out effect :
+		$('#requestslist').fadeOut("slow", function(){
+		
+		
+   		 var div = $("<div id='responseslist'>"+finalHtml+"</div>").hide(); 
+  		 $(this).replaceWith(div);
+    	 $('#responseslist').fadeIn("slow");
+});
+		
+	}
+
+
+
+	function ResponseTile(id, added,by,title, description, likes,tags,cover,track1,track2,track3,track4,track5,mix){
+		// 5 tracks is just quick(not even that quick) hack .. should use array like for tags
+		this.id = id;
+		this.title= title;
+		this.by=by;
+		this.added=added;
+		this.description= description;
+		this.likes = likes;
+		this.tags = new Array();
+		this.tags[0]= tags[0];
+		this.tags[1]= tags[1];
+		this.tags[2]= tags[2];
+		this.cover = cover;
+		this.track1=track1;
+		this.track2=track2;
+		this.track3=track3;
+		this.track4=track4;
+		this.track5=track5;
+		this.mix=mix;
+		this.wHTMLRES = wHTMLRES;
+		this.respond = respond;
+		this.renderRES = renderRES;
+		}
+	
+	
+	function wHTMLRES() {
+	// ditching the onClick stuff on anchor ..
+	//alert("wHTML feeder called");
+	//var dateago = prettyDate(this.added); // something goes bad here 
+	//alert(dateago);
+			var html = "<li><img src=" + "'img/bep.png'"+    // this.cover
+			+" width='600' height='600' />"+
+			"<audio id='audioPlayer' controls='controls' >"+
+						"<source id='mp3Source' type='audio/mp3'"+
+								+"src="+this.mix+"</audio>"+
+			+"<a class='aaa' href='page1.html'></a>"+
+		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
+		"<h3>" + this.title + "</h3><br><h4 style='{font-style:italic};'>By:"+this.by+
+				+"user"+"</h4><br>"+"2 days ago" +"<a class='more'>More</a> <span class='respond' > respond</span>"+
+				"tracklist :<ul><li>"+this.track1+"</li>"; // do the same for track2 etc ..
+		//alert("it looks like this:"+html);
+		return html;
+	}
+	
+var ResponsesList = new Array();
+var sortByRes="added"; 
+
+//======================================================================== REquest logic tier
+
+	function loadResponses(){
+		var Request = Parse.Object.extend("Request");
+		var query = new Parse.Query(Request);
+		query.equalTo();
+		query.find({
+		success: function(results) {
+		for(i=0 ; i<results.length ; i++){
+			var tags= new Array();
+			tags[0]=results[i].get('tag1');
+		    tags[1]=results[i].get('tag2');
+		    tags[2]=results[i].get('tag3');
+		    
+		    var date= new Date(results[i].get('createdAt'));
+		    ResponsesList.push(new ResponseTile(results[i].get('id'),
+										 date,
+										 results[i].get('by'),
+										 results[i].get('title1'),
+										 results[i].get('description'),
+										 results[i].get('likes'),
+										 tags,
+										 results[i].get('track1'),
+										 results[i].get('track2'),
+										 results[i].get('track3'),
+										 results[i].get('track4'),
+										 results[i].get('track5'),
+										 results[i].get('mix')
+										 ));
+		 }
+		 
+		renderResponse();
+	
+		},
+		error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+	    }
+	});
+	
+	}
+
 
 // method to be used for comparing feeding it a particular property .. to be used on sortBy or on refresh
 // usage: LIST.sort(dynamicSort("title"));
@@ -270,9 +399,14 @@ function dynamicSort(property) {
     return true;
 }
 
-function respond(){
-	alert("responded with id:" + this.id);
-}
+	function OnChangeresponse(dropdown) {
+	var myindex  = dropdown.selectedIndex
+    var SelValue = dropdown.options[myindex].value
+    alert("now Sorting by "+SelValue);
+    var sortByRes=SelValue;
+    renderResponse();
+    return true;
+	}
 
 //================= Borrowed methods :D
 /*

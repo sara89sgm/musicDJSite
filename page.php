@@ -17,7 +17,6 @@
 			
 			//instantiate the class
 			$s3 = new S3(awsAccessKey, awsSecretKey);
-			S3::$useSSL = false;
 			//check whether a form was submitted
 			if(isset($_POST['Submit'])){
 			
@@ -32,7 +31,7 @@
 				if ($s3->putObjectFile($fileTempName, "fuuzik", $fileName, S3::ACL_PUBLIC_READ)) {
 					echo "<strong>Booya!</strong>";
 				}else{
-					echo "<strong>fuck this shit</strong>";
+					echo "<strong></strong>";
 				}
 			}
 		?>
