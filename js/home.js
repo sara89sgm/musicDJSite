@@ -163,7 +163,7 @@ alert(getCookieValue("yourname"));
 		this.tags[2]= tags[2];
 		this.cover = cover;
 		this.wHTML = wHTML;
-		this.respond =respond;
+		this.respond = respond;
 		}
 	
 	
@@ -187,23 +187,13 @@ var sortBy="added";
 //======================================================================== REquest logic tier
 
 	function loadRequests(){
-	alert('loading requests');
-	// requstList.push(new RequestTile(id,added,by,title,description , likes,tags,cover);
 		var Request = Parse.Object.extend("Request");
 		var query = new Parse.Query(Request);
 		query.equalTo();
 		query.find({
 		success: function(results) {
-		alert(results.length);
-		 for(i=0 ; i<results.length ; i++){
-		
-	 	// Adaptation needed:
-	 	// Create date object done
-		// tag array done
-		// write them all done
-		// test .. 
-		
-	    	var tags= new Array();
+		for(i=0 ; i<results.length ; i++){
+			var tags= new Array();
 	 	    tags[0]=results[i].get('tag1');
 		    tags[1]=results[i].get('tag2');
 		    tags[2]=results[i].get('tag3');
@@ -220,11 +210,12 @@ var sortBy="added";
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
-	}
+	    }
 	});
 	
 	alert('added to array');
 	render();
+	}
 
 
 
@@ -288,7 +279,7 @@ function respond(){
  * Licensed under the MIT and GPL licenses.
  */
 
-<<<<<<< HEAD
+
 // Takes an ISO time and returns a string representing how
 // long ago the date represents.
 function prettyDate(time){
@@ -319,6 +310,4 @@ if ( typeof jQuery != "undefined" )
 				jQuery(this).text( date );
 		});
 	};
-=======
->>>>>>> a1f1bd6746eff1bdae30182aa10c7d07ea2e1963
 	
