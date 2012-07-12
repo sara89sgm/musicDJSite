@@ -140,9 +140,10 @@ for (i=0;i<ARRcookies.length;i++)
 // this is the object constructed after the database query .. it handles generating it's HTML
 // it also inserts itself into the list and registers it's button to link to the correct reqID
 
-	function RequestTile(id, added,title, description, likes,tags,cover){
+	function RequestTile(id, added,by,title, description, likes,tags,cover){
 		this.id = id;
 		this.title= title;
+		this.by=by;
 		this.added=added;
 		this.description= description;
 		this.likes = likes;
@@ -158,25 +159,24 @@ for (i=0;i<ARRcookies.length;i++)
 	
 	function wHTML() {
 	// ditching the onClick stuff on anchor ..
-		var html = "<li><img src=" + this.cover + " width='600' height='600' /> <a class='aaa' href='page1.html'></a><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a><h3>" + this.title + "</h3><a class='more'>More</a> <span class='respond' > respond</span>";
+	var dateago = prettyDate(this.added);
+			var html = "<li><img src=" + this.cover 
+		+ " width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
+		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
+		"<h3>" + this.title + "</h3><h4 style='{font-style:italic};'>By:"
+		+"PLACEHOLDER"+"</h4>"+dateago +"<a class='more'>More</a> <span class='respond' > respond</span>";
 		return html;
 	}
-	
-	
-	
 	
 var RequestList = new Array();
 var sortBy="added"; 
 
 //======================================================================== REquest logic tier
 
-
 	function loadRequests(){
 	
 	alert('loading requests');
-	// query from DB
-	// iterate over and do:
-	// requstList.push(new RequestTile(id,added,title,description , likes,tags,cover);
+	// requstList.push(new RequestTile(id,added,by,title,description , likes,tags,cover);
 	//  
 		Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 		var Request = Parse.Object.extend("Request");
@@ -186,20 +186,26 @@ var sortBy="added";
 		success: function(results) {
 		for(i=0 ; i<results.length ; i++){
 		
-		//
+		// Adaptation needed:
+		// Create date object done
+		// tag array done
+		// write them all done
+		// test ..
+		
 		var tags= new Array();
 		tags[0]=results[i].get('tag1');
 		tags[1]=results[i].get('tag2');
 		tags[2]=results[i].get('tag3');
+		var date= new Date(results[i].get('createdAt'));
+		
 		RequestList.push(new RequestTile(results[i].get('id'),
-										 results[i].get(''),
-										 results[i].get(''),
-										 results[i].get(''),
-										 results[i].get(''),
-										 results[i].get(''),
-										 results[i].get(''),
-										 "ROL","some desc low",
-		22, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
+										 date,
+										 results[i].get('by'),
+										 results[i].get('title'),
+										 results[i].get('description'),
+										 results[i].get('likes'),
+										 tags,
+										 results[i].get('cover'),));
 		}
 		},
 		error: function(error) {
@@ -207,8 +213,6 @@ var sortBy="added";
 	}
 	});
 	}
-	RequestList.push(new RequestTile(28,24,"ROL2","some desc med",122, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
-	RequestList.push(new RequestTile(63,23,"ROL3","otherdesc high",202, ["Joe", "Bob", "Ken"] , "img/bep.jpg"));
 	alert('added to array');
 	render();
 }
@@ -218,6 +222,9 @@ var sortBy="added";
 		alert('rendering');
 		RequestList.sort(dynamicSort(sortBy));
 		var finalHtml ="<ul>";
+		
+		// 1. Check sort is correct/
+		// 2. more field fills up description and expands
 		for (i = 0 ; i < RequestList.length ;i++)
 		{
 			finalHtml=finalHtml+RequestList[i].wHTML();		
@@ -264,6 +271,42 @@ function respond(){
 	alert("responded with id:" + this.id);
 }
 
+//================= Borrowed methods :D
+/*
+ * JavaScript Pretty Date
+ * Copyright (c) 2011 John Resig (ejohn.org)
+ * Licensed under the MIT and GPL licenses.
+ */
 
+// Takes an ISO time and returns a string representing how
+// long ago the date represents.
+function prettyDate(time){
+	var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
+		diff = (((new Date()).getTime() - date.getTime()) / 1000),
+		day_diff = Math.floor(diff / 86400);
+			
+	if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+		return;
+			
+	return day_diff == 0 && (
+			diff < 60 && "just now" ||
+			diff < 120 && "1 minute ago" ||
+			diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+			diff < 7200 && "1 hour ago" ||
+			diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+		day_diff == 1 && "Yesterday" ||
+		day_diff < 7 && day_diff + " days ago" ||
+		day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+}
+
+// If jQuery is included in the page, adds a jQuery plugin to handle it as well
+if ( typeof jQuery != "undefined" )
+	jQuery.fn.prettyDate = function(){
+		return this.each(function(){
+			var date = prettyDate(this.title);
+			if ( date )
+				jQuery(this).text( date );
+		});
+	};
 	
 	
