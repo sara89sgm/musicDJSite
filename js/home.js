@@ -13,7 +13,7 @@ var listSongs = new Array();
 					function() {
 						Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 						loadRequests();
-
+						loadResponses();
 						$("li.a").hover(
 								  function () {
 								   $("#exp").empty();
@@ -169,7 +169,7 @@ alert(getCookieValue("yourname"));
 		this.track4=track4;
 		this.track5=track5;
 		this.wHTML = wHTML;
-		this.respond = respond;
+		//this.respond = respond;
 		this.render = render;
 		}
 	
@@ -218,9 +218,9 @@ var sortBy="added";
 										 results[i].get('track2'),
 										 results[i].get('track3'),
 										 results[i].get('track4'),
-										 results[i].get('track5'),
+										 results[i].get('track5')
 										 ));
-		 }
+		}
 		 
 		render();
 	
@@ -264,26 +264,26 @@ var sortBy="added";
 
 //========== RESponse section:
 
-function renderRES{
+function renderRES() {
 		alert('renderingresp');
 		RequestList.sort(dynamicSort(sortBy));
 		var finalHtml ="<ul>";
 		
 		// 1. Check sort is correct/
 		// 2. more field fills up description and expands
-		for (i = 0 ; i < RequestList.length ;i++)
+		for (i = 0 ; i < ResponseList.length ;i++)
 		{
 			finalHtml=finalHtml+ResponseList[i].wHTMLRES();		
 		}
 		finalHtml=finalHtml+"</ul>";
 		alert(finalHtml);
 		// fade out effect :
-		$('#requestslist').fadeOut("slow", function(){
+		$('#responseList').fadeOut("slow", function(){
 		
 		
-   		 var div = $("<div id='responseslist'>"+finalHtml+"</div>").hide(); 
+   		 var div = $("<div id='responselist'>"+finalHtml+"</div>").hide(); 
   		 $(this).replaceWith(div);
-    	 $('#responseslist').fadeIn("slow");
+    	 $('#responselist').fadeIn("slow");
 });
 		
 	}
@@ -310,7 +310,7 @@ function renderRES{
 		this.track5=track5;
 		this.mix=mix;
 		this.wHTMLRES = wHTMLRES;
-		this.respond = respond;
+		//this.respond = respond;
 		this.renderRES = renderRES;
 		}
 	
