@@ -233,7 +233,7 @@
 	</form>
     
     
-
+<button class="submit" onclick="saveresponse()"; setCookie();" type="submit">Request</button>
 			
 
 						
