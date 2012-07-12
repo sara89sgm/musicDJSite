@@ -288,6 +288,7 @@ function respond(){
  * Licensed under the MIT and GPL licenses.
  */
 
+<<<<<<< HEAD
 // Takes an ISO time and returns a string representing how
 // long ago the date represents.
 function prettyDate(time){
@@ -318,4 +319,6 @@ if ( typeof jQuery != "undefined" )
 				jQuery(this).text( date );
 		});
 	};
+=======
+>>>>>>> a1f1bd6746eff1bdae30182aa10c7d07ea2e1963
 	
