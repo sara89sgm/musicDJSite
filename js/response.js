@@ -1,4 +1,4 @@
-
+Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 
 function saveresponse(){
  alert("responding");
