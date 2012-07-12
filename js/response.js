@@ -1,6 +1,6 @@
 var myvar = "<?php echo $fileName;?>";
 
-function response(){
+function saveresponse(){
  alert("responding");
 var Response = Parse.Object.extend("Response");
 var response = new Response();
@@ -16,7 +16,7 @@ response.set("tag1", $("#tag1").val());
 response.set("tag2", $("#tag2").val());
 response.set("tag3", $("#tag3").val());
 response.set("by", "User");
-response.set("mix", "https://s3-eu-west-1.amazonaws.com/fuuzik/"+(myvar));
+response.set("mix", "https://s3-eu-west-1.amazonaws.com/fuuzik/"+myvar);
 response.save(null, {
  
   success: function(object) {
