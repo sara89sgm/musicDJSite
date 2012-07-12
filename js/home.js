@@ -343,8 +343,6 @@ var sortBy="added";
 	
 	}
 
-
-
 	function renderresponse(){
 		alert('renderingresponse');
 		ResponseList.sort(dynamicSort(sortBy));
