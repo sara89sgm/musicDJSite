@@ -173,30 +173,27 @@ var sortBy="added";
 //======================================================================== REquest logic tier
 
 	function loadRequests(){
-	
 	alert('loading requests');
 	// requstList.push(new RequestTile(id,added,by,title,description , likes,tags,cover);
-	//  
 		var Request = Parse.Object.extend("Request");
 		var query = new Parse.Query(Request);
 		query.equalTo();
 		query.find({
 		success: function(results) {
-		for(i=0 ; i<results.length ; i++){
+		 for(i=0 ; i<results.length ; i++){
 		
-		// Adaptation needed:
-		// Create date object done
+	 	// Adaptation needed:
+	 	// Create date object done
 		// tag array done
 		// write them all done
 		// test .. 
 		
-		var tags= new Array();
-		tags[0]=results[i].get('tag1');
-		tags[1]=results[i].get('tag2');
-		tags[2]=results[i].get('tag3');
-		var date= new Date(results[i].get('createdAt'));
-		
-		RequestList.push(new RequestTile(results[i].get('id'),
+	    	var tags= new Array();
+	 	    tags[0]=results[i].get('tag1');
+		    tags[1]=results[i].get('tag2');
+		    tags[2]=results[i].get('tag3');
+		    var date= new Date(results[i].get('createdAt'));
+		    RequestList.push(new RequestTile(results[i].get('id'),
 										 date,
 										 results[i].get('by'),
 										 results[i].get('title'),
@@ -204,13 +201,13 @@ var sortBy="added";
 										 results[i].get('likes'),
 										 tags,
 										 results[i].get('cover')));
-		}
+		 }
 		},
 		error: function(error) {
 			alert("Error: " + error.code + " " + error.message);
 	}
 	});
-	}
+	
 	alert('added to array');
 	render();
 }
