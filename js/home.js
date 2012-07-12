@@ -175,8 +175,8 @@ alert(getCookieValue("yourname"));
 			var html = "<li><img src=" + this.cover +
 		+ " width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
 		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
-		"<h3>" + this.title + "</h3><h4 style='{font-style:italic};'>By:"+
-				+"PLACEHOLDER"+"</h4>"+"PLACEHOLDDATE" +"<a class='more'>More</a> <span class='respond' > respond</span>";
+		"<h3>" + this.title + "</h3><br><h4 style='{font-style:italic};'>By:"+
+				+"PLACEHOLDER"+"</h4><br>"+"PLACEHOLDDATE" +"<a class='more'>More</a> <span class='respond' > respond</span>";
 	
 		alert("it looks like this:"+html);
 		return html;
@@ -202,7 +202,7 @@ var sortBy="added";
 		    RequestList.push(new RequestTile(results[i].get('id'),
 										 date,
 										 results[i].get('by'),
-										 results[i].get('title'),
+										 results[i].get('title1'),
 										 results[i].get('description'),
 										 results[i].get('likes'),
 										 tags,
