@@ -180,9 +180,7 @@ alert(getCookieValue("yourname"));
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
 			var html ="<li><img src=" +""+    // this.cover
-			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+this.by+
-				+"user"+"</h1>"+"2 days ago" +"<a class='' href='page1.html'></a>"+"<a class='more'></a>"
-				"<div>tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
+			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+ this.by +"</h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
 		//alert("it looks like this:"+html);
 		return html;
 	}
@@ -282,23 +280,21 @@ var sortBy="added";
 		this.track4=track4;
 		this.track5=track5;
 		this.mix=mix;
-		this.wHTML = wHTML;
+		this.wresponseHTML = wresponseHTML;
 		//this.respond = respond;
 		this.render = render;
 		}
 	
 	
-	function wHTML() {
+	function wresponseHTML() {
 	// ditching the onClick stuff on anchor ..
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li><img src=" +""+    // this.cover
-			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+this.by+
-				+"user"+"</h1><audio src="+this.mix+"></audio><a class='' href='page1.html'></a>"+"<a class='more'></a>"
-				"<div>tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
+			var responsehtml ="<li><img src=" +""+    // this.cover
+			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+ this.by +"<audio src="+this.mix+"></audio><br/></h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
 		//alert("it looks like this:"+html);
-		return html;
+		return responsehtml;
 	}
 	
 var ResponseList = new Array();
@@ -311,32 +307,33 @@ var sortBy="added";
 		var query = new Parse.Query(Response);
 		query.equalTo();
 		query.find({
-		success: function(resultsre) {
-		for(i=0 ; i<resultsre.length ; i++){
-			var tags= new Array();
-			tags[0]=resultsre[i].get('tag1');
-		    tags[1]=resultsre[i].get('tag2');
-		    tags[2]=resultsre[i].get('tag3');
+		success: function(result) {
+		for(i=0 ; i<result.length ; i++){
+			var responsetags= new Array();
+			responsetags[0]=result[i].get('tag1');
+		    responsetags[1]=result[i].get('tag2');
+		    responsetags[2]=result[i].get('tag3');
 		    
-		    var date= new Date(results[i].get('createdAt'));
-		    ResponseList.push(new ResponseTile(results[i].get('id'),
+		    var date= new Date(result[i].get('createdAt'));
+		    ResponseList.push(new ResponseTile(result[i].get('id'),
 										 date,
-										 resultsre[i].get('by'),
-										 resultsre[i].get('title1'),
-										 resultsre[i].get('description'),
-										 resultsre[i].get('likes'),
-										 tags,
-										 resultsre[i].get('track1'),
-										 resultsre[i].get('track2'),
-										 resultsre[i].get('track3'),
-										 resultsre[i].get('track4'),
-										 resultsre[i].get('track5'),
-										 resultsre[i].get('mix')
+										 result[i].get('by'),
+										 result[i].get('title1'),
+										 result[i].get('description'),
+										 result[i].get('likes'),
+										 responsetags,
+										 result[i].get('track1'),
+										 result[i].get('track2'),
+										 result[i].get('track3'),
+										 result[i].get('track4'),
+										 result[i].get('track5'),
+										 result[i].get('mix')
 										 ));
 										 
 		}
 		 
-		render();
+		renderresponse();
+		alert("response");
 	
 		},
 		error: function(error) {
@@ -349,7 +346,7 @@ var sortBy="added";
 
 
 	function renderresponse(){
-		alert('rendering');
+		alert('renderingresponse');
 		ResponseList.sort(dynamicSort(sortBy));
 		var finalHtml ="<ul>";
 		
@@ -357,17 +354,17 @@ var sortBy="added";
 		// 2. more field fills up description and expands
 		for (i = 0 ; i < ResponseList.length ;i++)
 		{
-			finalHtml=finalHtml+ResponseList[i].wHTML();		
+			finalHtml=finalHtml+ResponseList[i].wresponseHTML();		
 		}
 		finalHtml=finalHtml+"</ul>";
 		alert(finalHtml);
 		// fade out effect :
-		$('#ResponseList').fadeOut("slow", function(){
+		$('#rlist').fadeOut("slow", function(){
 		
 		
-   		 var div = $("<div id=ResponseList'>"+finalHtml+"</div>").hide(); 
+   		var div = $("<div id='rlist'>"+finalHtml+"</div>").hide(); 
   		 $(this).replaceWith(div);
-    	 $('#ResponseList').fadeIn("slow");
+    	 $('#rlist').fadeIn("slow");
 });
 		
 		//put it on the screen:
