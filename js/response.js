@@ -16,7 +16,7 @@ resonse.set("tag1", $("#tag1").val());
 resonse.set("tag2", $("#tag2").val());
 resonse.set("tag3", $("#tag3").val());
 resonse.set("by", "User");
-resonse.set("mix", "https://s3-eu-west-1.amazonaws.com/fuuzik/"+myvar);
+resonse.set("mix", "https://s3-eu-west-1.amazonaws.com/fuuzik/");
 resonse.save(null, {
  
   success: function(object) {

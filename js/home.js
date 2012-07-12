@@ -13,7 +13,7 @@ var listSongs = new Array();
 					function() {
 						Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 						loadRequests();
-						loadResponses();
+						loadResonses();
 						$("li.a").hover(
 								  function () {
 								   $("#exp").empty();
@@ -261,7 +261,7 @@ var sortBy="added";
 
 //========== RESponse section:
 
-	function ResponseTile(id, added,by,title, description, likes,tags,cover,track1,track2,track3,track4,track5,mix){
+	function ResonseTile(id, added,by,title, description, likes,tags,cover,track1,track2,track3,track4,track5,mix){
 		// 5 tracks is just quick(not even that quick) hack .. should use array like for tags
 		this.id = id;
 		this.title= title;
@@ -280,48 +280,48 @@ var sortBy="added";
 		this.track4=track4;
 		this.track5=track5;
 		this.mix=mix;
-		this.wresponseHTML = wresponseHTML;
+		this.wresonseHTML = wresonseHTML;
 		//this.respond = respond;
 		this.render = render;
 		}
 	
 	
-	function wresponseHTML() {
+	function wresonseHTML() {
 	// ditching the onClick stuff on anchor ..
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var responsehtml ="<li><img src=" +""+    // this.cover
+			var resonsehtml ="<li><img src=" +""+    // this.cover
 			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+ this.by +"<audio src="+this.mix+"></audio><br/></h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
 		//alert("it looks like this:"+html);
-		return responsehtml;
+		return resonsehtml;
 	}
 	
-var ResponseList = new Array();
+var ResonseList = new Array();
 var sortBy="added"; 
 
 //======================================================================== REquest logic tier
 
-	function loadResponses(){
-		var Response = Parse.Object.extend("Response");
-		var query = new Parse.Query(Response);
+	function loadResonses(){
+		var Resonse = Parse.Object.extend("Resonse");
+		var query = new Parse.Query(Resonse);
 		query.equalTo();
 		query.find({
 		success: function(result) {
 		for(i=0 ; i<result.length ; i++){
-			var responsetags= new Array();
-			responsetags[0]=result[i].get('tag1');
-		    responsetags[1]=result[i].get('tag2');
-		    responsetags[2]=result[i].get('tag3');
+			var resonsetags= new Array();
+			resonsetags[0]=result[i].get('tag1');
+		    resonsetags[1]=result[i].get('tag2');
+		    resonsetags[2]=result[i].get('tag3');
 		    
 		    var date= new Date(result[i].get('createdAt'));
-		    ResponseList.push(new ResponseTile(result[i].get('id'),
+		    ResonseList.push(new ResonseTile(result[i].get('id'),
 										 date,
 										 result[i].get('by'),
 										 result[i].get('title1'),
 										 result[i].get('description'),
 										 result[i].get('likes'),
-										 responsetags,
+										 resonsetags,
 										 result[i].get('track1'),
 										 result[i].get('track2'),
 										 result[i].get('track3'),
@@ -332,8 +332,8 @@ var sortBy="added";
 										 
 		}
 		 
-		renderresponse();
-		alert("response");
+		renderresonse();
+		alert("resonse");
 	
 		},
 		error: function(error) {
@@ -343,16 +343,16 @@ var sortBy="added";
 	
 	}
 
-	function renderresponse(){
-		alert('renderingresponse');
-		ResponseList.sort(dynamicSort(sortBy));
+	function renderresonse(){
+		alert('renderingresonse');
+		ResonseList.sort(dynamicSort(sortBy));
 		var finalHtml ="<ul>";
 		
 		// 1. Check sort is correct/
 		// 2. more field fills up description and expands
-		for (i = 0 ; i < ResponseList.length ;i++)
+		for (i = 0 ; i < ResonseList.length ;i++)
 		{
-			finalHtml=finalHtml+ResponseList[i].wresponseHTML();		
+			finalHtml=finalHtml+ResonseList[i].wresonseHTML();		
 		}
 		finalHtml=finalHtml+"</ul>";
 		alert(finalHtml);
@@ -394,12 +394,12 @@ function dynamicSort(property) {
     return true;
 }
 
-	function OnChangeresponse(dropdown) {
+	function OnChangeresonse(dropdown) {
 	var myindex  = dropdown.selectedIndex
     var SelValue = dropdown.options[myindex].value
     alert("now Sorting by "+SelValue);
     var sortByRes=SelValue;
-    renderResponse();
+    renderResonse();
     return true;
 	}
 
