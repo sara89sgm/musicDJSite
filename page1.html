@@ -176,7 +176,7 @@
 					<h2>Request A Mix</h2>
 <p>enter a song for a remix or up to five for a mix. </p>
 					<div id="track">
-						<input type="text" name="" value="enter track 1" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select(); performSearch();" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" /><div id="itunes-preview"></div>
+						<input type="text" name="" value="enter track 1" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select();" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" /><div id="itunes-preview"></div>
 						<input type="text" name="" value="enter track 3" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_2" title="" />
 						<input type="text" name="" value="enter track 3" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_3" title="" />
 						<input type="text" name="" value="enter track 4" onblur="this.value=!this.value?'enter track 4':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_4" title="" />
@@ -203,7 +203,8 @@
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
 			
 
-						<button class="submit" onclick="requested();" type="submit">Request</button>
+						<button class="submit" onclick="requested(); setCookie();" type="submit">Request</button>
+                        <button class="submit" onclick="cookie();" type="submit">get cookie</button>
 
 					</div>
 				</section>
