@@ -171,6 +171,7 @@ alert(getCookieValue("yourname"));
 	// ditching the onClick stuff on anchor ..
 	alert("wHTML feeder called");
 	var dateago = prettyDate(this.added);
+	alert(dateago);
 			var html = "<li><img src=" + this.cover +
 		+ " width='600' height='600' /> <a class='aaa' href='page1.html'></a>"+
 		"<a class='bbb' href='page1.html'><a class='ccc' href='page1.html'></a>"+
