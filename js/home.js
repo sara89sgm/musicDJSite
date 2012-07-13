@@ -169,9 +169,17 @@ alert(getCookieValue("yourname"));
 		this.track4=track4;
 		this.track5=track5;
 		this.wHTML = wHTML;
+		this.mHTML = mHTML;
 		//this.respond = respond;
 		this.render = render;
 		}
+	
+	
+	
+	function mHTML(){
+		var html = "</h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
+	return html;
+	}
 	
 	
 	function wHTML() {
@@ -179,8 +187,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li><img src=" +""+    // this.cover
-			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+ this.by +"</h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
+			var html ="<li><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more">More</a> <span class="respond">respond</span></li>'; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}
