@@ -192,10 +192,30 @@
 							</select>
 						</div>
 						
-						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
+						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/>
+
+ <form action="https://fuuzik.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="uploads/${filename}">
+      <input type="hidden" name="AWSAccessKeyId" value="AKIAITXOXYKBQBBYQN6A"> 
+      <input type="hidden" name="acl" value="public-read"> 
+      <input type="hidden" name="success_action_redirect" value="http://localhost/">
+      <input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjogIjIwMTMtMDEtMDFUMDA6MDA6MDBaIiwKICAiY29uZGl0aW9ucyI6IFsgCiAgICB7ImJ1Y2tldCI6ICJmdXV6aWsifSwgCiAgICBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAidXBsb2Fkcy8iXSwKICAgIHsiYWNsIjogInB1YmxpYy1yZWFkIn0sCiAgICB7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjogImh0dHA6Ly9sb2NhbGhvc3QvIn0sCiAgICBbInN0YXJ0cy13aXRoIiwgIiRDb250ZW50LVR5cGUiLCAiIl0sCiAgICBbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwgMCwgMTA0ODU3NjAwXQogIF0KfQ==">
+      <input type="hidden" name="signature" value="4XoStT0Xssm8whEqCyJy5dXmFUA=">
+      <input type="hidden" name="Content-Type" value="audio/*">
+      <!-- Include any additional input fields here -->
+
+      
+      <input name="file" type="file" id="filename"> 
+      <br> 
+      <input class="submit" type="submit"  value="Upload File to S3"> 
+    </form>     
+    
+    <button class="submit" onclick="saveresponse()" type="submit">Respond</button>
+    
+
 			
 
-						<button class="submit" onclick="resonses();" type="submit">Request</button>
+						
 
 					</div>
 				</section>

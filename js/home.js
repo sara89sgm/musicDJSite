@@ -298,10 +298,11 @@ var sortBy="added";
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var resonsehtml ="<li><img src=" +""+    // this.cover
-			+" width='600' height='600' /><a class='bbb' href='page1.html'><a class='ccc' href='page1.html'><span class='respond'> respond</span>"+"</a><h1>" + this.title + "</h1><h1 style='{font-style:italic};'>By:"+ this.by +"<audio src="+this.mix+"></audio><br/></h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
+			var resonsehtml ="<li><audio src='"+this.track5+"' controls></audio></li>"; // do the same for track2 etc ..
 		//alert("it looks like this:"+html);
 		return resonsehtml;
+  
+
 	}
 	
 var ResonseList = new Array();
