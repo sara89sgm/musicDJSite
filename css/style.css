@@ -258,11 +258,12 @@ section ul {
 	height: 550px;
 	float:left;
 	
-	border-radius:7px;
+	
 	
 	margin: .2em 0 3em 0;
 	padding: 1em;
 	overflow-y: scroll;
+	border-radius:7px;
 	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
  
@@ -398,7 +399,10 @@ section#requestamix {
 	width: 85%;
 	margin: 0 0 3em 0;
 	padding: 1em;
-	border: 2px solid #000;
+	
+	border-radius:7px;
+	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
+
 }
 section#requestamix #track {
 	width: 40%;
@@ -410,6 +414,7 @@ section#requestamix #trackinfo {
 	width: 40%;
 	float: left;
 	margin: 0 4% 0em 0;
+	
 	
 }
 
@@ -426,7 +431,9 @@ section#requestamix input, section#requestamix textarea {
 	width: 100%;
 	margin: 0 0 2em 0;
 	background: ;
-	border: 2px solid #000;
+	border-radius:7px;
+	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
+
 	display: block;
 	font-size: .7em;
 	padding: .4em;
@@ -446,7 +453,7 @@ section#requestamix .tags {
 	width: 250px;	
 	padding: 5px;
 	font-size: 16px;
-	border: 1px solid #ccc;
+	
 	height: 34px;
 	margin: 0 -1em 0 0;
 }
@@ -454,7 +461,7 @@ section#requestamix .addcoverimg {
 	float: left;
 	margin: 4em 0 0 -14em;
 	background: #fff;
-	border: 2px solid #000;
+	
 	color: #1C397B;
 	padding: .3em 1em;
 	cursor: pointer;
