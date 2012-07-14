@@ -45,7 +45,11 @@ function logged(){
 	
 	var currentUser = Parse.User.current();
 	if (currentUser) {
+		
+		var username = currentUser();
 	    return true;
+		
+		
 	} else {
 	    return false;
 	}
