@@ -47,18 +47,6 @@ var listSongs = new Array();
 							$("#audioPlayer").load();
 						}
 						
-						$('a.more').click(function(e){
-						
-						    if($(this).parent().hasClass("open")){
-						        $(this).parent().animate({"height":125}).removeClass("open");
-						        $(this).html("More...");
-						    }else{
-						        $(this).parent().animate({"height":300}).addClass("open");
-						        $(this).html("Less...");
-						    }
-						    e.preventDefault();
-						});
-						
 						if (navigator.geolocation) {
 							  navigator.geolocation.getCurrentPosition(success, error);
 							} else {
@@ -68,6 +56,7 @@ var listSongs = new Array();
 					});
 	
 	
+
 	function success(position) {
 		  lng=position.coords.longitude;
 		  lat=position.coords.latitude;
@@ -174,7 +163,20 @@ alert(getCookieValue("yourname"));
 		this.render = render;
 		}
 	
-	
+	function more(more){
+		var id = $(more).parent().attr("id"); 
+		var current = findReq(id);
+		alert(current.mHTML());
+						    if($(more).parent().hasClass("open")){
+						        $(more).parent().animate({"height":125}).removeClass("open");
+						        $(more).html("More...");
+						    }else{
+						        $(more).parent().animate({"height":300}).addClass("open");
+						        $(more).html("Less...");
+						    }
+						    e.preventDefault();
+						}
+
 	
 	function mHTML(){
 		var html = "</h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
@@ -187,7 +189,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more">More</a> <span class="respond">respond</span></li>'; // more and respond
+			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}
@@ -226,6 +228,7 @@ var sortBy="added";
 		}
 		 
 		render();
+		
 	
 		},
 		error: function(error) {
@@ -258,6 +261,8 @@ var sortBy="added";
   		 $(this).replaceWith(div);
     	 $('#requestslist').fadeIn("slow");
 });
+
+
 		
 		//put it on the screen:
 		//$('requestslist).replaceWith(finalHtml);
