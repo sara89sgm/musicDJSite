@@ -207,10 +207,14 @@
       <br/> <br/> <br/> <br/> <br/> 
       <input name="file" type="file" id="filename"> 
       <br/> 
-      <input class="submit" type="submit"  value="Upload File to S3"> 
+      <input onclick="saveresponse()"  class="submit" type="submit" onchange="handleFiles(this.files)"  value="Upload File to S3"> 
+      
      
     </form> 
-    <button class="submit" onclick="saveresponse()" type="submit">Respond</button>
+    <div class="meter animate">
+			<span style="width: 50%"><span></span></span>
+		</div>
+			
  
  
 
