@@ -1,5 +1,8 @@
 function requested(){
- 
+	
+ if(logged()){
+	 
+	 var currentUser = Parse.User.current();
 
 var Request = Parse.Object.extend("Request");
 var request = new Request();
@@ -15,7 +18,7 @@ request.set("tag1", $("#tag1").val());
 request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
 request.set("cover", $("#picture").val());
-request.set("by", "User");
+request.set("by", currentUser.username);
 request.save(null, {
  
   success: function(object) {
@@ -24,6 +27,10 @@ request.save(null, {
   
   
 });
+}
+else{
+		
+	}
 }
 
 function like(reqID){
