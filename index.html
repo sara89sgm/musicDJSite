@@ -23,8 +23,7 @@
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
         <script src="js/request.js"></script>
-       
-        
+        <script src="js/modalrequest.js"></script>       
        <script src="js/submit_request.js"></script>
        
        
@@ -70,7 +69,7 @@
 				<img src='img/purplefuziclogo.png' width="215" height="118" onClick="window.location.href='index.html'"> </img> 
 					
 					<ul>
-						<li class="a" onClick="window.location.href='page1.html'"></li><li class="b" onClick="window.location.href='index.html'"></li><li class="c" onClick="window.location.href='page3.html'"></li><li class="d" onClick="window.location.href='page4.html'"></li>
+						<a href="#request-box" class="request-window">d</a></li><li class="b" onClick="window.location.href='index.html'"></li><li class="c" onClick="window.location.href='page3.html'"></li><li class="d" onClick="window.location.href='page4.html'"></li>
 					</ul>
 					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
 					<span class="b">request a mix 2</span>
@@ -96,6 +95,43 @@
                 
 				
 				</div>
+                <div id="request-box" class="request-popup"><a href="#" class="closerequest"></a>
+   <section id="requestamix">
+					<h2>Request A Mix</h2><h3>enter a song for a remix or up to five for a mix. </h3>
+					<div id="track">
+						<input type="text" name="" value="enter track 1" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select();" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" /><div id="itunes-preview"></div>
+						<input type="text" name="" value="enter track 2" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_2" title="" />
+						<input type="text" name="" value="enter track 3" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_3" title="" />
+						<input type="text" name="" value="enter track 4" onblur="this.value=!this.value?'enter track 4':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_4" title="" />
+						<input type="text" name="" value="enter track 5" onblur="this.value=!this.value?'enter track 5':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_5" title="" />
+					</div>
+					<div id="trackinfo">
+						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
+						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
+<!--  TAGS INPUT  -->
+
+						<input id="tag1" type="text" name="" value="tag 1" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<input id="tag2" type="text" name="" value="tag 2" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<input id="tag3" type="text" name="" value="tag 3" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" /><div class="styled-select">
+							<select id="genre">
+								<option>Genre</option>
+								<option>House</option>
+								<option>Electro</option>
+								<option>Dubstep</option>
+                                <option>Drum & Bass</option>
+							</select>
+						</div>
+						
+						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
+			
+
+						<button class="submit" onclick="requested();" type="submit">Request</button>
+                  
+
+					</div>
+				</section>        </div>
+</div>
+
 				
 				<div id="login-box" class="login-popup">
         <a href="#" class="close"></a>

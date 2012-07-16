@@ -4,38 +4,37 @@ $(document).ready(function() {
 
 
 	
-	$('nav ul li.a').click(function() {
-		alert("popup");
+	$('a.request-window').click(function() {
 		
-		
+		alert("pop");
 		
                 //Getting the variable's value from a link 
-		var loginBox = $(this).attr('href');
+		var requestBox = $(this).attr('href');
 
 		//Fade in the Popup
-		$(loginBox).fadeIn(300);
+		$(requestBox).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(loginBox).height() + 24) / 2; 
-		var popMargLeft = ($(loginBox).width() + 24) / 2; 
-		
-		$(loginBox).css({ 
+		var popMargTop = ($(requestBox).height() - 100 ) /2; 
+		var popMargLeft = ($(requestBox).width() + 40 ) / 2; 
+	
+		$(requestBox).css({ 
 			'margin-top' : -popMargTop,
 			'margin-left' : -popMargLeft
 		});
 		
 		// Add the mask to body
-		$('body').append('<div id="mask"></div>');
-		$('#mask').fadeIn(300);
+		$('body').append('<div id="maskrequest"></div>');
+		$('#maskrequest').fadeIn(300);
 	
 		
 		return false;
 	});
 	
 	// When clicking on the button close or the mask layer the popup closed
-	$('a.close, #mask').live('click', function() { 
-	  $('#mask , .request-popup').fadeOut(300 , function() {
-		$('#mask').remove();  
+	$('a.closerequest, #maskrequest').live('click', function() { 
+	  $('#maskrequest , .request-popup').fadeOut(300 , function() {
+		$('#maskrequest').remove();  
 	}); 
 	return false;
 	});

@@ -434,7 +434,7 @@ section#requestamix input, section#requestamix textarea {
 	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
 	display: block;
-	font-size: .7em;
+	
 	padding: .4em;
 	color: ;
 	font-size: 1em;
@@ -449,7 +449,7 @@ section#requestamix .tags {
 .styled-select select {
 	float: right;
 	background: transparent;
-	width: 250px;	
+	width: 170px;	
 	padding: 5px;
 	font-size: 16px;
 	

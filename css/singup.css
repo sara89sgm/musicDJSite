@@ -8,6 +8,15 @@
 	opacity: 0.8;
 	z-index: 999;
 }
+#maskrequest {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.9;
+	z-index: 999;
+}
 .popupMessage{
 	color:#999; 
 	font-size:11px; 
@@ -32,6 +41,18 @@
         -moz-border-radius: 3px; /* Firefox */
         -webkit-border-radius: 3px; /* Safari, Chrome */
 }
+.request-popup {display:none;
+	
+	margin:-50% 0 0 -50%;
+	position:fixed;
+	
+	width:100%;
+	height:100%;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	padding-left:100px;
+}
+
 
 img.btn_close { Position the close button
 	float: right; 
