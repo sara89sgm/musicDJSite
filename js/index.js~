@@ -1,98 +1,12 @@
-var listSongs = new Array();
-	var actual = 0;
-	var lat;
-	var lng;
-	listSongs[0] = 'http://houseanthems.com/wp-content/uploads/2012/05/Avicii-vs.-Lenny-Kravitz-Superlove-Original-Mix.mp3';
-	listSongs[1] = 'http://houseanthems.com/wp-content/uploads/2012/06/Take-A-Walk-The-M-Machine-Remix.mp3';
-	listSongs[2] = 'http://houseanthems.com/wp-content/uploads/2012/06/Chris-Lake-John-Dahlback-I-Saw-This-Before-Original-Mix.mp3';
-	listSongs[3] = 'http://houseanthems.com/wp-content/uploads/2012/06/Rhythm-Masters-MYNC-Feat.-Wynter-Gordon-I-Feel-Love-Aviciis-Forgotten-Remix.mp3'
-	listSongs[4] = 'http://houseanthems.com/wp-content/uploads/2012/06/Tombo-Original-Mix.mp3';
-
-	$(document)
+$(document)
 			.ready(
 					function() {
-						Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+
+Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 						loadRequests();
 						loadResonses();
-						$("li.a").hover(
-								  function () {
-								   $("#exp").empty();
-								   $("#exp").append($(this).text());
-								   $("#exp").attr("href","#"+$(this).text());
-								  }, 
-								  function () {
-									  $("#exp").empty();
-									   $("#exp").append("Request a mix");
-								  }
-								);
-						
-						$("#roundb").roundabout({
+});
 
-							clickToFocusCallback : function() {
-								changeSong();
-							},
-							shape : 'figure8'
-
-						});
-
-						$("#roundb").roundabout("animateToChild", 0);
-
-						function changeSong() {
-
-							var num = $("#roundb")
-									.roundabout("getChildInFocus");
-
-							$("#mp3Source").attr("src", listSongs[num])
-									.detach().appendTo('#audioPlayer');
-							$("#audioPlayer").load();
-						}
-						
-						if (navigator.geolocation) {
-							  navigator.geolocation.getCurrentPosition(success, error);
-							} else {
-							  error('not supported');
-							}
-						
-					});
-	
-	
-
-	function success(position) {
-		  lng=position.coords.longitude;
-		  lat=position.coords.latitude;
-		  
-		}
-
-		function error(msg) {
-		  var s = document.querySelector('#status');
-		  //s.innerHTML = typeof msg == 'string' ? msg : "failed";
-		  //s.className = 'fail';
-		  
-		  console.log("error geolocation");
-		}
-
-
-	
-	
-	function createRequestMix(){
-		var Request = Parse.Object.extend("Request");
-		var request = new Request();
-		var currentUser = Parse.User.current();
-		request.set("emailUser", currentUser.get("email") );
-		request.set("playerName", "Sean Plott");
-		request.set("cheatMode", false);
-
-		request.save(null, {
-		  success: function(gameScore) {
-		    // The object was saved successfully.
-		  },
-		  error: function(gameScore, error) {
-		    // The save failed.
-		    // error is a Parse.Error with an error code and description.
-		  }
-		});
-	}
-	
 	
 	
 //====================== METHODS FOR SAVING SESSION
@@ -169,17 +83,20 @@ alert(getCookieValue("yourname"));
 		alert(current.mHTML());
 						    if($(more).parent().hasClass("open")){
 						        $(more).parent().animate({"height":125}).removeClass("open");
+							$("#more").remove();
 						        $(more).html("More...");
 						    }else{
 						        $(more).parent().animate({"height":300}).addClass("open");
-						        $(more).html("Less...");
-						    }
+							 $(more).html("Less...");
+							 $(more).parent().append(current.mHTML());
+														    
+}
 						    e.preventDefault();
 						}
 
 	
 	function mHTML(){
-		var html = "</h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</li>"; // do the same for track2 etc ..
+		var html = "<div id='more' style='clear:both;'> </h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
 	return html;
 	}
 	
@@ -189,7 +106,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
+			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a>'+'<div style="clear:right;"></div>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}
