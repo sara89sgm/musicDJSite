@@ -24,17 +24,17 @@ $(document).ready(function() {
 		});
 		
 		// Add the mask to body
-		$('body').append('<div id="maskrequest"></div>');
-		$('#maskrequest').fadeIn(300);
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
 	
 		
 		return false;
 	});
 	
 	// When clicking on the button close or the mask layer the popup closed
-	$('a.closerequest, #maskrequest').live('click', function() { 
-	  $('#maskrequest , .request-popup').fadeOut(300 , function() {
-		$('#maskrequest').remove();  
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .request-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
 	}); 
 	return false;
 	});
