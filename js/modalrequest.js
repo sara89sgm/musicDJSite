@@ -39,8 +39,7 @@ $(document).ready(function() {
 	return false;
 	});
 	$("#signedUP").hide();
-	
-	$('a.aaa').click(function() {
+	$('section ul li a.aaa').click(function() {
 		
 		alert("pop");
 		
@@ -75,5 +74,7 @@ $(document).ready(function() {
 	return false;
 	});
 	$("#signedUP").hide();
+	
+	
 
 });
