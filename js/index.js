@@ -10,10 +10,14 @@ Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5
 //REQUEST AND RESPONSE POP UPS//
 // MODAL REQUEST POP UP - NEEDS TO BE IN SAME SCRIPT AS RENDERING FUNCTION TO WORK ELSE FUNCTION NOT DEFINED JAVASCRIPT ERROR	//
 function reqpopup(){
+	
+	var currentUser = Parse.User.current();
+if (currentUser) {
+    // do stuff with the user
 		
 		alert("pop");
 		
-                //Getting the variable's value from a link 
+//Getting the variable's value from a link 
 		var requestBox = $("#request-box");
 
 		//Fade in the Popup
@@ -33,8 +37,11 @@ function reqpopup(){
 		$('#mask').fadeIn(300);
 	
 		
-		return false;
-	};
+		
+	}  else {
+    alert("sign in");
+}}
+	
 	$(document).ready(function() {
 	
 	// When clicking on the button close or the mask layer the popup closed
@@ -47,8 +54,11 @@ function reqpopup(){
 	$("#signedUP").hide();
 	
 	
+	
+	
 
 });
+
 
 //END REQUEST POP UP
 

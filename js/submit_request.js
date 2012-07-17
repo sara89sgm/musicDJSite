@@ -16,7 +16,7 @@ request.set("tag1", $("#tag1").val());
 request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
 request.set("cover", $("#picture").val());
-request.set("by", "username");
+request.set("by", currentUser);
 request.save(null, {
  
   success: function(object) {
