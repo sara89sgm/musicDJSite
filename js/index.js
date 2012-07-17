@@ -7,8 +7,97 @@ Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5
 						loadResonses();
 });
 
+//REQUEST AND RESPONSE POP UPS//
+// MODAL REQUEST POP UP - NEEDS TO BE IN SAME SCRIPT AS RENDERING FUNCTION TO WORK ELSE FUNCTION NOT DEFINED JAVASCRIPT ERROR	//
+function reqpopup(){
+		
+		alert("pop");
+		
+                //Getting the variable's value from a link 
+		var requestBox = $("#request-box");
+
+		//Fade in the Popup
+		$(requestBox).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(window).height() - $(requestBox).height() ) / 2; 
+		var popMargLeft = ($(window).width() - $(requestBox).width()) / 2; 
+	
+		$(requestBox).css({ 
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+	
+		
+		return false;
+	};
+	$(document).ready(function() {
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .request-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+	$("#signedUP").hide();
 	
 	
+
+});
+
+//END REQUEST POP UP
+
+//MODAL RESPONSE POPUP
+	
+	function respopup() {
+		
+		alert("popresponse");
+		
+                //Getting the variable's value from a link 
+		var responseBox = $("#response-box");
+
+		//Fade in the Popup
+		$(responseBox).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(window).height() - $(responseBox).height() ) / 2; 
+		var popMargLeft = ($(window).width() - $(responseBox).width()) / 2; 
+	
+		$(responseBox).css({ 
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+	
+		
+		return false;
+	};
+	
+	$(document).ready(function() {
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .response-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+	$("#signedUP").hide();
+	
+	
+
+});
+
+//end response pop up//
+
 //====================== METHODS FOR SAVING SESSION
 function setCookie()
 { 
@@ -106,7 +195,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="request-window aaa" href="#request-box"></a><a id="" class="bbb" href="#request-box"></a><a id="" class="ccc" href=""></a>'+'<div style="clear:right;"></div>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
+			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa"></a><a id="" class="bbb"></a><a id="" class="ccc" onclick="reqpopup()" href="#request-box"></a>'+'<div style="clear:right;"></div>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond" onclick="respopup()">respond</span></li>'; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}

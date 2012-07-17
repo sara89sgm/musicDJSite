@@ -1,10 +1,9 @@
-$(document).ready(function() {
-	
+
 	
 
 
 	
-	$('a.response-window').click(function() {
+	function respopup() {
 		
 		alert("popresponse");
 		
@@ -29,7 +28,9 @@ $(document).ready(function() {
 	
 		
 		return false;
-	});
+	};
+	
+	$(document).ready(function() {
 	
 	// When clicking on the button close or the mask layer the popup closed
 	$('a.close, #mask').live('click', function() { 

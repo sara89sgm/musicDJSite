@@ -17,15 +17,14 @@
 		<script src="js/jquery.roundabout.js"></script>
 		<script src="js/default.js"></script>
         <script src="js/home.js"></script>
+           
 		<script src="js/index.js"></script>
 		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
 		<script src="js/singUp.js"></script>
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
         <script src="js/request.js"></script>
-        <script src="js/response.js"></script>
-        <script src="js/modalrequest.js"></script>
-        <script src="js/modalresponse.js"></script>       
+        <script src="js/response.js"></script>      
        <script src="js/submit_request.js"></script>
        
        
@@ -72,7 +71,7 @@
 				<img src='img/purplefuziclogo.png' width="215" height="118" onClick="window.location.href='index.html'"> </img> 
 					
 					<ul>
-						<a href="#request-box" class="request-window"><li class="a"></li></a></li><li class="b" onClick="window.location.href='index.html'"></li><li class="c" onClick="window.location.href='page3.html'"></li><li class="d" onClick="window.location.href='page4.html'"></li>
+						<li class="a" onclick="reqpopup()"></li></li><li class="b" onClick="window.location.href='index.html'"></li><li class="c" onClick="window.location.href='page3.html'"></li><li class="d" onClick="window.location.href='page4.html'"></li>
 					</ul>
 					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
 					<span class="b">request a mix 2</span>
@@ -178,19 +177,11 @@
 
       <br/> <br/> <br/> <br/> <br/> 
       <input name="file" type="file" id="filename"> 
-      <br/> 
+      
       <input  class="submit" type="submit" value="Upload" onclick="showloading()"> <div id="loading" ><img src="img/ajax-loader.gif"/></div>
       </form>  <input class="submit" value="Next" onclick="saveresponse()">
     
-			
- 
- 
-
-			
-
-						
-
-					</div>
+    		</div>
 </div>
 
 				
