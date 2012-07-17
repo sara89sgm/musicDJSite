@@ -6,8 +6,8 @@
   $S3_BUCKET = 'fuuzik' ;
 
   /* where I go when I am done uploading */
-  $SUCCESS_REDIRECT = "http://localhost/musicDJSite/musicDJSite/swfuploadv250-php-example/success.php";
+  $SUCCESS_REDIRECT = "http://sharp-ocean-1212.herokuapp.com/swfuploadv250-php-example/success.php";
 
   /* where do I find swfupload , including http:// --not relative-- */
-  $SWFRoot = "http://localhost/musicDJSite/musicDJSite/swfuploadv250-php-example/swfupload";
+  $SWFRoot = "http://sharp-ocean-1212.herokuapp.com/swfuploadv250-php-example/swfupload";
 ?>
