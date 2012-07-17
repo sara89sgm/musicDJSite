@@ -32,9 +32,7 @@ if ( is_array($keys) ) {
   } 
 } 
 ?>
-<?php if (preg_match("/.*(png|jpg|gif)/",$value)) { // very simple check for a picture (only on last file) -- for fun ?>
-<img src="http://<?=$S3_BUCKET?>.s3.amazonaws.com/<?=$value?>" />
-<?php } ?>
+
 
 <p><a href="example.php">&laquo; Go back and upload more files...</a></p>
 </body>

@@ -1,7 +1,6 @@
 
-
-
 function saveresponse(){
+	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 	myOriginalfilename = $("#filename").val();
 myFilename = myOriginalfilename.substring(12);
  alert("responding");
@@ -29,3 +28,6 @@ resonse.save(null, {
   
 });
 }
+
+function showloading() {
+	$('#loading').show();}

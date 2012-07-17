@@ -4,10 +4,16 @@ require_once "config.php";
 
 $isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
 
-if ( !isset($S3_BUCKET) || $S3_BUCKET == 'fuuzik' ) {
+if ( !isset($S3_BUCKET) || $S3_BUCKET == "") {
   echo "Um, sorry, I need my configuration file. :( ";
   exit(0);
 }
+ 
+
+
+
+
+
 
 /*
   Flash 10.1 issue, omitted the below from the policy
@@ -20,20 +26,20 @@ $expTimeStr = gmdate('Y-m-d\TH:i:s\Z', $expTime);
 $policyDoc = '{
         "expiration": "' . $expTimeStr . '",
         "conditions": [
-        {"bucket": "' . $S3_BUCKET . '"},
-        ["starts-with", "$key", ""],
+        {"bucket": "fuuzik"},
+        
         {"acl": "public-read"},
         ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
         {"success_action_status": "201"},
         ["starts-with", "$Filename", ""],
-        ["starts-with", "$Content-Type", "image/"]
+        ["starts-with", "$Content-Type", "audio/"]
       ]
 }';
 
 $policyDoc = implode(explode('\r', $policyDoc));
 $policyDoc = implode(explode('\n', $policyDoc));
 $policyDoc64 = base64_encode($policyDoc);
-$sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_KEY, TRUE));
+$sigPolicyDoc = 'fHyBEaH4o6m7z49cNo2fcTdQ3aI=';
 
 ?>
 <!DOCTYPE html>
