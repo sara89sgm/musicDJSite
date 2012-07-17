@@ -23,6 +23,7 @@ resonse.save(null, {
  
   success: function(object) {
     alert("Done");
+	window.location = "http://sharp-ocean-1212.herokuapp.com/";
   }
   
   

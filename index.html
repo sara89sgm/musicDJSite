@@ -23,8 +23,11 @@
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
         <script src="js/request.js"></script>
-        <script src="js/modalrequest.js"></script>       
+        <script src="js/response.js"></script>
+        <script src="js/modalrequest.js"></script>
+        <script src="js/modalresponse.js"></script>       
        <script src="js/submit_request.js"></script>
+       
        
        
         
@@ -130,6 +133,64 @@
 
 					</div>
 				</section>        </div>
+</div>
+
+<div id="response-box" class="response-popup"><a href="#" class="close"></a>
+<section id="requestamix">
+					<h2>Respond</h2>
+<p>Enter added songs... </p>
+					<div id="track">
+						<input type="text" name="" value="enter track 6" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select(); performSearch();" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" /><div id="itunes-preview"></div>
+						<input type="text" name="" value="enter track 7" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_2" title="" />
+						<input type="text" name="" value="enter track 8" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_3" title="" />
+						<input type="text" name="" value="enter track 9" onblur="this.value=!this.value?'enter track 4':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_4" title="" />
+						<input type="text" name="" value="enter track 10" onblur="this.value=!this.value?'enter track 5':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_5" title="" />
+					</div>
+					<div id="trackinfo">
+						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
+						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
+<!--  TAGS INPUT  -->
+
+						<input id="tag1" type="text" name="" value="tag 1" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<input id="tag2" type="text" name="" value="tag 2" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<input id="tag3" type="text" name="" value="tag 3" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
+						<div class="styled-select">
+							<select id="genre">
+								<option>Genre</option>
+								<option>House</option>
+								<option>Electro</option>
+								<option>Dubstep</option>
+                                <option>Drum & Bass</option>
+							</select>
+						</div>
+						
+						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/>
+
+ <form action="https://fuuzik.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="uploads/${filename}">
+      <input type="hidden" name="AWSAccessKeyId" value="AKIAITXOXYKBQBBYQN6A"> 
+      <input type="hidden" name="acl" value="public-read"> 
+      <input type="hidden" name="success_action_redirect" value="">
+      <input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjogIjIwMTMtMDEtMDFUMDA6MDA6MDBaIiwKICAiY29uZGl0aW9ucyI6IFsgCiAgICB7ImJ1Y2tldCI6ICJmdXV6aWsifSwgCiAgICBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAidXBsb2Fkcy8iXSwKICAgIHsiYWNsIjogInB1YmxpYy1yZWFkIn0sCiAgICB7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjogIiJ9LAogICAgWyJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgIiJdLAogICAgWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsIDAsIDEwNDg1NzYwMF0KICBdCn0=">
+      <input type="hidden" name="signature" value="fHyBEaH4o6m7z49cNo2fcTdQ3aI=">
+      <input type="hidden" name="Content-Type" value="audio/*">
+      <!-- Include any additional input fields here -->
+
+      <br/> <br/> <br/> <br/> <br/> 
+      <input name="file" type="file" id="filename"> 
+      <br/> 
+      <input  class="submit" type="submit" value="Upload" onclick="showloading()"> <div id="loading" ><img src="img/ajax-loader.gif"/></div>
+      </form>  <input class="submit" value="Next" onclick="saveresponse()">
+    
+			
+ 
+ 
+
+			
+
+						
+
+					</div>
 </div>
 
 				

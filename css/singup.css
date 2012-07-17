@@ -45,6 +45,19 @@
 	z-index: 99999;
 	
 }
+.response-popup {display:none;
+
+	width:85%;
+	position:fixed;
+	
+	height:auto;
+	float:left;
+
+
+	z-index: 99999;
+	
+}
+
 
 
 img.btn_close { Position the close button
