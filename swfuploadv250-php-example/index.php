@@ -32,14 +32,15 @@ $policyDoc = '{
         ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
         {"success_action_status": "201"},
         ["starts-with", "$Filename", ""],
-        ["starts-with", "$Content-Type", "audio/"]
+        ["starts-with", "$Content-Type", "audio/*"]
       ]
 }';
 
 $policyDoc = implode(explode('\r', $policyDoc));
 $policyDoc = implode(explode('\n', $policyDoc));
 $policyDoc64 = base64_encode($policyDoc);
-$sigPolicyDoc = 'fHyBEaH4o6m7z49cNo2fcTdQ3aI=';
+$sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_KEY, TRUE));
+
 
 ?>
 <!DOCTYPE html>
@@ -63,8 +64,8 @@ $sigPolicyDoc = 'fHyBEaH4o6m7z49cNo2fcTdQ3aI=';
 				flash_url : "swfupload/swfupload.swf",
 				flash9_url : "swfupload/swfupload_fp9.swf",
 				//upload_url: "upload.php",
-        upload_url: "http://<?=$S3_BUCKET?>.s3.amazonaws.com/",
-        post_params: {"AWSAccessKeyId":"<?=AWS_ACCESS_KEY_ID?>", "key":"${filename}", "acl":"public-read", "policy":"<?=$policyDoc64?>", "signature":"<?=$sigPolicyDoc?>","success_action_status":"201", "content-type":"image/"},
+        upload_url: "https://fuuzik.s3.amazonaws.com/",
+        post_params: {"AWSAccessKeyId":"<?=AWS_ACCESS_KEY_ID?>", "key":"${filename}", "acl":"public-read", "policy":"<?=$policyDoc64?>", "signature":"<?=$sigPolicyDoc?>","success_action_status":"201", "content-type":"audio/*"},
 
         http_success : [201],
         assume_success_timeout : <?php echo ($isMacUser ? 5 : 0); ?>,
