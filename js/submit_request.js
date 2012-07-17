@@ -21,6 +21,7 @@ request.save(null, {
  
   success: function(object) {
     alert("sdfsd");
+	window.location = "http://sharp-ocean-1212.herokuapp.com/";
   }
   
   
