@@ -64,7 +64,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 				flash_url : "swfupload/swfupload.swf",
 				flash9_url : "swfupload/swfupload_fp9.swf",
 				//upload_url: "upload.php",
-        upload_url: "https://fuuzik.s3.amazonaws.com/",
+        upload_url: "https://fuuzik.s3.amazonaws.com/uploads/",
         post_params: {"AWSAccessKeyId":"<?=AWS_ACCESS_KEY_ID?>", "key":"${filename}", "acl":"public-read", "policy":"<?=$policyDoc64?>", "signature":"<?=$sigPolicyDoc?>","success_action_status":"201", "content-type":"audio/*"},
 
         http_success : [201],
