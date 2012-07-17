@@ -53,7 +53,7 @@ alert(getCookieValue("yourname"));
 // this is the object constructed after the database query .. it handles generating it's HTML
 // it also inserts itself into the list and registers it's button to link to the correct reqID
 
-	function RequestTile(id, added,by,title, description, likes,tags,cover,track1,track2,track3,track4,track5){
+	function RequestTile(id, added,by,title, description, likes, tags, cover, track1, track2,track3,track4,track5){
 		// 5 tracks is just quick(not even that quick) hack .. should use array like for tags
 		this.id = id;
 		this.title= title;
@@ -61,16 +61,16 @@ alert(getCookieValue("yourname"));
 		this.added=added;
 		this.description= description;
 		this.likes = likes;
-		this.tags = new Array();
-		this.tags[0]= tags[0];
-		this.tags[1]= tags[1];
-		this.tags[2]= tags[2];
-		this.cover = cover;
 		this.track1=track1;
 		this.track2=track2;
 		this.track3=track3;
 		this.track4=track4;
 		this.track5=track5;
+		this.tags = new Array();
+		this.tags[0]= tags[0];
+		this.tags[1]= tags[1];
+		this.tags[2]= tags[2];
+		this.cover = cover;
 		this.wHTML = wHTML;
 		this.mHTML = mHTML;
 		//this.respond = respond;
@@ -106,7 +106,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="request-window aaa" href="#request-box"></a><a id="" class="bbb" href="#request-box"></a><a id="" class="ccc" href="page1.html"></a>'+'<div style="clear:right;"></div>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
+			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="request-window aaa" href="#request-box"></a><a id="" class="bbb" href="#request-box"></a><a id="" class="ccc" href=""></a>'+'<div style="clear:right;"></div>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}

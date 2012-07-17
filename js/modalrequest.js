@@ -15,12 +15,12 @@ $(document).ready(function() {
 		$(requestBox).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(requestBox).height() + 24 ) /2; 
-		var popMargLeft = ($(requestBox).width() + 24 ) / 2; 
+		var popMargTop = ($(window).height() - $(requestBox).height() ) / 2; 
+		var popMargLeft = ($(window).width() - $(requestBox).width()) / 2; 
 	
 		$(requestBox).css({ 
-			'margin-top' : -popMargTop,
-			'margin-left' : -popMargLeft
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
 		});
 		
 		// Add the mask to body

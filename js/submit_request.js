@@ -1,9 +1,7 @@
 function requested(){
-	
- if(logged()){
-	 
+Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
+alert("sdf");
 	 var currentUser = Parse.User.current();
-
 var Request = Parse.Object.extend("Request");
 var request = new Request();
 request.set("track1", $("#entry_1").val());
@@ -18,7 +16,7 @@ request.set("tag1", $("#tag1").val());
 request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
 request.set("cover", $("#picture").val());
-request.set("by", currentUser.username);
+request.set("by", "username");
 request.save(null, {
  
   success: function(object) {
@@ -28,10 +26,9 @@ request.save(null, {
   
 });
 }
-else{
-		
-	}
-}
+
+
+
 
 function like(reqID){
 	
