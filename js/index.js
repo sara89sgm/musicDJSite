@@ -70,7 +70,7 @@ if (currentUser) {
 		
 		alert("popresponse");
 		
-		var RequestID = param1;
+		RequestID = param1;
 		
 		alert(""+param1+"");
                 //Getting the variable's value from a link 
