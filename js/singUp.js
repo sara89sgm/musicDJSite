@@ -45,7 +45,7 @@ function logged(){
 	
 	var currentUser = Parse.User.current();
 	if (currentUser) {
-		alert(""+curentuser+"")
+		alert(""+currentuser+"")
 		 UserID = currentUser;
 	    return true;
 		
