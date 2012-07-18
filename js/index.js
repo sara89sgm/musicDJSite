@@ -152,7 +152,7 @@ alert(getCookieValue("yourname"));
 // this is the object constructed after the database query .. it handles generating it's HTML
 // it also inserts itself into the list and registers it's button to link to the correct reqID
 
-	function RequestTile(id, added,by,title, description, likes, tags, cover, track1, track2,track3,track4,track5){
+	function RequestTile(id, added,by,title, description, cover, tags, likes, track1, track2,track3,track4,track5){
 		// 5 tracks is just quick(not even that quick) hack .. should use array like for tags
 		this.id = id;
 		this.title= title;
@@ -204,7 +204,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src='"+this.cover+"' width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
+			var html ="<li id='"+this.id+"'><img src='"+this.tags[2]+"' width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}

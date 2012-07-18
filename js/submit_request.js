@@ -96,11 +96,7 @@
 					
 
 
-
-					
-					artwork = item.artworkUrl100;
-					
-					
+	html += '<img src="{0}"  width="100" height="100"/>&nbsp;&nbsp;'.replace("{0}", item.artworkUrl100);
 					
 
 			
@@ -130,7 +126,7 @@ request.set("tag1", $("#tag1").val());
 request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
 
-request.set("cover", artwork);
+request.set("cover", $("#itunes-results").val());
 request.set("by", "user");
 request.save(null, {
  
