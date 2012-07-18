@@ -1,6 +1,8 @@
 function facebooklogin (){
 		
 	Parse.FacebookUtils.logIn("email", {
+		
+		
   success: function(user) {
 	  
     if (!user.existed()) {

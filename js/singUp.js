@@ -1,7 +1,41 @@
 $(document).ready(function() {
 	
 	
+function logout(){
+	
+	var currentUser = Parse.User.current();
+	if (currentUser) {
+		alert(currentUser.getUsername())
+			$('#login').fadeOut("slow", function(){
+		
+		
+   		 var div = $("<div id='login'><a href='#login-box3' class='logout-window' id='logout'>Logout</a></div>").hide(); 
+  		 $(this).replaceWith(div);
+    	 $('#login').fadeIn("slow");
 
+
+	
+
+
+
+});
+		 
+	    return true;
+		
+		
+	} else {
+	    return false;
+	}
+	
+}
+$('a.logout-window').click(function() {
+		
+		Parse.User.logOut();
+		alert("logged out");
+		
+});
+	
+	
 
 	
 	$('a.login-window').click(function() {
