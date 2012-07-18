@@ -5,6 +5,8 @@ $(document)
 Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 						loadRequests();
 						loadResonses();
+						var RequestID;
+						
 });
 
 //REQUEST AND RESPONSE POP UPS//
@@ -64,10 +66,13 @@ if (currentUser) {
 
 //MODAL RESPONSE POPUP
 	
-	function respopup() {
+	function respopup(requestd) {
 		
 		alert("popresponse");
 		
+		var RequestID = requestd;
+		
+		alert(RequestID);
                 //Getting the variable's value from a link 
 		var responseBox = $("#response-box");
 
@@ -87,7 +92,7 @@ if (currentUser) {
 		$('body').append('<div id="mask"></div>');
 		$('#mask').fadeIn(300);
 	
-		
+	
 		return false;
 	};
 	
@@ -200,7 +205,7 @@ alert(getCookieValue("yourname"));
 	
 	
 	function wHTML() {
-var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>";
+var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' id="+this.id+" onclick='respopup("+this.id+")'>respond</span></li>";
 		return html;
 	}
 	
