@@ -190,12 +190,11 @@ alert(getCookieValue("yourname"));
 							 $(more).parent().append(current.mHTML());
 														    
 }
-						    e.preventDefault();
 						}
 
 	
 	function mHTML(){
-		var html = "<div id='more' style='clear:both;'> </h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
+		var html = "<div id='more' style='clear:both;'> </h1>"+"description:"+this.description+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
 	return html;
 	}
 	
@@ -205,7 +204,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src='img/bep.jpg' width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
+			var html ="<li id='"+this.id+"'><img src='img/bep.jpg' width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}
@@ -224,23 +223,33 @@ var sortBy="added";
 		for(i=0 ; i<results.length ; i++){
 			
 			var tags= new Array();
-			tags[0]=results[i].get('tag1');
+		    tags[0]=results[i].get('tag1');
 		    tags[1]=results[i].get('tag2');
 		    tags[2]=results[i].get('tag3');
-		    
-		    var date= new Date(results[i].get('createdAt'));
-		    RequestList.push(new RequestTile(results[i].id,date, results[i].get('by'),
+		    var date= new Date(results[i].createdAt);
+		    RequestList.push(new RequestTile(results[i].id,results[i].createdAt, results[i].get('by'),
 								results[i].get('title1'),
 								results[i].get('description'),
 								results[i].get('likes'),
 								tags,
+								results[i].get('track'),
 								results[i].get('track1'),
 								results[i].get('track2'),
 								results[i].get('track3'),
-								results[i].get('track4'),
-								results[i].get('track5')
+								results[i].get('track4')
 								));
-										 
+										
+		alert("contents written:"+RequestList[i].id+
+		RequestList[i].title+" "+
+		RequestList[i].by+" "+
+		RequestList[i].added+" "+
+		RequestList[i].description+" "+
+		RequestList[i].likes+" "+
+		RequestList[i].track1+" "+
+		RequestList[i].track2+" "+
+		RequestList[i].track3+" ");
+		
+ 
 		}
 		 
 		render();

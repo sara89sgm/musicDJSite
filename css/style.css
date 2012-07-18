@@ -60,7 +60,6 @@ body {
 	background-image:url(../img/seamlesstexture19_1200.jpeg);
 	font-family: Verdana, sans-serif;
 	font-size: 100%;
-	line-height: 1.4;
 	
 }
 /* -------------------------------------------------------------
@@ -281,7 +280,6 @@ section ul li {
 }
 section ul li span.respond {
 	float: right;
-	margin-right:50px;
 	
 	background: #fff;
 	cursor: pointer;

@@ -7,8 +7,107 @@ Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5
 						loadResonses();
 });
 
+//REQUEST AND RESPONSE POP UPS//
+// MODAL REQUEST POP UP - NEEDS TO BE IN SAME SCRIPT AS RENDERING FUNCTION TO WORK ELSE FUNCTION NOT DEFINED JAVASCRIPT ERROR	//
+function reqpopup(){
+	
+	var currentUser = Parse.User.current();
+if (currentUser) {
+    // do stuff with the user
+		
+		alert("pop");
+		
+//Getting the variable's value from a link 
+		var requestBox = $("#request-box");
+
+		//Fade in the Popup
+		$(requestBox).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(window).height() - $(requestBox).height() ) / 2; 
+		var popMargLeft = ($(window).width() - $(requestBox).width()) / 2; 
+	
+		$(requestBox).css({ 
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+	
+		
+		
+	}  else {
+    alert("sign in");
+}}
+	
+	$(document).ready(function() {
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .request-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+	$("#signedUP").hide();
 	
 	
+	
+	
+
+});
+
+
+//END REQUEST POP UP
+
+//MODAL RESPONSE POPUP
+	
+	function respopup() {
+		
+		alert("popresponse");
+		
+                //Getting the variable's value from a link 
+		var responseBox = $("#response-box");
+
+		//Fade in the Popup
+		$(responseBox).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(window).height() - $(responseBox).height() ) / 2; 
+		var popMargLeft = ($(window).width() - $(responseBox).width()) / 2; 
+	
+		$(responseBox).css({ 
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+	
+		
+		return false;
+	};
+	
+	$(document).ready(function() {
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .response-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+	$("#signedUP").hide();
+	
+	
+
+});
+
+//end response pop up//
+
 //====================== METHODS FOR SAVING SESSION
 function setCookie()
 { 
@@ -53,7 +152,7 @@ alert(getCookieValue("yourname"));
 // this is the object constructed after the database query .. it handles generating it's HTML
 // it also inserts itself into the list and registers it's button to link to the correct reqID
 
-	function RequestTile(id, added,by,title, description, likes,tags,cover,track1,track2,track3,track4,track5){
+	function RequestTile(id, added,by,title, description, likes, tags, cover, track1, track2,track3,track4,track5){
 		// 5 tracks is just quick(not even that quick) hack .. should use array like for tags
 		this.id = id;
 		this.title= title;
@@ -61,16 +160,16 @@ alert(getCookieValue("yourname"));
 		this.added=added;
 		this.description= description;
 		this.likes = likes;
-		this.tags = new Array();
-		this.tags[0]= tags[0];
-		this.tags[1]= tags[1];
-		this.tags[2]= tags[2];
-		this.cover = cover;
 		this.track1=track1;
 		this.track2=track2;
 		this.track3=track3;
 		this.track4=track4;
 		this.track5=track5;
+		this.tags = new Array();
+		this.tags[0]= tags[0];
+		this.tags[1]= tags[1];
+		this.tags[2]= tags[2];
+		this.cover = cover;
 		this.wHTML = wHTML;
 		this.mHTML = mHTML;
 		//this.respond = respond;
@@ -91,12 +190,11 @@ alert(getCookieValue("yourname"));
 							 $(more).parent().append(current.mHTML());
 														    
 }
-						    e.preventDefault();
 						}
 
 	
 	function mHTML(){
-		var html = "<div id='more' style='clear:both;'> </h1>"+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
+		var html = "<div id='more' style='clear:both;'> </h1>"+"description:"+this.description+"tracklist :"+this.track1+"<br/>"+"tracklist :"+this.track2+"<br/>"+"tracklist :"+this.track3+"<br/>"+"tracklist :"+this.track4+"<br/>"+"tracklist :"+this.track5+"</div>"; // do the same for track2 etc ..
 	return html;
 	}
 	
@@ -106,7 +204,7 @@ alert(getCookieValue("yourname"));
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src=" +"img/bep.jpg "+" width='600' height='600' /> <h3> " + this.title + "</h3>"+ '<a id="" class="aaa" href="page1.html"></a><a id="" class="bbb" href="page1.html"></a><a id="" class="ccc" href="page1.html"></a>'+'<div style="clear:right;"></div>'+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1>"+'<a class="more" onclick="more(this);">More</a> <span class="respond">respond</span></li>'; // more and respond
+			var html ="<li id='"+this.id+"'><img src='img/bep.jpg' width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}
@@ -125,23 +223,33 @@ var sortBy="added";
 		for(i=0 ; i<results.length ; i++){
 			
 			var tags= new Array();
-			tags[0]=results[i].get('tag1');
+		    tags[0]=results[i].get('tag1');
 		    tags[1]=results[i].get('tag2');
 		    tags[2]=results[i].get('tag3');
-		    
-		    var date= new Date(results[i].get('createdAt'));
+		    var date= new Date(results[i].createdAt);
 		    RequestList.push(new RequestTile(results[i].id,date, results[i].get('by'),
 								results[i].get('title1'),
 								results[i].get('description'),
 								results[i].get('likes'),
 								tags,
+								results[i].get('track'),
 								results[i].get('track1'),
 								results[i].get('track2'),
 								results[i].get('track3'),
-								results[i].get('track4'),
-								results[i].get('track5')
+								results[i].get('track4')
 								));
-										 
+										
+		alert("contents written:"+RequestList[i].id+
+		RequestList[i].title+" "+
+		RequestList[i].by+" "+
+		RequestList[i].added+" "+
+		RequestList[i].description+" "+
+		RequestList[i].likes+" "+
+		RequestList[i].track1+" "+
+		RequestList[i].track2+" "+
+		RequestList[i].track3+" ");
+		
+ 
 		}
 		 
 		render();
