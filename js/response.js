@@ -19,7 +19,7 @@ resonse.set("genre", $("#genre").val());
 resonse.set("tag1", $("#tag1").val());
 resonse.set("tag2", $("#tag2").val());
 resonse.set("tag3", $("#tag3").val());
-resonse.set("requestid", RequestID.value);
+resonse.set("requestid", RequestID);
 resonse.set("by", "User");
 resonse.set("mix", "https://fuuzik.s3.amazonaws.com/uploads/"+myFilename);
 resonse.save(null, {
