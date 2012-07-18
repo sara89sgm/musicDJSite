@@ -65,7 +65,7 @@ if (currentUser) {
 //END REQUEST POP UP
 
 //MODAL RESPONSE POPUP
-	
+	var RequestID;
 	function respopup(param1) {
 		
 		alert("popresponse");

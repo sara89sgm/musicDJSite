@@ -1,11 +1,11 @@
 
 function saveresponse(){
-	alert(RequestID);
+	
 	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 	myOriginalfilename = $("#filename").val();
 myFilename = myOriginalfilename.substring(12);
- alert("responding");
- alert(RequestID);
+ 
+
 var Resonse = Parse.Object.extend("Resonse");
 var resonse = new Resonse();
 resonse.set("track1", $("#entry_1").val());
