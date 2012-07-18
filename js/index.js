@@ -200,11 +200,7 @@ alert(getCookieValue("yourname"));
 	
 	
 	function wHTML() {
-	// ditching the onClick stuff on anchor ..
-	//alert("wHTML feeder called");
-	//var dateago = prettyDate(this.added); // something goes bad here 
-	//alert(dateago);
-			var html ="<li id='"+this.id+"'><img src='img/bep.jpg' width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
+	var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' onclick='respopup()'>respond</span></li>"; // more and respond
 		//alert("it looks like this:"+html);
 		return html;
 	}
@@ -232,6 +228,7 @@ var sortBy="added";
 								results[i].get('description'),
 								results[i].get('likes'),
 								tags,
+								results[i].get('cover'),
 								results[i].get('track'),
 								results[i].get('track1'),
 								results[i].get('track2'),
@@ -239,15 +236,7 @@ var sortBy="added";
 								results[i].get('track4')
 								));
 										
-		alert("contents written:"+RequestList[i].id+
-		RequestList[i].title+" "+
-		RequestList[i].by+" "+
-		RequestList[i].added+" "+
-		RequestList[i].description+" "+
-		RequestList[i].likes+" "+
-		RequestList[i].track1+" "+
-		RequestList[i].track2+" "+
-		RequestList[i].track3+" ");
+		//alert("contents written:"+RequestList[i].id+RequestList[i].title+" "+RequestList[i].by+" "+		RequestList[i].added+" "+		RequestList[i].description+" "+RequestList[i].likes+" "+RequestList[i].track1+" "+	RequestList[i].track2+" "+RequestList[i].track3+" ");
 		
  
 		}
@@ -285,9 +274,15 @@ var sortBy="added";
    		 var div = $("<div id='requestslist'>"+finalHtml+"</div>").hide(); 
   		 $(this).replaceWith(div);
     	 $('#requestslist').fadeIn("slow");
+
+
+	
+
+
+
 });
 
-
+		// infinite scroll code:
 		
 		//put it on the screen:
 		//$('requestslist).replaceWith(finalHtml);
