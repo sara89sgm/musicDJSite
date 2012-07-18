@@ -63,9 +63,9 @@ function logged(){
 function signUp() {
 	var user = new Parse.User();
 
-	user.set("name", $("#username").val());
 	user.set("password", $("#password").val());
-	user.set("username", $("#email").val());
+	user.set("username", $("#username").val());
+	user.set("email", $("#email").val());
 	user.set("lat", lat);
 	user.set("lng", lng);
 
