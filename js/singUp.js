@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	logout();
+	
 
 $('a.logout-window').click(function() {
 		
