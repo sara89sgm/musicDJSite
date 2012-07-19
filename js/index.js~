@@ -31,6 +31,12 @@ Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5
 						     
 });
 
+
+
+function customScroll(){
+            $("#requestslist").mCustomScrollbar();
+        }
+
 // scrollbar for style:
 (function($){
         $(window).load(function(){
@@ -45,7 +51,6 @@ function reqpopup(){
 if (currentUser) {
     // do stuff with the user
 		
-		alert("pop");
 		
 //Getting the variable's value from a link 
 		var requestBox = $("#request-box");
@@ -69,7 +74,6 @@ if (currentUser) {
 		
 		
 	}  else {
-    alert("sign in");
 }}
 	
 	$(document).ready(function() {
@@ -140,42 +144,6 @@ if (currentUser) {
 });
 
 //end response pop up//
-
-//====================== METHODS FOR SAVING SESSION
-function setCookie()
-{ 
-
-alert("settting cookie");
-document.cookie="yourname=" + prompt("What is your name?");
-}
-
-function handlecookie(){
-	
-	var temp = getCookie(ssdf)
-function cookie(){
-function getCookieValue(key)
-{alert("getcookie");
-    currentcookie = document.cookie;
-    if (currentcookie.length > 0)
-    {
-        firstidx = currentcookie.indexOf(key + "=");
-        if (firstidx != -1)
-        {
-            firstidx = firstidx + key.length + 1;
-            lastidx = currentcookie.indexOf(";",firstidx);
-            if (lastidx == -1)
-            {
-                lastidx = currentcookie.length;
-            }
-            return unescape(currentcookie.substring(firstidx, lastidx));
-        }
-    }
-    return "";
-}
-
-alert(getCookieValue("yourname"));
-
-}}
 
 
 
@@ -454,7 +422,6 @@ function dynamicSort(property) {
 {
     var myindex  = dropdown.selectedIndex
     var SelValue = dropdown.options[myindex].value
-    alert("now Sorting by "+SelValue);
     var sortBy=SelValue;
     render();
     return true;
@@ -463,7 +430,6 @@ function dynamicSort(property) {
 	function OnChangeresonse(dropdown) {
 	var myindex  = dropdown.selectedIndex
     var SelValue = dropdown.options[myindex].value
-    alert("now Sorting by "+SelValue);
     var sortByRes=SelValue;
     renderResonse();
     return true;

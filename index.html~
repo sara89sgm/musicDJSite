@@ -14,11 +14,11 @@
 		
 		<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	        <script type='text/javascript' > 		
+	        		
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 		<script src="js/jquery.mousewheel.min.js"></script>
 		<script src="js/jquery.mCustomScrollbar.js"></script>		
-
+<script type='text/javascript' > 
   RequestID = ""
   UserID = ""
   ResponseID = ""; 
@@ -45,6 +45,7 @@
      
 	</head>
 	<body>
+
     
      <div id="fb-root"></div>
 <script>
@@ -267,10 +268,9 @@
 
 <!--  HEADER END  -->
 			</header>
-<!--  CONTENT START  -->
+<!--  CONTENT START  --><
 			<div id="content">
-            
-            <div id="fb-root"></div>
+           <div id="fb-root"></div>
 				<section id="requests">
 					<form>
 					<label for='sort'>Sort By:</label>

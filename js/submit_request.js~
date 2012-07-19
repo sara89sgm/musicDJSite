@@ -147,8 +147,7 @@ query.equalTo(RequestID);
 query.find({
 success: function(results) {
 
-	results[0].set("like", results[0].get("like")++);
-	results[0].save();
+var Like = results[0].set("like", results[0].get("like")++);
 
 },
 error: function(error) {
