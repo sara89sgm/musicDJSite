@@ -236,7 +236,8 @@ Content Styling
 	position: static;  background-color:rgba(77,77,77,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 	padding: 11em 7% 0 6%;
 	float: left;
-	overflow: hidden;
+	overflow: auto;
+	overflow-x: hidden;
 }
 /* -------------------------------------------------------------
 Section Requests - Responses Styling
