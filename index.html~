@@ -8,17 +8,28 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 		<link rel="stylesheet" href="css/custom.css" type="text/css" />
 		<link rel="stylesheet" href="css/singup.css" type="text/css" />
-        <link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
+        	<link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
+
+        	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
+		
 		<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	        <script type='text/javascript' > 		
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script src="js/jquery.mousewheel.min.js"></script>
+		<script src="js/jquery.mCustomScrollbar.js"></script>		
+
+  RequestID = ""
+  UserID = ""
+  ResponseID = ""; 
+</script>
         <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
 		<script src="js/jquery.roundabout-shapes.min.js"></script>
 		<script src="js/jquery.flexslider.js"></script>
 		<script src="js/jquery.roundabout.js"></script>
 		<script src="js/default.js"></script>
         <script src="js/home.js"></script>
-           <script src="js/jquery.endless-scroll.js"></script>
-		<script src="js/index.js"></script>
+         	<script src="js/index.js"></script>
 		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
 		<script src="js/singUp.js"></script>
         <script src="js/facebook.js"></script>
@@ -58,6 +69,7 @@
      ref.parentNode.insertBefore(js, ref);
    }(document));
    
+
    
 </script>
 
@@ -123,11 +135,12 @@
                                 <option>Drum & Bass</option>
 							</select>
 						</div>
-						
+						<div id="#itunes-results"></div>
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
 			
 
-						<button class="submit" onclick="performSearch();setTimeout(function() {requested();},2000); " type="submit">Request</button>
+						<button class="submit" onclick="logged(); performSearch();" type="submit">Request</button>
+                       
                   
 
 					</div>
@@ -259,12 +272,13 @@
             
             <div id="fb-root"></div>
 				<section id="requests">
-					<h4> Sort By </h4>
 					<form>
-					<select name=select1 onchange='OnChange(this.form.select1);'>
+					<label for='sort'>Sort By:</label>
+					<select id='sort' name=select1 onchange='OnChange(this.form.select1);'>
 					<option>likes</option>
 					<option>added</option>
 					</select>
+					
 					</form>
 					<div id='requestslist'>
 					<ul>
@@ -294,9 +308,10 @@
 				</section>
 				<section id="response">
                 
-					<h4> Sort By </h4>
+					
 					<form>
-					<select name=select1 onchange='OnChange(this.form.select1);'>
+					<label for='sort'>Sort By:</label>
+					<select id='sort' name=select1 onchange='OnChange(this.form.select1);'>
 					<option>likes</option>
 					<option>added</option>
 					</select>

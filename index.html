@@ -8,10 +8,17 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 		<link rel="stylesheet" href="css/custom.css" type="text/css" />
 		<link rel="stylesheet" href="css/singup.css" type="text/css" />
-        <link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
+        	<link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
+
+        	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
+		
 		<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type='text/javascript' > 
+	        		
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script src="js/jquery.mousewheel.min.js"></script>
+		<script src="js/jquery.mCustomScrollbar.js"></script>		
+<script type='text/javascript' > 
   RequestID = ""
   UserID = ""
   ResponseID = ""; 
@@ -62,6 +69,7 @@
      ref.parentNode.insertBefore(js, ref);
    }(document));
    
+
    
 </script>
 
@@ -264,12 +272,13 @@
             
             <div id="fb-root"></div>
 				<section id="requests">
-					<h4> Sort By </h4>
 					<form>
-					<select name=select1 onchange='OnChange(this.form.select1);'>
+					<label for='sort'>Sort By:</label>
+					<select id='sort' name=select1 onchange='OnChange(this.form.select1);'>
 					<option>likes</option>
 					<option>added</option>
 					</select>
+					
 					</form>
 					<div id='requestslist'>
 					<ul>
@@ -299,9 +308,10 @@
 				</section>
 				<section id="response">
                 
-					<h4> Sort By </h4>
+					
 					<form>
-					<select name=select1 onchange='OnChange(this.form.select1);'>
+					<label for='sort'>Sort By:</label>
+					<select id='sort' name=select1 onchange='OnChange(this.form.select1);'>
 					<option>likes</option>
 					<option>added</option>
 					</select>
