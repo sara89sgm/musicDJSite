@@ -1,9 +1,11 @@
-
+var RequestID;
 function saveresponse(){
+	alert(RequestID);
 	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 	myOriginalfilename = $("#filename").val();
 myFilename = myOriginalfilename.substring(12);
  alert("responding");
+ alert(RequestID);
 var Resonse = Parse.Object.extend("Resonse");
 var resonse = new Resonse();
 resonse.set("track1", $("#entry_1").val());
@@ -17,6 +19,7 @@ resonse.set("genre", $("#genre").val());
 resonse.set("tag1", $("#tag1").val());
 resonse.set("tag2", $("#tag2").val());
 resonse.set("tag3", $("#tag3").val());
+resonse.set("requestid", "joe");
 resonse.set("by", "User");
 resonse.set("mix", "https://fuuzik.s3.amazonaws.com/uploads/"+myFilename);
 resonse.save(null, {
