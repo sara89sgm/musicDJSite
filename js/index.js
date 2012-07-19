@@ -265,14 +265,13 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 	
 		},
 		error: function(error) {
-			alert("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 	    }
 	});
 	
 	}
 
 	function render(){
-		alert('rendering');
 		RequestList.sort(dynamicSort(sortBy));
 		var finalHtml ="<ul>";
 		
@@ -283,7 +282,6 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 			finalHtml=finalHtml+RequestList[i].wHTML();		
 		}
 		finalHtml=finalHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
-		alert(finalHtml);
 		// fade out effect :
 		$('#requestslist').fadeOut("slow", function(){
 		
@@ -299,7 +297,6 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 
 
 	function infiniteloader(){
-		alert("called inf loader ..")
 	setInterval(function() {
     	if ( didScroll ) {
         	didScroll = false;
@@ -405,18 +402,16 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		}
 		 
 		renderresonse();
-		alert("resonse");
 	
 		},
 		error: function(error) {
-			alert("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 	    }
 	});
 	
 	}
 
 	function renderresonse(){
-		alert('renderingresonse');
 		ResonseList.sort(dynamicSort(sortBy));
 		var finalHtml ="<ul>";
 		
@@ -427,7 +422,6 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 			finalHtml=finalHtml+ResonseList[i].wresonseHTML();		
 		}
 		finalHtml=finalHtml+"</ul>";
-		alert(finalHtml);
 		// fade out effect :
 		$('#rlist').fadeOut("slow", function(){
 		
@@ -460,7 +454,6 @@ function dynamicSort(property) {
 {
     var myindex  = dropdown.selectedIndex
     var SelValue = dropdown.options[myindex].value
-    alert("now Sorting by "+SelValue);
     var sortBy=SelValue;
     render();
     return true;
@@ -469,7 +462,6 @@ function dynamicSort(property) {
 	function OnChangeresonse(dropdown) {
 	var myindex  = dropdown.selectedIndex
     var SelValue = dropdown.options[myindex].value
-    alert("now Sorting by "+SelValue);
     var sortByRes=SelValue;
     renderResonse();
     return true;
