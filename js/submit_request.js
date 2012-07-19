@@ -124,7 +124,7 @@ request.set("tag2", $("#tag2").val());
 request.set("tag3", $("#tag3").val());
 
 request.set("cover", item.artworkUrl100);
-request.set("by", "user");
+request.set("by", UserID);
 request.save(null, {
  
   success: function(object) {
@@ -139,13 +139,13 @@ request.save(null, {
 
 
 
-function like(reqID){
+function like(like){
 	
 alert("like");
 
 var Request = Parse.Object.extend("Request");
 var query = new Parse.Query(Request);
-query.equalTo(reqID);
+query.equalTo(RequestID);
 query.find({
 success: function(results) {
 

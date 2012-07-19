@@ -1,7 +1,15 @@
 $(document).ready(function() {
 	
-	
+	logout();
 
+$('a.logout-window').click(function() {
+		
+		Parse.User.logOut();
+		alert("logged out");
+		
+});
+	
+	
 
 	
 	$('a.login-window').click(function() {
@@ -45,8 +53,8 @@ function logged(){
 	
 	var currentUser = Parse.User.current();
 	if (currentUser) {
-		
-		var username = currentUser();
+		alert(currentUser.getUsername())
+		 UserID = currentUser.getUsername();
 	    return true;
 		
 		
@@ -63,9 +71,9 @@ function logged(){
 function signUp() {
 	var user = new Parse.User();
 
-	user.set("name", $("#username").val());
 	user.set("password", $("#password").val());
-	user.set("username", $("#email").val());
+	user.set("username", $("#username").val());
+	user.set("email", $("#email").val());
 	user.set("lat", lat);
 	user.set("lng", lng);
 
@@ -101,10 +109,5 @@ function login(){
 }
 
 
-
-function logout(){
-	Parse.User.logOut();
-
-}
 
 

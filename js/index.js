@@ -82,14 +82,14 @@ if (currentUser) {
 //END REQUEST POP UP
 
 //MODAL RESPONSE POPUP
-	
-	function respopup(requestd) {
+	var RequestID;
+	function respopup(param1) {
 		
 		alert("popresponse");
 		
-		var RequestID = requestd;
+		RequestID = param1;
 		
-		alert(RequestID);
+		alert(""+param1+"");
                 //Getting the variable's value from a link 
 		var responseBox = $("#response-box");
 
@@ -221,7 +221,7 @@ alert(getCookieValue("yourname"));
 	
 	
 	function wHTML() {
-var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick='reqpopup()' href='#request-box'></a>"+"<div style='clear:right;'></div>"+"<h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br>"+"<a class='more' onclick='more(this);'>More</a><span class='respond' id="+this.id+" onclick='respopup("+this.id+")'>respond</span></li>";
+var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1> <br>"+prettyDate(this.added)+"<br><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
 		return html;
 	}
 	

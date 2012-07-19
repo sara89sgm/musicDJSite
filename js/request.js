@@ -43,7 +43,7 @@ function doRequest(){
 		request.set("track4", $("#entry_4").val());
 		request.set("track5", $("#entry_5").val());
 		var currentUser = Parse.User.current();
-		request.set("userId", currentUser.username);
+		request.set("userId", currentUser.getUsername());
 	
 
 		request.save(null, {
