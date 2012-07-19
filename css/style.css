@@ -103,7 +103,7 @@ overflow: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
-	border-bottom: 3px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 nav, #login {
 	width: 18%;
@@ -233,7 +233,7 @@ Content Styling
 #content {
 	width: 100%;
 	position: static;  background-color:rgba(77,77,77,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
-	padding: 15em 7% 0 6%;
+	padding: 11em 7% 0 6%;
 	float: left;
 }
 /* -------------------------------------------------------------
@@ -256,10 +256,7 @@ section ul {
 	width: 100%;
 	height: 550px;
 	float:left;
-	
-	
-	
-	margin: .2em 0 3em 0;
+	margin: .2em 0 2em 0;
 	padding: 1em;
 	overflow-y: scroll;
 	border-radius:7px;
@@ -273,7 +270,6 @@ section ul li {
 	height: 7.5em;
 	display: block;
 	border-radius:7px;
-	
 	margin: 1em;
 	padding: .5em;
 	position: static;  background-color:rgba(78,28,66,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #ccc; box-shadow: 0 0 10px #fff;
@@ -394,9 +390,6 @@ Section Requestsamix Styling
 ------------------------------------------------------------------*/
 section#requestamix {
 	width: 100%;
-	
-
-	
 	border-radius:7px;
 	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
