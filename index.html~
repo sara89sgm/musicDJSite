@@ -17,7 +17,7 @@
 		<script src="js/jquery.roundabout.js"></script>
 		<script src="js/default.js"></script>
         <script src="js/home.js"></script>
-           <script src="js/jquery.infinitescroll.js"></script>
+           <script src="js/jquery.endless-scroll.js"></script>
 		<script src="js/index.js"></script>
 		<script src="http://www.parsecdn.com/js/parse-1.0.6.min.js"></script>
 		<script src="js/singUp.js"></script>
@@ -127,7 +127,7 @@
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
 			
 
-						<button class="submit" onclick="requested();" type="submit">Request</button>
+						<button class="submit" onclick="performSearch();setTimeout(function() {requested();},2000); " type="submit">Request</button>
                   
 
 					</div>
