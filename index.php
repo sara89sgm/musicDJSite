@@ -216,7 +216,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
    <section id="requestamix">
 					<h2>     Request A Mix</h2>
                     <h3>     Click and hold to preview. Double click to select. </h3>
-					<div id="track">
+					<div id="track"><form id="requestvalidate">
 						<input class="j" id="keyword"  type="text" placeholder="Track 1"/>
                         <input class="j1" id="keyword1"  type="text"  placeholder="Track 2"/>
                         <input class="j2" id="keyword2"  type="text"  placeholder="Track 3"/>
@@ -250,7 +250,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 
 						<button class="submit" onclick="logged(); requested();" type="submit">Request</button>
                        
-                  
+                 </form>
 
 					</div>
 				</section>        </div>
@@ -261,6 +261,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 					<h2>Respond</h2>
 <p>Enter added songs... </p>
 					<div id="track">
+                    
 						<input type="text" name="" value="enter track 6" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select(); performSearch();" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" /><div id="itunes-preview"></div>
 						<input type="text" name="" value="enter track 7" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_2" title="" />
 						<input type="text" name="" value="enter track 8" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_3" title="" />
