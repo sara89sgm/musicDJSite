@@ -1,13 +1,10 @@
-<html>
-<head>
-<title>test Upload</title>
 <?php
 /* Be sure to edit the file included below with your AMAZON S3 settings! */
 require_once "config.php";
 
 $isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
 
-if ( !isset($S3_BUCKET) || $S3_BUCKET == 'fuuzik' ) {
+if ( !isset($S3_BUCKET) || $S3_BUCKET == "" ) {
   echo "Um, sorry, I need my configuration file. :( ";
   exit(0);
 }
@@ -39,7 +36,9 @@ $policyDoc64 = base64_encode($policyDoc);
 $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_KEY, TRUE));
    
 ?>
-
+<html>
+<head>
+<title>test Upload</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?=$SWFRoot?>swfupload.js"></script>
