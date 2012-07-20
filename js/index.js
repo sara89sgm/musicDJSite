@@ -362,32 +362,32 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.wresonseHTML = wresonseHTML;
 		this.mresonseHTML = mresonseHTML;
 		//this.respond = respond;
-		this.render = render;
+		this.renderresonse = renderresonse;
 		}
 	
-	function more(more){
-		var id = $(more).parent().attr("id"); 
-				if($(more).parent().hasClass("open")){
-						        $(more).parent().animate({"height":125}).removeClass("open");
+	function moreresonse(more){
+		var id = $(moreresonse).parent().attr("id"); 
+				if($(moreresonse).parent().hasClass("open")){
+						        $(moreresonse).parent().animate({"height":125}).removeClass("open");
 							$("#more").remove();
-						        $(more).html("More...");
+						        $(moreresonse).html("More...");
 						    }else{
-						        $(more).parent().animate({"height":300}).addClass("open");
-							 $(more).html("Less...");
-							 $(more).parent().append(findReq(id).mresonseHTML());			    
+						        $(moreresonse).parent().animate({"height":300}).addClass("open");
+							 $(moreresonse).html("Less...");
+							 $(moreresonse).parent().append(findReq(id).mresonseHTML());			    
 }
 						}
 
 	
 	function mresonseHTML(){
-		var html = "<div id='more' style='clear:both;'>"+"<ul id='tags'><li class='tag' >"+this.tags[0]+"</li>"+"<li class='tag' >"+this.tags[1]+"</li>"+"<li class='tag' >"+this.tags[2]+"</li></ul>"+"<ul id='tracklist'><li>"+this.track1+"</li><li>"+this.track2+"</li><li>"+this.track3+"</li><li>"+this.track4+"</li><li>"+this.track5+"</ul>"+"<div id='desc' >"+this.description+"</div></div>"; // do the same for track2 etc ..
-	return html;
+		var resonsehtml = "<div id='more' style='clear:both;'>"+"<ul id='tags'><li class='tag' >"+this.tags[0]+"</li>"+"<li class='tag' >"+this.tags[1]+"</li>"+"<li class='tag' >"+this.tags[2]+"</li></ul>"+"<ul id='tracklist'><li>"+this.track1+"</li><li>"+this.track2+"</li><li>"+this.track3+"</li><li>"+this.track4+"</li><li>"+this.track5+"</ul>"+"<div id='desc' >"+this.description+"</div></div>"; // do the same for track2 etc ..
+	return resonsehtml;
 	}
 	
 	
 	function wresonseHTML() {
-var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
-		return html;
+var wresonsehtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
+		return wresonsehtml;
 	}
 	
 
@@ -430,15 +430,15 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 
 	function renderresonse(){
 		ResonseList.sort(dynamicSort(sortBy));
-		var finalHtml ="<ul id='list-req'>";
+		var finalresonseHtml ="<ul id='list-req'>";
 		
 		// 1. Check sort is correct/
 		// 2. more field fills up description and expands
 		for (i = 0 ; i <5  ;i++) //ResonseList.length
 		{
-			finalHtml=finalHtml+ResonseList[i].wresonseHTML();		
+			finalresonseHtml=finalresonseHtml+ResonseList[i].wresonseHTML();		
 		}
-		finalHtml=finalHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
+		finalresonseHtml=finalresonseHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
 		// fade out effect :
 		$('#rlist').fadeOut("slow", function(){
 		
@@ -481,7 +481,6 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 }, 250);
 }
 	
-
 
 
 
