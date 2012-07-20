@@ -5,8 +5,7 @@
   $S3_BUCKET = "fuuzik";
 
   /* where I go when I am done uploading */
-  $SUCCESS_REDIRECT = "<script type='text/javascript'> saveresponse();</script>";
-
+  
   /* where do I find swfupload , including http:// --not relative-- */
   $SWFRoot = "http://sharp-ocean-1212.herokuapp.com/";
 ?>

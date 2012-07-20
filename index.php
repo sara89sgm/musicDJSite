@@ -83,10 +83,11 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
   ResponseID = "";
   myfilename = "";
 </script>
+<script src="js/response.js"></script>
 <script type="text/javascript">
 
         var isMacUser = <?php echo ($isMacUser ? 'true' : 'false'); ?>;
-        var successURL = '<?php echo ($SUCCESS_REDIRECT); ?>';
+        var successURL = saveresponse();
 
         var swfu;
         window.onload = function () {
@@ -147,7 +148,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         };
     </script>
   
-     <script src="js/response.js"></script> 
+      
     </head>
 	<body>
 
