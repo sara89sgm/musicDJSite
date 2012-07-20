@@ -359,7 +359,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.tags[2]= tags[2];
 		this.cover = cover;
 		this.mix = mix;
-		this.wresonseHTML = wresonsHTML;
+		this.wresonsHTML = wresonsHTML;
 		this.mresonseHTML = mresonseHTML;
 		//this.respond = respond;
 		this.render = render;
@@ -385,7 +385,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 	}
 	
 	
-	function wresonseHTML() {
+	function wresonsHTML() {
 var wresonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
 		return wresonshtml;
 	}
