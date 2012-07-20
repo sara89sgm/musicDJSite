@@ -71,7 +71,7 @@ var data;
 
 					term: (jQuery('#keyword').val()),
 
-					country: 'GB',
+					country: 'US',
 
 					media: 'music',
 
@@ -208,7 +208,7 @@ function performSearch1() {
 
 					term: (jQuery('#keyword1').val()),
 
-					country: 'GB',
+					country: 'US',
 
 					media: 'music',
 
@@ -310,7 +310,7 @@ html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').pl
 
 					term: (jQuery('#keyword2').val()),
 
-					country: 'GB',
+					country: 'US',
 
 					media: 'music',
 
@@ -412,7 +412,7 @@ html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').pl
 
 					term: (jQuery('#keyword3').val()),
 
-					country: 'GB',
+					country: 'US',
 
 					media: 'music',
 
@@ -515,7 +515,7 @@ html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').pl
 
 					term: (jQuery('#keyword4').val()),
 
-					country: 'GB',
+					country: 'US',
 
 					media: 'music',
 
