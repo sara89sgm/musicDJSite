@@ -4,7 +4,7 @@ require_once "config.php";
 
 $isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
 
-if ( !isset($S3_BUCKET) || $S3_BUCKET == "fuuzik" ) {
+if ( !isset($S3_BUCKET) || $S3_BUCKET == "" ) {
   echo "Um, sorry, I need my configuration file. :( ";
   exit(0);
 }
