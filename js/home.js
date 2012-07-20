@@ -72,23 +72,6 @@ var listSongs = new Array();
 
 	
 	
-	function createRequestMix(){
-		var Request = Parse.Object.extend("Request");
-		var request = new Request();
-		var currentUser = Parse.User.current();
-		request.set("emailUser", currentUser.get("email") );
-		request.set("playerName", "Sean Plott");
-		request.set("cheatMode", false);
-
-		request.save(null, {
-		  success: function(gameScore) {
-		    // The object was saved successfully.
-		  },
-		  error: function(gameScore, error) {
-		    // The save failed.
-		    // error is a Parse.Error with an error code and description.
-		  }
-		});
-	}
+	
 	
 

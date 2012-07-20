@@ -48,7 +48,6 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 		<link rel="stylesheet" href="css/singup.css" type="text/css" />
         <link rel="stylesheet" href="css/itunes.css" type="text/css" />
         <link rel="stylesheet" href="css/swf.css" type="text/css" />
-         <link rel="stylesheet" href="css/formcheck.css" type="text/css" />
         	<link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
 
         	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
@@ -71,11 +70,8 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
         <script src="js/request.js"></script>
-        <script src="js/mootools-core-1.4.5-full-nocompat.js"></script>  
+            
        <script src="js/submit_request.js"></script>
-        <script src="js/formcheck.js"></script>
-        <script src="js/en.js"></script>
-        
         <script src="js/requestpopup.js"></script><script type="text/javascript" src="<?=$SWFRoot?>swfupload.js"></script>
 <script type="text/javascript" src="js/swfupload.queue.js"></script>
 <script type="text/javascript" src="js/fileprogress.js"></script>
@@ -151,11 +147,6 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
             });
         };
     </script>
-    <script type="text/javascript">
-    window.addEvent('domready', function(){
-        new FormCheck('valid1');
-    });
-</script>
   
       
     </head>
@@ -218,15 +209,14 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 				<div id="login">
 				<a href="#login-box2" class="login-window" id="loginA">Login </a>
 				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
-                
-				
-				</div>
+                </div>
+                  <div id="pleaselogin" class="login-popup">
+                  </div>
                 <div id="request-box" class="request-popup"><a href="#" class="close"></a>
    <section id="requestamix">
 					<h2>     Request A Mix</h2>
                     <h3>     Click and hold to preview. Double click to select. </h3>
 					<div id="track">
-                    <form id="valid1">
 						<input class="j" id="keyword"  type="text" placeholder="Track 1"/>
                         <input class="j1" id="keyword1"  type="text"  placeholder="Track 2"/>
                         <input class="j2" id="keyword2"  type="text"  placeholder="Track 3"/>
@@ -239,8 +229,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
     
   });"></ul></div>
 					<div id="trackinfo">
-                  
-						<input type="text" name="" placeholder="title" class="validate['required']" id="title1" title="" />
+						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
 						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
 <!--  TAGS INPUT  -->
 
@@ -259,9 +248,9 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
 			
 
-						<input type="submit" class="submit" onclick="logged(); requested();">Request</input>
+						<button class="submit" onclick="logged(); requested();" type="submit">Request</button>
                        
-         </form>
+                  
 
 					</div>
 				</section>        </div>
@@ -272,7 +261,6 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 					<h2>Respond</h2>
 <p>Enter added songs... </p>
 					<div id="track">
-                    
 						<input type="text" name="" value="enter track 6" onblur="this.value=!this.value?'enter track 1':this.value;" onfocus="this.select(); performSearch();" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_1" title="" /><div id="itunes-preview"></div>
 						<input type="text" name="" value="enter track 7" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_2" title="" />
 						<input type="text" name="" value="enter track 8" onblur="this.value=!this.value?'enter track 3':this.value;" onfocus="this.select()" onclick="this.value='';" class="spotify_song_search searchSpotify ui-autocomplete" id="entry_3" title="" />
@@ -312,14 +300,40 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <input id="btnCancel" type="button" value="Cancel All Uploads" onClick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
       </div>
       <span id="spanButtonPlaceHolder"></span>
-
+<!--
           <table cellspacing="0">
-          
+            <tr>
+              <td>Current Speed:</td>
+              <td id="tdCurrentSpeed"></td>
+            </tr>
+            <tr>
+              <td>Average Speed:</td>
+              <td id="tdAverageSpeed"></td>
+            </tr>
+            <tr>
+              <td>Moving Average Speed:</td>
+              <td id="tdMovingAverageSpeed"></td>
+            </tr>
+            <tr>
               <td>Time Remaining</td>
               <td id="tdTimeRemaining"></td>
             </tr>
             <tr>
-             
+              <td>Time Elapsed</td>
+              <td id="tdTimeElapsed"></td>
+            </tr>
+            <tr>
+              <td>Percent Uploaded</td>
+              <td id="tdPercentUploaded"></td>
+            </tr>
+            <tr>
+              <td>Size Uploaded</td>
+              <td id="tdSizeUploaded"></td>
+            </tr>
+            <tr>
+              <td>Progress Event Count</td>
+              <td id="tdProgressEventCount"></td>
+            </tr>
           </table>
 
   </form> 
