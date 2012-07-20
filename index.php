@@ -87,7 +87,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 <script type="text/javascript">
 
         var isMacUser = <?php echo ($isMacUser ? 'true' : 'false'); ?>;
-        var successURL = saveresponse();
+        var successURL = 'saveresponse()';
 
         var swfu;
         window.onload = function () {
