@@ -114,12 +114,13 @@ if (currentUser) {
 //MODAL RESPONSE POPUP
 	var RequestID;
 	function respopup(param1) {
+		var currentUser = Parse.User.current();
+if (currentUser) {
 		
-		alert("popresponse");
 		
 		RequestID = param1;
 		
-		alert(""+param1+"");
+		
                 //Getting the variable's value from a link 
 		var responseBox = $("#response-box");
 
@@ -140,8 +141,33 @@ if (currentUser) {
 		$('#mask').fadeIn(300);
 	
 	
-		return false;
+		
+	}
+	
+	else {
+		var login2 = $("#login-box");
+
+		//Fade in the Popup
+		$(login2).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(login2).height() + 24) / 2; 
+		var popMargLeft = ($(login2).width() + 24) / 2; 
+	
+		$(login2).css({ 
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		
+	}
 	};
+	
+	
 	
 	$(document).ready(function() {
 	
