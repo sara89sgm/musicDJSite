@@ -79,7 +79,7 @@ var data;
 
 					//attribute: 'artistTerm,albumTerm,songTerm,musicTrackTerm',
 
-					limit: 12,
+					limit: 21,
 
 					callback: 'handleTunesSearchResults'
 
@@ -216,7 +216,7 @@ function performSearch1() {
 
 					//attribute: 'artistTerm,albumTerm,songTerm,musicTrackTerm',
 
-					limit: 12,
+					limit: 21,
 
 					callback: 'handleTunesSearchResults1'
 
@@ -318,7 +318,7 @@ html = html+ "<img class='itunes' src='{2}' alt='image'/><audio id='{3}' style='
 
 					//attribute: 'artistTerm,albumTerm,songTerm,musicTrackTerm',
 
-					limit: 12,
+					limit: 21,
 
 					callback: 'handleTunesSearchResults2'
 
@@ -420,7 +420,7 @@ html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').pl
 
 					//attribute: 'artistTerm,albumTerm,songTerm,musicTrackTerm',
 
-					limit: 12,
+					limit: 21,
 
 					callback: 'handleTunesSearchResults3'
 
@@ -523,7 +523,7 @@ html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').pl
 
 					//attribute: 'artistTerm,albumTerm,songTerm,musicTrackTerm',
 
-					limit: 12,
+					limit: 21,
 
 					callback: 'handleTunesSearchResults4'
 
