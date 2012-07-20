@@ -32,12 +32,11 @@ Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5
 });
 
 
-
-function customScroll(){
-            $("#list-req").mCustomScrollbar();
-		
-		console.log("scroll changed");
-        }
+  (function($){
+        $(window).load(function(){
+            $("#requestslist").mCustomScrollbar();
+        });
+    })(jQuery);
 
 //REQUEST AND RESPONSE POP UPS//
 // MODAL REQUEST POP UP - NEEDS TO BE IN SAME SCRIPT AS RENDERING FUNCTION TO WORK ELSE FUNCTION NOT DEFINED JAVASCRIPT ERROR	//
@@ -255,7 +254,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
     	 $('#requestslist').fadeIn("slow");
 	
 	});
-	customScroll();
+	$("#requestslist").mCustomScrollbar("update");
 	infiniteloader();
 }
 
