@@ -64,7 +64,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 
                 // File Upload Settings
                 file_post_name: 'file',
-                file_size_limit : "10240",    // 10 MB
+                file_size_limit : "102400",    // 10 MB
                 file_types : "*.*",
                 file_types_description : "All Files",
                 file_upload_limit : "10",
