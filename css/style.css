@@ -272,7 +272,7 @@ section ul li[class~=box]{
 	width: 90%;
 	height: 7.5em;
 	display: block;
-	border-radius:7px;
+	border-radius:4px;
 	margin: 1em;
 	padding: .5em;
 	position: static;  background-color:rgba(78,28,66,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #ccc; box-shadow: 0 0 10px #fff;
@@ -429,7 +429,7 @@ Section Requestsamix Styling
 ------------------------------------------------------------------*/
 section#requestamix {
 	width: 100%;
-	border-radius:7px;
+	border-radius:4px;
 	 position: static;  background-color:rgba(255,255,255,0.76); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
 }
@@ -460,7 +460,7 @@ section#requestamix input, section#requestamix textarea {
 	width: 100%;
 	margin: 0 0 2em 0;
 	background: ;
-	border-radius:7px;
+	border-radius:4px;
 	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
 	display: block;
