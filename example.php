@@ -4,7 +4,7 @@ require_once "config.php";
 
 $isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
 
-if ( !isset($S3_BUCKET) || $S3_BUCKET == "" ) {
+if ( !isset($S3_BUCKET) || $S3_BUCKET == "fuuzik" ) {
   echo "Um, sorry, I need my configuration file. :( ";
   exit(0);
 }
@@ -33,7 +33,7 @@ $policyDoc = '{
 $policyDoc = implode(explode('\r', $policyDoc));
 $policyDoc = implode(explode('\n', $policyDoc));
 $policyDoc64 = base64_encode($policyDoc);
-$sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_KEY, TRUE));
+$sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, 'oQ3oHXoVuTF/5t6Xc4tAv2O0/UZUbyzqCqlbe6ks', TRUE));
    
 ?>
 <html>
