@@ -2,7 +2,7 @@
 function saveresponse(){
 	
 	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
-	myresponsefilename = myfilename
+
 
  
 alert(RequestID);
@@ -21,7 +21,7 @@ resonse.set("tag2", $("#tag2").val());
 resonse.set("tag3", $("#tag3").val());
 resonse.set("requestid", RequestID);
 resonse.set("by", "User");
-resonse.set("mix", "https://fuuzik.s3.amazonaws.com/"+myresponsefilename);
+resonse.set("mix", "https://fuuzik.s3.amazonaws.com/"+myfilename);
 resonse.save(null, {
  
   success: function(object) {

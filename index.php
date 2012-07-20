@@ -145,13 +145,9 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
             });
         };
     </script>
-    <script type="text/javascript" language="javascript">
-<!--
-<?php 
-echo("var myfilename = $filename;");
+    <script type="text/javascript">
+ myfilename = "<?php echo($filename)?>"
 
-?>
-// -->
 </script>
      <script src="js/response.js"></script> 
     </head>
