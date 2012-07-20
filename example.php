@@ -26,7 +26,7 @@ $policyDoc = '{
         ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
         {"success_action_status": "201"},
         ["starts-with", "$Filename", ""], 
-        ["starts-with", "$Content-Type", "image/"]
+        ["starts-with", "$Content-Type", "audio/*"]
       ]
 }';
    
@@ -113,7 +113,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 <body>
 
 <div id="content">
-  <form id="form1" action="index.php" method="post" enctype="multipart/form-data">
+  <form id="form1" action="indext.php" method="post" enctype="multipart/form-data">
     <p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
 
       <div class="fieldset flash" id="fsUploadProgress">
