@@ -48,6 +48,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 		<link rel="stylesheet" href="css/singup.css" type="text/css" />
         <link rel="stylesheet" href="css/itunes.css" type="text/css" />
         <link rel="stylesheet" href="css/swf.css" type="text/css" />
+         <link rel="stylesheet" href="css/formcheck.css" type="text/css" />
         	<link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
 
         	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
@@ -72,6 +73,9 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <script src="js/request.js"></script>
             
        <script src="js/submit_request.js"></script>
+        <script src="js/formcheck.js"></script>
+        <script src="js/en.js"></script>
+        
         <script src="js/requestpopup.js"></script><script type="text/javascript" src="<?=$SWFRoot?>swfupload.js"></script>
 <script type="text/javascript" src="js/swfupload.queue.js"></script>
 <script type="text/javascript" src="js/fileprogress.js"></script>
@@ -217,6 +221,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 					<h2>     Request A Mix</h2>
                     <h3>     Click and hold to preview. Double click to select. </h3>
 					<div id="track">
+                    <form id="valid1">
 						<input class="j" id="keyword"  type="text" placeholder="Track 1"/>
                         <input class="j1" id="keyword1"  type="text"  placeholder="Track 2"/>
                         <input class="j2" id="keyword2"  type="text"  placeholder="Track 3"/>
@@ -230,7 +235,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
   });"></ul></div>
 					<div id="trackinfo">
                   
-						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
+						<input type="text" name="" placeholder="title" class="validate['required']" id="title1" title="" />
 						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
 <!--  TAGS INPUT  -->
 
