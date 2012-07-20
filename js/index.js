@@ -76,8 +76,8 @@ if (currentUser) {
 		$(login2).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(window).height() - $(login2).height() ) / 2; 
-		var popMargLeft = ($(window).width() - $(login2).width()) / 2; 
+		var popMargTop = ($(login2).height() + 24) / 2; 
+		var popMargLeft = ($(login2).width() + 24) / 2; 
 	
 		$(login2).css({ 
 			'margin-top' : popMargTop,
