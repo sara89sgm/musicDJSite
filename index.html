@@ -1,3 +1,41 @@
+<?php
+/* Be sure to edit the file included below with your AMAZON S3 settings! */
+require_once "config.php";
+
+$isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
+
+if ( !isset($S3_BUCKET) || $S3_BUCKET == '' ) {
+  echo "Um, sorry, I need my configuration file. :( ";
+  exit(0);
+}
+
+/*
+  Flash 10.1 issue, omitted the below from the policy
+        {"success_action_redirect": "' . $SUCCESS_REDIRECT . '"},
+*/
+
+$MAX_FILE_SIZE = 50 * 1048576;
+$expTime = time() + (1 * 60 * 60);
+$expTimeStr = gmdate('Y-m-d\TH:i:s\Z', $expTime);
+$policyDoc = '{
+        "expiration": "' . $expTimeStr . '",
+        "conditions": [
+        {"bucket": "' . $S3_BUCKET . '"},
+        ["starts-with", "$key", ""],
+        {"acl": "public-read"},
+        ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
+        {"success_action_status": "201"},
+        ["starts-with", "$Filename", ""], 
+        ["starts-with", "$Content-Type", ""]
+      ]
+}';
+   
+$policyDoc = implode(explode('\r', $policyDoc));
+$policyDoc = implode(explode('\n', $policyDoc));
+$policyDoc64 = base64_encode($policyDoc);
+$sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_KEY, TRUE));
+   
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,6 +47,7 @@
 		<link rel="stylesheet" href="css/custom.css" type="text/css" />
 		<link rel="stylesheet" href="css/singup.css" type="text/css" />
         <link rel="stylesheet" href="css/itunes.css" type="text/css" />
+        <link rel="stylesheet" href="css/swf.css" type="text/css" />
         	<link rel="stylesheet" href="css/jquery-ui-1.8.21.css" type="text/css" />
 
         	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" />
@@ -61,7 +100,7 @@
 
                 // File Upload Settings
                 file_post_name: 'file',
-                file_size_limit : "10240",    // 10 MB
+                file_size_limit : "102400",    // 10 MB
                 file_types : "*.*",
                 file_types_description : "All Files",
                 file_upload_limit : "10",
@@ -248,21 +287,56 @@
 						
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/>
 
- <form action="https://fuuzik.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="key" value="uploads/${filename}">
-      <input type="hidden" name="AWSAccessKeyId" value="AKIAITXOXYKBQBBYQN6A"> 
-      <input type="hidden" name="acl" value="public-read"> 
-      <input type="hidden" name="success_action_redirect" value="">
-      <input type="hidden" name="policy" value="eyJleHBpcmF0aW9uIjogIjIwMTMtMDEtMDFUMDA6MDA6MDBaIiwKICAiY29uZGl0aW9ucyI6IFsgCiAgICB7ImJ1Y2tldCI6ICJmdXV6aWsifSwgCiAgICBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAidXBsb2Fkcy8iXSwKICAgIHsiYWNsIjogInB1YmxpYy1yZWFkIn0sCiAgICB7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjogIiJ9LAogICAgWyJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgIiJdLAogICAgWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsIDAsIDEwNDg1NzYwMF0KICBdCn0=">
-      <input type="hidden" name="signature" value="fHyBEaH4o6m7z49cNo2fcTdQ3aI=">
-      <input type="hidden" name="Content-Type" value="audio/*">
-      <!-- Include any additional input fields here -->
+  <form id="form1" action="index.php" method="post" enctype="multipart/form-data">
+    <p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
 
-      <br/> <br/> <br/> <br/> <br/> 
-      <input name="file" type="file" id="filename"> 
-      
-      <input  class="submit" type="submit" value="Upload" onclick="showloading()"> <div id="loading" ><img src="img/ajax-loader.gif"/></div>
-      </form>  <input class="submit" value="Next" onclick="saveresponse()">
+      <div class="fieldset flash" id="fsUploadProgress">
+      <span class="legend">Upload Queue</span>
+          <div id="loadanim" style="display:none;position:relative;top:-10px;line-height:0;"><img src="images/loader.gif" alt="" style="border:0;" />&nbsp;Processing...please wait.</div>
+      </div>
+    <div id="divStatus" style="display:none;">0 Files Uploaded</div>
+      <div>
+        <input id="btnCancel" type="button" value="Cancel All Uploads" onClick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
+      </div>
+      <span id="spanButtonPlaceHolder"></span>
+<!--
+          <table cellspacing="0">
+            <tr>
+              <td>Current Speed:</td>
+              <td id="tdCurrentSpeed"></td>
+            </tr>
+            <tr>
+              <td>Average Speed:</td>
+              <td id="tdAverageSpeed"></td>
+            </tr>
+            <tr>
+              <td>Moving Average Speed:</td>
+              <td id="tdMovingAverageSpeed"></td>
+            </tr>
+            <tr>
+              <td>Time Remaining</td>
+              <td id="tdTimeRemaining"></td>
+            </tr>
+            <tr>
+              <td>Time Elapsed</td>
+              <td id="tdTimeElapsed"></td>
+            </tr>
+            <tr>
+              <td>Percent Uploaded</td>
+              <td id="tdPercentUploaded"></td>
+            </tr>
+            <tr>
+              <td>Size Uploaded</td>
+              <td id="tdSizeUploaded"></td>
+            </tr>
+            <tr>
+              <td>Progress Event Count</td>
+              <td id="tdProgressEventCount"></td>
+            </tr>
+          </table>
+-->
+  </form> 
+  <button class="submit" onclick="saveresponse();" type="submit">Save</button>
     
     		</div>
 </div>
