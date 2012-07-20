@@ -555,7 +555,23 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #45
 #loading {display:none;
 width:5px;
 height:5px;}
-input.error { border: 1px solid red; }
+
+
+#title1, label { float: left; font-family: Arial, Helvetica, sans-serif; font-size: small; }
+	br { clear: both; }
+	input { border: 1px solid black; margin-bottom: .5em;  }
+	input.error { border: 1px solid red; }
+	label.error {
+		background: url('http://dev.jquery.com/view/trunk/plugins/validate/demo/images/unchecked.gif') no-repeat;
+		padding-left: 16px;
+		margin-left: .3em;
+	}
+	label.valid {
+		background: url('http://dev.jquery.com/view/trunk/plugins/validate/demo/images/checked.gif') no-repeat;
+		display: block;
+		width: 16px;
+		height: 16px;
+	}
 /* -------------------------------------------------------------
 footer Styling
 ------------------------------------------------------------------*/
