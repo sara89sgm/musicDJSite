@@ -71,7 +71,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
         <script src="js/request.js"></script>
-            
+        <script src="js/mootools-core-1.4.5-full-nocompat.js"></script>  
        <script src="js/submit_request.js"></script>
         <script src="js/formcheck.js"></script>
         <script src="js/en.js"></script>
@@ -151,6 +151,11 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
             });
         };
     </script>
+    <script type="text/javascript">
+    window.addEvent('domready', function(){
+        new FormCheck('valid1');
+    });
+</script>
   
       
     </head>

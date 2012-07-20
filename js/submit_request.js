@@ -1,11 +1,5 @@
 	
-	$(document)
-			.ready(
-					function() {
-	 window.addEvent('domready', function(){
-        new FormCheck('valid1');
-    });
-					});
+			
 	
 	function urlEncode(obj) {
 
