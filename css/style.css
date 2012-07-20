@@ -235,7 +235,7 @@ Content Styling
 #content {
 	width: 100%;
 	position: static;  background-color:rgba(77,77,77,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
-	padding: 11em 7% 0 6%;
+	padding: 12em 7% 0 6%;
 	float: left;
 	overflow: scroll;
 	overflow-x: hidden;
@@ -255,20 +255,19 @@ section span.sortBy {
 	float: right;
 	margin: ;
 }
-section ul {
-	background: #;
+section ul#list-req {
 	width: 100%;
-	height: 550px;
+	height: 700px;
 	float:left;
-	margin: .2em 0 2em 0;
-	padding: 1em;
 	overflow-y: scroll;
-	border-radius:7px;
-	 position: static;  background-color:rgba(255,255,255,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
+	border-radius:2px;
+	position: relative;
+	-moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
  
 }
-section ul li {
+
+section ul li[class~=box]{
 	float: left;
 	width: 90%;
 	height: 7.5em;
@@ -277,7 +276,7 @@ section ul li {
 	margin: 1em;
 	padding: .5em;
 	position: static;  background-color:rgba(78,28,66,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #ccc; box-shadow: 0 0 10px #fff;
-}
+} 
 section ul li span.respond {
 	float: right;
 	
