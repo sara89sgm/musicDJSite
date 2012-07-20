@@ -70,16 +70,16 @@ if (currentUser) {
 		
 	}  else {
 		
-	var loginbox = $("#login-box");
+	var login2 = $("#login-box");
 
 		//Fade in the Popup
-		$(loginBox).fadeIn(300);
+		$(login2).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(loginBox).height() + 24) / 2; 
-		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		var popMargTop = ($(login2).height() + 24) / 2; 
+		var popMargLeft = ($(login2).width() + 24) / 2; 
 		
-		$(loginBox).css({ 
+		$(login2).css({ 
 			'margin-top' : -popMargTop,
 			'margin-left' : -popMargLeft
 		});
@@ -145,16 +145,16 @@ if (currentUser) {
 	}
 	
 	else {
-		var loginbox = $("#login-box");
+		var login2 = $("#login-box");
 
 		//Fade in the Popup
-		$(loginBox).fadeIn(300);
+		$(login2).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(loginBox).height() + 24) / 2; 
-		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		var popMargTop = ($(login2).height() + 24) / 2; 
+		var popMargLeft = ($(login2).width() + 24) / 2; 
 		
-		$(loginBox).css({ 
+		$(login2).css({ 
 			'margin-top' : -popMargTop,
 			'margin-left' : -popMargLeft
 		});
