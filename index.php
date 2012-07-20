@@ -73,10 +73,10 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <script src="js/response.js"></script>      
        <script src="js/submit_request.js"></script>
         <script src="js/requestpopup.js"></script><script type="text/javascript" src="<?=$SWFRoot?>swfupload.js"></script>
-<script type="text/javascript" src="<?=$SWFRoot?>js/swfupload.queue.js"></script>
-<script type="text/javascript" src="<?=$SWFRoot?>js/fileprogress.js"></script>
-<script type="text/javascript" src="<?=$SWFRoot?>plugins/swfupload.speed.js"></script>
-<script type="text/javascript" src="<?=$SWFRoot?>js/handlers.js"></script>
+<script type="text/javascript" src="js/swfupload.queue.js"></script>
+<script type="text/javascript" src="js/fileprogress.js"></script>
+<script type="text/javascript" src="plugins/swfupload.speed.js"></script>
+<script type="text/javascript" src="js/handlers.js"></script>
 <script type='text/javascript' > 
   RequestID = ""
   UserID = ""
