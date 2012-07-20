@@ -1,16 +1,24 @@
-<!doctype html>
-<head>
+<!DOCTYPE html>
+<html>
 <title>Itunes</title>
+<link rel="stylesheet" type="text/css" href="css/itunes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/soundmanager2.css" media="all" />
+
  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
-    <script type="text/javascript">
+  <script type="text/javascript">
+
 	var data;
         $(document).ready(function(){
 			$('input.j').keyup(function() {
 			
 			performSearch();
-$("#keyword").autocomplete({source:data});
+//$("#keyword").autocomplete({source:data});
 			});	
+			 $('li').hover(
+        function() { $(this).addClass("Hover"); },
+        function() { $(this).removeClass("Hover"); }
+    );
 	
         });
     </script>
@@ -48,7 +56,7 @@ $("#keyword").autocomplete({source:data});
 
 					//attribute: 'artistTerm,albumTerm,songTerm,musicTrackTerm',
 
-					limit: 20,
+					limit: 12,
 
 					callback: 'handleTunesSearchResults'
 
@@ -80,9 +88,27 @@ $("#keyword").autocomplete({source:data});
 
 					var obj = {
 
-		
+		source: 0,
+
+						track_id: item.trackId,
+
 						track_name: item.trackCensoredName,
-artist_name: item.artistName,
+
+						track_url: item.trackViewUrl,
+
+						artist_name: item.artistName,
+
+						artist_url: item.artistViewUrl,
+
+						collection_name: item.collectionCensoredName,
+
+						collection_url: item.collectionViewUrl,
+
+						genre: item.primaryGenreName,
+
+						artwork: item.artworkUrl100,
+						
+						preview: item.previewUrl
 
 					};
 					
@@ -91,6 +117,18 @@ artist_name: item.artistName,
 
 				
 				
+html = html+ "<li class='d' ondblclick=\"rack('{0}','{1}')\"; \">".replace('{0}', obj.track_name).replace('{1}', obj.artist_name);
+html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').play()\" onmouseup=\"document.getElementById('{4}').pause()\" src='{2}'/><audio id='{3}' style='display:none'  src='{1}'></audio><br/>".replace("{0}", obj.track_id).replace("{1}", obj.preview).replace("{2}", obj.artwork).replace("{3}", obj.track_id).replace("{4}", obj.track_id);
+					html += '<div class="c">{0}</div>'.replace("{0}", obj.track_name);
+					html += '<div class="d">{0}</div></li>'.replace("{0}", obj.artist_name);
+					
+
+
+
+
+					
+
+			
 				 data = [
 				obj.track_name,
 				obj.artist_name
@@ -101,8 +139,18 @@ artist_name: item.artistName,
 
 
 				};
+				jQuery('#itunes-results').html(html);
+
 			
 			}
+			
+			function rack(parm1, parm2) { 
+			
+  alert("ok");
+  $('input.j').val(parm1 + " - " + parm2);
+
+}
+				
             
            </script>
 
@@ -113,10 +161,13 @@ artist_name: item.artistName,
 <body>
 <br />
 
-<input class="j"  id="keyword" type="text" name="seed_one"/>
+<div class="h">
+<input class="j" id="keyword"  type="text"/></div>
 <br />
+<ul id="itunes-results" onDblClick="$('#itunes-results').hide('slow', function() {
 
-<div id="itunes-results">
+    
+  });"></ul>
 </div>
 </body>
 </html>
