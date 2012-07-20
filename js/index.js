@@ -70,18 +70,18 @@ if (currentUser) {
 		
 	}  else {
 		
-		var login2 = $("#login-box");
+	var loginbox = $("#login-box");
 
 		//Fade in the Popup
-		$(login2).fadeIn(300);
+		$(loginBox).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(login2).height() + 24) / 2; 
-		var popMargLeft = ($(login2).width() + 24) / 2; 
-	
-		$(login2).css({ 
-			'margin-top' : popMargTop,
-			'margin-left' : popMargLeft
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
 		});
 		
 		// Add the mask to body
@@ -145,24 +145,24 @@ if (currentUser) {
 	}
 	
 	else {
-		var login2 = $("#login-box");
+		var loginbox = $("#login-box");
 
 		//Fade in the Popup
-		$(login2).fadeIn(300);
+		$(loginBox).fadeIn(300);
 		
 		//Set the center alignment padding + border see css style
-		var popMargTop = ($(login2).height() + 24) / 2; 
-		var popMargLeft = ($(login2).width() + 24) / 2; 
-	
-		$(login2).css({ 
-			'margin-top' : popMargTop,
-			'margin-left' : popMargLeft
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
 		});
 		
 		// Add the mask to body
 		$('body').append('<div id="mask"></div>');
 		$('#mask').fadeIn(300);
-		
+	
 		
 	}
 	};
