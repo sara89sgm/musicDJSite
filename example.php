@@ -4,7 +4,7 @@ require_once "config.php";
 
 $isMacUser = (preg_match("/macintosh/",strtolower($_SERVER['HTTP_USER_AGENT'])) ? true : false);
 
-if ( !isset($S3_BUCKET) || $S3_BUCKET == "" ) {
+if ( !isset($S3_BUCKET) || $S3_BUCKET == '' ) {
   echo "Um, sorry, I need my configuration file. :( ";
   exit(0);
 }
@@ -26,7 +26,7 @@ $policyDoc = '{
         ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
         {"success_action_status": "201"},
         ["starts-with", "$Filename", ""], 
-        ["starts-with", "$Content-Type", "audio/"]
+        ["starts-with", "$Content-Type", ""]
       ]
 }';
    
