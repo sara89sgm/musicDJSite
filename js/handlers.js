@@ -125,7 +125,7 @@ function uploadSuccess(file, serverData) {
 		progress.setComplete();
 		progress.setStatus("Complete.");
 		progress.toggleCancel(false);
-		saveresponse();
+		
     //alert('right here we can tell Ajax about the '+file.name);
 
 	} catch (ex) {
