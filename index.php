@@ -188,11 +188,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 					<ul>
 						<li class="a" onclick="reqpopup()"></li></li><li class="b" onClick="window.location.href='index.php'"></li><li class="c" onClick="window.location.href='page3.html'"></li><li class="d" onClick="window.location.href='page4.html'"></li>
 					</ul>
-					<!-- Will reinclude this later :D<span class="a">request a mix 1</span>
-					<span class="b">request a mix 2</span>
-					<span class="c">request a mix 3</span>
-					<span class="d">request a mix 4</span>
-					-->
+					
 				</nav>
 <!--  NAV END  -->
 				<div id="player">
@@ -288,13 +284,13 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/>
 
   <form id="form1" action="swf.php" method="post" enctype="multipart/form-data">
-    <p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
+   
 
       <div class="fieldset flash" id="fsUploadProgress">
-      <span class="legend">Upload Queue</span>
-          <div id="loadanim" style="display:none;position:relative;top:-10px;line-height:0;"><img src="images/loader.gif" alt="" style="border:0;" />&nbsp;Processing...please wait.</div>
+  
+          <div id="loadanim" style="display:none;position:relative;top:-10px;line-height:0;"><img src="images/loader.gif" alt="" style="border:0;" />&nbsp;</div>
       </div>
-    <div id="divStatus" style="display:none;">0 Files Uploaded</div>
+    <div id="divStatus" style="display:none;"></div>
       <div>
         <input id="btnCancel" type="button" value="Cancel All Uploads" onClick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
       </div>
