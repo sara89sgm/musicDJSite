@@ -183,22 +183,31 @@ nav ul li.d:hover {
 	padding: 1em 0 1em 0;
 }
 #loginA, #loginB, #logout {
-	display: block;
-	background: #fff;
-	border: 2px solid #000;
-	font-size: 1em;
-	width: 90%;
-	height: 15px;
-	padding: 7px 0 13px 0;
-	margin: 1em 5% 0 15%;
-	-o-box-shadow: 5px 5px 5px #000;
-	-moz-box-shadow: 5px 5px 5px #000;
-	-webkit-box-shadow: 5px 5px 5px #000;
-	box-shadow: 5px 5px 5px #000;
+	-moz-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
+	box-shadow:inset 0px 0px 0px 0px #dbdbdb;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9d9d9), color-stop(1, #bfbfbf) );
+	background:-moz-linear-gradient( center top, #d9d9d9 5%, #bfbfbf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#bfbfbf');
+	background-color:#d9d9d9;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+	display:inline-block;
+	color:#363636;
+	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	padding:7px 15px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #e0e0e0;
 }
 #loginA:hover, #loginB:hover, #logout:hover {
-	background: #1C397B;
-	color: #fff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bfbfbf), color-stop(1, #d9d9d9) );
+	background:-moz-linear-gradient( center top, #bfbfbf 5%, #d9d9d9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#d9d9d9');
+	background-color:#bfbfbf;
 }
 #player {
 	width: 60%;
