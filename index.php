@@ -300,44 +300,18 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <input id="btnCancel" type="button" value="Cancel All Uploads" onClick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
       </div>
       <span id="spanButtonPlaceHolder"></span>
-<!--
+
           <table cellspacing="0">
-            <tr>
-              <td>Current Speed:</td>
-              <td id="tdCurrentSpeed"></td>
-            </tr>
-            <tr>
-              <td>Average Speed:</td>
-              <td id="tdAverageSpeed"></td>
-            </tr>
-            <tr>
-              <td>Moving Average Speed:</td>
-              <td id="tdMovingAverageSpeed"></td>
-            </tr>
-            <tr>
+          
               <td>Time Remaining</td>
               <td id="tdTimeRemaining"></td>
             </tr>
             <tr>
-              <td>Time Elapsed</td>
-              <td id="tdTimeElapsed"></td>
-            </tr>
-            <tr>
-              <td>Percent Uploaded</td>
-              <td id="tdPercentUploaded"></td>
-            </tr>
-            <tr>
-              <td>Size Uploaded</td>
-              <td id="tdSizeUploaded"></td>
-            </tr>
-            <tr>
-              <td>Progress Event Count</td>
-              <td id="tdProgressEventCount"></td>
-            </tr>
+             
           </table>
--->
+
   </form> 
-  <button class="submit" onclick="saveresponse();" type="submit">Save</button>
+ 
     
     		</div>
 </div>
