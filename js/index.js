@@ -466,7 +466,7 @@ var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" 
 			
 			var i;			
 			for(i=respindex; (i<ResonseList.length && i< respindex+step);i++){
-			$("#rlist ul").append(ResonseList[i].resonsHTML());			
+			$("#rlist ul").append(ResonseList[i].wresonsHTML());			
 			}
 			respindex=i;
                		$('#loadmoreajaxloader').fadeOut("slow");	
