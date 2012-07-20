@@ -235,7 +235,7 @@ Content Styling
 #content {
 	width: 100%;
 	position: static;  background-color:rgba(77,77,77,0.65); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
-	padding: 11em 7% 0 6%;
+	padding: 12em 7% 0 6%;
 	float: left;
 	overflow: scroll;
 	overflow-x: hidden;
@@ -388,6 +388,44 @@ section img {
 #responses {
 
 }
+
+.tag {
+display: inline;
+padding: .2em 1em; 
+background:gray;
+width:100%;
+font-family: "League-Gothic", Courier;
+font-size: 15px;
+text-transform: uppercase;
+color: #222;
+text-shadow: 0px 2px 3px #666;
+}
+
+#tags{
+	float:right;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#tracklist{
+	float:left;
+	font-style: italic;
+	font-family: Georgia, Times, serif;
+	font-size: 15px;
+	color: #BFE1F1;
+}
+
+
+#desc{
+	clear:right;	
+	margin-left:10px;
+	width:400px;
+	font-size: 1.5em;
+	font-family: "Skolar Bold","Times New Roman",serif;
+	border-left: 10px solid #999;
+}
+
+
 /* -------------------------------------------------------------
 Section Requestsamix Styling
 ------------------------------------------------------------------*/
