@@ -17,7 +17,7 @@
 				post_params: {"PHPSESSID" : "<?php echo session_id(); ?>"},
 				file_size_limit : "100 MB",
 				file_types : "*.*",
-				file_types_description : "All Files",
+				file_types_description : "audio/",
 				file_upload_limit : 100,
 				file_queue_limit : 0,
 				custom_settings : {
@@ -60,7 +60,7 @@
 
 <div id="content">
 	<h2>Simple Demo</h2>
-	<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
+	<form id="form1" action="indext.php" method="post" enctype="multipart/form-data">
 		<p>This page demonstrates a simple usage of SWFUpload.  It uses the Queue Plugin to simplify uploading or cancelling all queued files.</p>
 
 			<div class="fieldset flash" id="fsUploadProgress">

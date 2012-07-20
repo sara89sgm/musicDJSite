@@ -14,7 +14,7 @@ if ( !isset($S3_BUCKET) || $S3_BUCKET == "" ) {
         {"success_action_redirect": "' . $SUCCESS_REDIRECT . '"},
 */
 
-$MAX_FILE_SIZE = 50 * 1048576;
+$MAX_FILE_SIZE = 100 * 1048576;
 $expTime = time() + (1 * 60 * 60);
 $expTimeStr = gmdate('Y-m-d\TH:i:s\Z', $expTime);
 $policyDoc = '{
@@ -26,7 +26,7 @@ $policyDoc = '{
         ["content-length-range", 0, '. $MAX_FILE_SIZE .'],
         {"success_action_status": "201"},
         ["starts-with", "$Filename", ""], 
-        ["starts-with", "$Content-Type", "audio/*"]
+        ["starts-with", "$Content-Type", "audio/"]
       ]
 }';
    
@@ -64,7 +64,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 
                 // File Upload Settings
                 file_post_name: 'file',
-                file_size_limit : "10240",    // 10 MB
+                file_size_limit : "104857600",    // 10 MB
                 file_types : "*.*",
                 file_types_description : "All Files",
                 file_upload_limit : "10",
