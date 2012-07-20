@@ -70,7 +70,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
         <script src="js/facebook.js"></script>
         <script src="js/facebookparse.js"></script>
         <script src="js/request.js"></script>
-        <script src="js/response.js"></script>      
+            
        <script src="js/submit_request.js"></script>
         <script src="js/requestpopup.js"></script><script type="text/javascript" src="<?=$SWFRoot?>swfupload.js"></script>
 <script type="text/javascript" src="js/swfupload.queue.js"></script>
@@ -145,6 +145,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
             });
         };
     </script>
+     <script src="js/response.js"></script> 
     </head>
 	<body>
 
