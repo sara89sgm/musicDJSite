@@ -7,7 +7,7 @@ padding-top:5px;
 padding-bottom:5px;
 width:470px;
 height:400px;
-background:#000;
+background-color:rgba(255,255,255,0.76); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 display:none;
 overflow:scroll;
 border-radius:7px;
