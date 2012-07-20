@@ -254,9 +254,9 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 						<input type="file" id="picture" class="droparea " data-crop="true" data-canvas="true" data-width="100" data height="100" style="float:left;"/> 
 			
 
-						<button class="submit" onclick="logged(); requested();" type="submit">Request</button>
+						<input type="submit" class="submit" onclick="logged(); requested();">Request</input>
                        
-         
+         </form>
 
 					</div>
 				</section>        </div>
