@@ -20,7 +20,7 @@
 
 			}
 
-			function performSearch() {
+			function requested() {
 				alert("searching");
 
 				var params = {
@@ -37,7 +37,7 @@
 
 					limit: 1,
 
-					callback: 'handleTunesSearchResults'
+					callback: 'requestparse'
 
 				};
 
@@ -55,7 +55,7 @@
 
 
 
-			function handleTunesSearchResults(arg) {
+			function requestparse(arg) {
 
 				var results = arg.results;
 
@@ -100,10 +100,6 @@
 alert(item.artworkUrl100);
 			
 				
-
-				
-
-				jQuery('#itunes-results').html(html);
 
 			
 Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
