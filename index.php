@@ -216,7 +216,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
    <section id="requestamix">
 					<h2>     Request A Mix</h2>
                     <h3>     Click and hold to preview. Double click to select. </h3>
-					<div id="track"><form id="requestvalidate">
+					<div id="track">
 						<input class="j" id="keyword"  type="text" placeholder="Track 1"/>
                         <input class="j1" id="keyword1"  type="text"  placeholder="Track 2"/>
                         <input class="j2" id="keyword2"  type="text"  placeholder="Track 3"/>
@@ -229,12 +229,12 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
     
   });"></ul></div>
 					<div id="trackinfo">
-                   
-						<input type="text" name="" value="title…" placeholder="title" class="" id="title1" title="" />
+                  
+						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
 						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
 <!--  TAGS INPUT  -->
 
-						<input id="tag1" type="text" name="" value="tag 1" placeholder="tag1" class="tags"  title="" />
+						<input id="tag1" type="text" name="" value="tag 1" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
 						<input id="tag2" type="text" name="" value="tag 2" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" />
 						<input id="tag3" type="text" name="" value="tag 3" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="tags"  title="" /><div class="styled-select">
 							<select id="genre">
@@ -251,7 +251,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 
 						<button class="submit" onclick="logged(); requested();" type="submit">Request</button>
                        
-                 </form>
+         
 
 					</div>
 				</section>        </div>

@@ -1,14 +1,5 @@
 	
-	$(document)
-			.ready(
-					function() {
 	
-	$("#requestvalidate").validate({
-  rules: {
-    title1: "required"
-  }
-});
-					});
 
 	
 	function urlEncode(obj) {
