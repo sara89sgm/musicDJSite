@@ -9,6 +9,7 @@
 // targetID is the HTML element id attribute that the FileProgress HTML structure will be added to.
 // Instantiating a new FileProgress object with an existing file will reuse/update the existing DOM elements
 function FileProgress(file, targetID) {
+	myfilename = file.id;
 	this.fileProgressID = file.id;
 
 	this.opacity = 100;

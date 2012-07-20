@@ -78,9 +78,10 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 <script type="text/javascript" src="plugins/swfupload.speed.js"></script>
 <script type="text/javascript" src="js/handlers.js"></script>
 <script type='text/javascript' > 
-  RequestID = ""
-  UserID = ""
-  ResponseID = ""
+  RequestID = "";
+  UserID = "";
+  ResponseID = "";
+  myfilename = "";
 </script>
 <script type="text/javascript">
 
@@ -145,10 +146,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
             });
         };
     </script>
-    <script type="text/javascript">
- myfilename = "<?php echo($Filename)?>"
-
-</script>
+  
      <script src="js/response.js"></script> 
     </head>
 	<body>
