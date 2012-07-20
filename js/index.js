@@ -70,8 +70,6 @@ if (currentUser) {
 		
 	}  else {
 		
-		
-		
 }}
 	
 	$(document).ready(function() {

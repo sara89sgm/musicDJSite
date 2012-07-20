@@ -209,8 +209,9 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 				<div id="login">
 				<a href="#login-box2" class="login-window" id="loginA">Login </a>
 				<a href="#login-box" class="login-window" id="loginB">Sign Up </a>
-                </div>
-                 
+                
+				
+				</div>
                 <div id="request-box" class="request-popup"><a href="#" class="close"></a>
    <section id="requestamix">
 					<h2>     Request A Mix</h2>
@@ -334,7 +335,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
               <td id="tdProgressEventCount"></td>
             </tr>
           </table>
-
+-->
   </form> 
  
     
