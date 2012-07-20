@@ -1,12 +1,15 @@
 
 #itunes-results {float:right;
 position:fixed;
-
+padding-left:500px;
 width:470px;
 height:400px;
 display:none;
 overflow:scroll;
-border-radius:7px;}
+border-radius:7px;
+
+}
+
 
 #track_1 { width:200px;}
 .h{}
