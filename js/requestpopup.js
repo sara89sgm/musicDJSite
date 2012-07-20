@@ -278,7 +278,7 @@ function performSearch1() {
 				
 				
 html = html+ "<li class='z' ondblclick=\"rack1('{0}','{1}')\"; \">".replace('{0}', obj.track_name).replace('{1}', obj.artist_name);
-html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').play()\" onmouseup=\"document.getElementById('{4}').pause()\" src='{2}' alt=''/><audio id='{3}' style='display:none'  src='{1}'></audio><br/>".replace("{0}", obj.track_id).replace("{1}", obj.preview).replace("{2}", obj.artwork).replace("{3}", obj.track_id).replace("{4}", obj.track_id);
+html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').play()\" onmouseup=\"document.getElementById('{4}').pause()\" src='{2}' alt='image'/><audio id='{3}' style='display:none'  src='{1}'></audio><br/>".replace("{0}", obj.track_id).replace("{1}", obj.preview).replace("{2}", obj.artwork).replace("{3}", obj.track_id).replace("{4}", obj.track_id);
 					html += '<div class="c">{0}</div>'.replace("{0}", obj.track_name);
 					html += '<div class="d">{0}</div></li>'.replace("{0}", obj.artist_name);
 					
