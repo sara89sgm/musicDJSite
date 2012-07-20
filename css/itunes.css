@@ -1,11 +1,11 @@
 
 #itunes-results {float:right;
 position:fixed;
-margin-left:35%;
+margin-left:44%;
 padding-left:5px;
 padding-top:5px;
 padding-bottom:5px;
-width:640px;
+width:500px;
 height:400px;
 background-color:rgba(255,255,255,0.76); -moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 display:none;
