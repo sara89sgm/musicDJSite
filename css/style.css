@@ -177,31 +177,31 @@ nav ul li.d:hover {
 	padding: 1em 0 1em 0;
 }
 #loginA, #loginB, #logout {
-	-moz-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9d9d9), color-stop(1, #bfbfbf) );
-	background:-moz-linear-gradient( center top, #d9d9d9 5%, #bfbfbf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#bfbfbf');
-	background-color:#d9d9d9;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	border:1px solid #ccc;
+	-moz-box-shadow:inset 0px 1px 0px 0px #611161;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #611161;
+	box-shadow:inset 0px 1px 0px 0px #611161;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #643675), color-stop(1, #451c42) );
+	background:-moz-linear-gradient( center top, #643675 5%, #451c42 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#643675', endColorstr='#451c42');
+	background-color:#643675;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #541c54;
 	display:inline-block;
-	color:#363636;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:18px;
+	color:#8f8f8f;
+	font-family:arial;
+	font-size:15px;
 	font-weight:bold;
-	padding:7px 15px;
+	padding:6px 21px;
 	text-decoration:none;
-	text-shadow:1px 1px 0px #e0e0e0;
+	text-shadow:1px 1px 0px #000000;
 }
 #loginA:hover, #loginB:hover, #logout:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bfbfbf), color-stop(1, #d9d9d9) );
-	background:-moz-linear-gradient( center top, #bfbfbf 5%, #d9d9d9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#d9d9d9');
-	background-color:#bfbfbf;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #451c42), color-stop(1, #643675) );
+	background:-moz-linear-gradient( center top, #451c42 5%, #643675 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#451c42', endColorstr='#643675');
+	background-color:#451c42;
 }
 #player {
 	width: 60%;
@@ -283,31 +283,31 @@ section ul li[class~=box]{
 section ul li span.respond {
 	float: right;
 	
-	-moz-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9d9d9), color-stop(1, #bfbfbf) );
-	background:-moz-linear-gradient( center top, #d9d9d9 5%, #bfbfbf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#bfbfbf');
-	background-color:#d9d9d9;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	border:1px solid #ccc;
+	-moz-box-shadow:inset 0px 1px 0px 0px #611161;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #611161;
+	box-shadow:inset 0px 1px 0px 0px #611161;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #643675), color-stop(1, #451c42) );
+	background:-moz-linear-gradient( center top, #643675 5%, #451c42 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#643675', endColorstr='#451c42');
+	background-color:#643675;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #541c54;
 	display:inline-block;
-	color:#363636;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:18px;
+	color:#8f8f8f;
+	font-family:arial;
+	font-size:15px;
 	font-weight:bold;
-	padding:7px 15px;
+	padding:6px 21px;
 	text-decoration:none;
-	text-shadow:1px 1px 0px #e0e0e0;
+	text-shadow:1px 1px 0px #000000;
 }
 section ul li span.respond:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bfbfbf), color-stop(1, #d9d9d9) );
-	background:-moz-linear-gradient( center top, #bfbfbf 5%, #d9d9d9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#d9d9d9');
-	background-color:#bfbfbf;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #451c42), color-stop(1, #643675) );
+	background:-moz-linear-gradient( center top, #451c42 5%, #643675 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#451c42', endColorstr='#643675');
+	background-color:#451c42;
 }
 
 section ul li h3 {
@@ -525,31 +525,31 @@ section#requestamix #trackinfo span.showimg {
 }
 section#requestamix .submit {
 	float:right;
-	-moz-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	box-shadow:inset 0px 0px 0px 0px #dbdbdb;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d9d9d9), color-stop(1, #bfbfbf) );
-	background:-moz-linear-gradient( center top, #d9d9d9 5%, #bfbfbf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9d9d9', endColorstr='#bfbfbf');
-	background-color:#d9d9d9;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	border:1px solid #ccc;
+	-moz-box-shadow:inset 0px 1px 0px 0px #611161;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #611161;
+	box-shadow:inset 0px 1px 0px 0px #611161;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #643675), color-stop(1, #451c42) );
+	background:-moz-linear-gradient( center top, #643675 5%, #451c42 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#643675', endColorstr='#451c42');
+	background-color:#643675;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #541c54;
 	display:inline-block;
-	color:#363636;
-	font:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:18px;
+	color:#8f8f8f;
+	font-family:arial;
+	font-size:15px;
 	font-weight:bold;
-	padding:7px 15px;
+	padding:6px 21px;
 	text-decoration:none;
-	text-shadow:1px 1px 0px #e0e0e0;
+	text-shadow:1px 1px 0px #000000;
 }
 section#requestamix .addcoverimg:hover, section#requestamix .submit:hover {
-background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bfbfbf), color-stop(1, #d9d9d9) );
-	background:-moz-linear-gradient( center top, #bfbfbf 5%, #d9d9d9 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#d9d9d9');
-	background-color:#bfbfbf;
+background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #451c42), color-stop(1, #643675) );
+	background:-moz-linear-gradient( center top, #451c42 5%, #643675 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#451c42', endColorstr='#643675');
+	background-color:#451c42;
 }
 
 #loading {display:none;
