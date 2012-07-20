@@ -323,7 +323,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 	//alert("wHTML feeder called");
 	//var dateago = prettyDate(this.added); // something goes bad here 
 	//alert(dateago);
-			var resonsehtml ="<li><audio src='"+this.track5+"'preload='metadata'  controls></audio></li>"; // do the same for track2 etc ..
+			var resonsehtml ="<li><audio src='"+this.track5+"'preload='none'  controls></audio></li>"; // do the same for track2 etc ..
 		//alert("it looks like this:"+html);
 		return resonsehtml;
   
