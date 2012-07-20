@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html>
-<title>Itunes</title>
-<link rel="stylesheet" type="text/css" href="css/itunes.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/soundmanager2.css" media="all" />
-
- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
-  <script type="text/javascript">
-
-	var data;
+var data;
         $(document).ready(function(){
 			$('input.j').keyup(function() {
 			
 			performSearch();
-//$("#keyword").autocomplete({source:data});
+
+			});	
+			$('input.j1').keyup(function() {
+			
+			performSearch();
+
+			});	
+			$('input.j2').keyup(function() {
+			
+			performSearch();
+
+			});	
+			$('input.j3').keyup(function() {
+			
+			performSearch();
+
+			});	
+			$('input.j4').keyup(function() {
+			
+			performSearch();
+
 			});	
 			 $('li').hover(
         function() { $(this).addClass("Hover"); },
         function() { $(this).removeClass("Hover"); }
     );
 	
-        });
-    </script>
-    <script type="text/javascript">
-			function urlEncode(obj) {
+        });	function urlEncode(obj) {
 				var s = '';
 
 				for (var key in obj) {
@@ -117,7 +124,7 @@
 
 				
 				
-html = html+ "<li class='d' ondblclick=\"rack('{0}','{1}')\"; \">".replace('{0}', obj.track_name).replace('{1}', obj.artist_name);
+html = html+ "<li class='z' ondblclick=\"rack('{0}','{1}')\"; \">".replace('{0}', obj.track_name).replace('{1}', obj.artist_name);
 html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').play()\" onmouseup=\"document.getElementById('{4}').pause()\" src='{2}'/><audio id='{3}' style='display:none'  src='{1}'></audio><br/>".replace("{0}", obj.track_id).replace("{1}", obj.preview).replace("{2}", obj.artwork).replace("{3}", obj.track_id).replace("{4}", obj.track_id);
 					html += '<div class="c">{0}</div>'.replace("{0}", obj.track_name);
 					html += '<div class="d">{0}</div></li>'.replace("{0}", obj.artist_name);
@@ -150,24 +157,4 @@ html = html+ "<img class='itunes'onmousedown=\"document.getElementById('{0}').pl
   $('input.j').val(parm1 + " - " + parm2);
 
 }
-				
-            
-           </script>
-
-
-
-
-</head>
-<body>
-<br />
-
-<div class="h">
-<input class="j" id="keyword"  type="text"/></div>
-<br />
-<ul id="itunes-results" onDblClick="$('#itunes-results').hide('slow', function() {
-
-    
-  });"></ul>
-</div>
-</body>
-</html>
+		

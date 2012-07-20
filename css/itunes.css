@@ -1,0 +1,75 @@
+
+#itunes-results {float:left; 
+width:470px;
+height:400px;
+background:#000;}
+
+#track_1 { width:200px;}
+.h{}
+ul li.z {
+	 width: 140px;
+		padding-left:1px;
+		padding-right:1px;
+		padding-bottom:5px;
+		border-radius:2px;
+		padding-top:10px;
+		background-color:rgba(255,255,255,0.65);
+        min-height: 160px;
+		max-height: 160px;
+        border: 2px solid #fff;
+   display:inline-block;
+        /* inline-block for the less capable browsers */
+        *display:inline;
+        *zoom:1;
+
+        margin:5px 5px 5px 5px;
+        /* we then reset the values to not affect actual text content */
+     
+        vertical-align:top;
+	
+}
+
+
+
+ul li.z:hover { 
+width: 140px;
+		padding-left:1px;
+		padding-right:1px;
+		padding-bottom:5px;
+		padding-top:10px;
+		border-radius:2px;
+		background-color:rgba(255,255,255,0.85);
+        min-height: 160px;
+		max-height: 160px;
+        border: 2px solid #09f;
+   display:inline-block;
+        /* inline-block for the less capable browsers */
+        *display:inline;
+        *zoom:1;
+
+        margin:5px 5px 5px 5px;
+        /* we then reset the values to not affect actual text content */
+     
+        vertical-align:top;
+	
+}
+
+
+.itunes{
+	padding-left:10px;}
+	 
+  
+	
+
+.c {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	text-align:center;}
+	
+	.d {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	text-align:center;
+	}
+	
+	
