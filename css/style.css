@@ -554,7 +554,8 @@ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #45
 
 #loading {display:none;
 width:5px;
-height:5px;
+height:5px;}
+input.error { border: 1px solid red; }
 /* -------------------------------------------------------------
 footer Styling
 ------------------------------------------------------------------*/

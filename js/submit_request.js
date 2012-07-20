@@ -1,45 +1,14 @@
-	(function($,W,D)
-{
-    var JQUERY4U = {};
-
-    JQUERY4U.UTIL =
-    {
-        setupFormValidation: function()
-        {
-            //form validation rules
-            $("#requestvalidate").validate({
-                rules: {
-                    keyword: "required",
-                    title1: "required",
-                    description: "required",
-                    
-                    tag1: "required",
-					tag2: "required",
-					tag3: "required",
-					genre: "required"
-                },
-                messages: {
-                    keyword: "Please add at least one song to the mix",
-                    title1: "Please name the mix",
-					description: "Please add a description",
-					tag1: "Please add a tag",
-					tag2: "Please add a tag",
-					tag3: "Please add a tag",
-					Genre: "Please select a genre"
-                },
-                submitHandler: function(form) {
-                    form.submit();
-                }
-            });
-        }
-    }
-
-    //when the dom has loaded setup form validation rules
-    $(D).ready(function($) {
-        JQUERY4U.UTIL.setupFormValidation();
-    });
-
-})(jQuery, window, document);
+	
+	$(document)
+			.ready(
+					function() {
+	
+	$("#requestvalidate").validate({
+  rules: {
+    title1: "required"
+  }
+});
+					});
 
 	
 	function urlEncode(obj) {

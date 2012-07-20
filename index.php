@@ -229,6 +229,7 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
     
   });"></ul></div>
 					<div id="trackinfo">
+                    <label for="title1">Required: </label>
 						<input type="text" name="" value="title…" onblur="this.value=!this.value?'title...':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="title1" title="" />
 						<textarea name="entry2" rows="8" cols="75" onblur="this.value=!this.value?'':this.value;" onfocus="this.select()" onclick="this.value='';" class="" id="description" title="">Please type your message here...</textarea>
 <!--  TAGS INPUT  -->
