@@ -1,7 +1,7 @@
 var RequestList = new Array();
 var sortBy="added"; 
 var reqindex=5;		// these indeces are for keeping track of when
-var respindex=0;
+var respindex=5;
 var step=5;
 var didScroll =false;
 var ResonseList = new Array();
@@ -380,14 +380,14 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 
 	
 	function mresonseHTML(){
-		var resonsehtml = "<div id='more' style='clear:both;'>"+"<ul id='tags'><li class='tag' >"+this.tags[0]+"</li>"+"<li class='tag' >"+this.tags[1]+"</li>"+"<li class='tag' >"+this.tags[2]+"</li></ul>"+"<ul id='tracklist'><li>"+this.track1+"</li><li>"+this.track2+"</li><li>"+this.track3+"</li><li>"+this.track4+"</li><li>"+this.track5+"</ul>"+"<div id='desc' >"+this.description+"</div></div>"; // do the same for track2 etc ..
-	return resonsehtml;
+		var html = "<div id='more' style='clear:both;'>"+"<ul id='tags'><li class='tag' >"+this.tags[0]+"</li>"+"<li class='tag' >"+this.tags[1]+"</li>"+"<li class='tag' >"+this.tags[2]+"</li></ul>"+"<ul id='tracklist'><li>"+this.track1+"</li><li>"+this.track2+"</li><li>"+this.track3+"</li><li>"+this.track4+"</li><li>"+this.track5+"</ul>"+"<div id='desc' >"+this.description+"</div></div>"; // do the same for track2 etc ..
+	return html;
 	}
 	
 	
 	function wresonsHTML() {
-var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
-		return resonshtml;
+var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
+		return html;
 	}
 	
 
