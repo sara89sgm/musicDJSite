@@ -4,8 +4,8 @@ function saveresponse(){
 	Parse.initialize("9TFpKOfV3hSAaBKazfX4tsLzmB2CMpBqiPPKeQq6", "tSXUDZVzAGipTmfxX5PdtXT2kb3cBxp7m8jjwUa4");
 alert(myfilename);
 
-myfilename = str.replace(/ /g, '+');
-alert(myfilename);
+mixfile = myfilename.replace(/\s/g,'+');
+alert(mixfile);
 
  
 alert(RequestID);
