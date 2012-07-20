@@ -125,6 +125,7 @@ function uploadSuccess(file, serverData) {
 		progress.setComplete();
 		progress.setStatus("Complete.");
 		progress.toggleCancel(false);
+		saveresponse();
     //alert('right here we can tell Ajax about the '+file.name);
 
 	} catch (ex) {
@@ -201,7 +202,7 @@ function uploadComplete(file) {
     if (successURL == '__UPDATE_ME__')
       alert('Um, you forgot to update the url var in function uploadComplete');
     else
-      window.location.href = successURL+'?keys='+escape(tmp);
+      saveresponse();
 	}
 }
 
