@@ -70,6 +70,25 @@ if (currentUser) {
 		
 	}  else {
 		
+		var login2 = $("#login-box");
+
+		//Fade in the Popup
+		$(login2).fadeIn(300);
+		
+		//Set the center alignment padding + border see css style
+		var popMargTop = ($(window).height() - $(login2).height() ) / 2; 
+		var popMargLeft = ($(window).width() - $(login2).width()) / 2; 
+	
+		$(login2).css({ 
+			'margin-top' : popMargTop,
+			'margin-left' : popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		
 }}
 	
 	$(document).ready(function() {
