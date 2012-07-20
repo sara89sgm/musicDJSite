@@ -288,7 +288,8 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
 
       <div class="fieldset flash" id="fsUploadProgress">
   
-          <div id="loadanim" style="display:none;position:relative;top:-10px;line-height:0;"><img src="images/loader.gif" alt="" style="border:0;" />&nbsp;</div>
+          <div id="loadanim" style="display:none;position:relative;top:-10px;line-height:0;">
+        </div>
       </div>
     <div id="divStatus" style="display:none;"></div>
       <div>
