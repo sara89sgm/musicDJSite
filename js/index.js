@@ -362,7 +362,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.wresonsHTML = wresonsHTML;
 		this.mresonseHTML = mresonseHTML;
 		//this.respond = respond;
-		this.renderresonse = renderresonse;
+		this.render = render;
 		}
 	
 	function moreresonse(more){
@@ -430,20 +430,20 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 
 	function renderresonse(){
 		ResonseList.sort(dynamicSort(sortBy));
-		var finalHtml ="<ul id='list-resp'>";
+		var finalresonseHtml ="<ul id='list-req'>";
 		
 		// 1. Check sort is correct/
 		// 2. more field fills up description and expands
 		for (i = 0 ; i <5  ;i++) //ResonseList.length
 		{
-			finalHtml=finalHtml+ResonseList[i].wresonsHTML();		
+			finalresonseHtml=finalresonseHtml+ResonseList[i].wresonsHTML();		
 		}
-		finalHtml=finalHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
+		finalresonseHtml=finalresonseHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
 		// fade out effect :
 		$('#rlist').fadeOut("slow", function(){
 		
 		
-   		 var div = $("<div id='rlist'>"+finalHtml+"</div>").hide(); 
+   		 var div = $("<div id='rlist'>"+finalresonseHtml+"</div>").hide(); 
   		 $(this).replaceWith(div);
     	 $('#rlist').fadeIn("slow");
 	
