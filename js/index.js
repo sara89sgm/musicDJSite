@@ -362,7 +362,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.wresonseHTML = wresonseHTML;
 		this.mresonseHTML = mresonseHTML;
 		//this.respond = respond;
-		this.render = render;
+		this.renderresonse = renderresonse;
 		}
 	
 	function moreresonse(more){
@@ -386,8 +386,8 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 	
 	
 	function wresonseHTML() {
-var wresonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
-		return wresonshtml;
+var wresonsehtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
+		return wresonsehtml;
 	}
 	
 
@@ -436,14 +436,14 @@ var wresonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+"
 		// 2. more field fills up description and expands
 		for (i = 0 ; i <5  ;i++) //ResonseList.length
 		{
-			finalresonseHtml=finalresonseHtml+ResonseList[i].wresonsHTML();		
+			finalresonseHtml=finalresonseHtml+ResonseList[i].wresonseHTML();		
 		}
 		finalresonseHtml=finalresonseHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
 		// fade out effect :
 		$('#rlist').fadeOut("slow", function(){
 		
 		
-   		 var div = $("<div id='rlist'>"+finalresonseHtml+"</div>").hide(); 
+   		 var div = $("<div id='rlist'>"+finalHtml+"</div>").hide(); 
   		 $(this).replaceWith(div);
     	 $('#rlist').fadeIn("slow");
 	
@@ -466,7 +466,7 @@ var wresonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+"
 			
 			var i;			
 			for(i=respindex; (i<ResonseList.length && i< respindex+step);i++){
-			$("#rlist ul").append(ResonseList[i].wresonsHTML());			
+			$("#resonseslist ul").append(ResonseList[i].wresonseHTML());			
 			}
 			respindex=i;
                		$('#loadmoreajaxloader').fadeOut("slow");	
