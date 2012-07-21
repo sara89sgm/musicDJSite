@@ -354,9 +354,9 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.track4=track4;
 		this.track5=track5;
 		this.resonsetags = new Array();
-		this.resonsetags[0]= resonsetags[0];
-		this.resonsetags[1]= resonsetags[1];
-		this.resonsetags[2]= resonsetags[2];
+		this.resonsetags[0]= tags[0];
+		this.resonsetags[1]= tags[1];
+		this.resonsetags[2]= tags[2];
 		this.cover = cover;
 		this.mix = mix;
 		this.wresonsHTML = wresonsHTML;
