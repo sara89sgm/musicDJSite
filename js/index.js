@@ -398,21 +398,21 @@ var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" 
 		var query = new Parse.Query(Resonse);
 		query.equalTo();
 		query.find({
-		success: function(resonseresults) {
-		for(i=0 ; i<resonseresults.length ; i++){
+		success: function(results) {
+		for(i=0 ; i<results.length ; i++){
 		    var resonsetags= new Array();
-		    resonsetags[0]=resonseresults[i].get('tag1');
-		    resonsetags[1]=resonseresults[i].get('tag2');
-		    resonsetags[2]=resonseresults[i].get('tag3');
+		    resonsetags[0]=results[i].get('tag1');
+		    resonsetags[1]=results[i].get('tag2');
+		    resonsetags[2]=results[i].get('tag3');
 		      
-		    var date= new Date(resonseresults[i].createdAt);
-		    ResonseList.push(new ResonseTile(resonseresults[i].id,date, resonseresults[i].get('by'),resonseresults[i].get('title1'),resonseresults[i].get('description'),resonseresults[i].get('cover'),resonsetags,resonseresults[i].get('likes'),
-								resonseresults[i].get('track1'),
-								resonseresults[i].get('track2'),
-								resonseresults[i].get('track3'),
-								resonseresults[i].get('track4'),
-								resonseresults[i].get('track5'),
-								resonseresults[i].get('mix')
+		    var date= new Date(results[i].createdAt);
+		    ResonseList.push(new ResonseTile(results[i].id,date, results[i].get('by'),results[i].get('title1'),results[i].get('description'),results[i].get('cover'),resonsetags,results[i].get('likes'),
+								results[i].get('track1'),
+								results[i].get('track2'),
+								results[i].get('track3'),
+								results[i].get('track4'),
+								results[i].get('track5'),
+								results[i].get('mix')
 								));		
  
 		}
@@ -458,7 +458,7 @@ var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" 
     	if ( didScroll ) {
         	didScroll = false;
         	// Check your page position and then
-        	// Load in more resonseresults
+        	// Load in more results
 	
 		 if(respindex < ResonseList.length)
     		{
