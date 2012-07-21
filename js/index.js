@@ -430,15 +430,15 @@ var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" 
 
 	function renderresonse(){
 		ResonseList.sort(dynamicSort(sortBy));
-		var finalHtml ="<ul id='list-resp'>";
+		var finalresonseHtml ="<ul id='list-resp'>";
 		
 		// 1. Check sort is correct/
 		// 2. more field fills up description and expands
 		for (i = 0 ; i <5  ;i++) //ResonseList.length
 		{
-			finalHtml=finalHtml+ResonseList[i].wresonsHTML();		
+			finaresonselHtml=finaresonselHtml+ResonseList[i].wresonsHTML();		
 		}
-		finalHtml=finalHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
+		finalresonseHtml=finalresonseHtml+'</ul><div id="loadmoreajaxloader" style="display:none;"><center><img src="img/ajax-loader.gif" /></center></div>';
 		// fade out effect :
 		$('#rlist').fadeOut("slow", function(){
 		
