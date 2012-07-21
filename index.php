@@ -465,14 +465,14 @@ $sigPolicyDoc = base64_encode(hash_hmac("sha1", $policyDoc64, AWS_SECRET_ACCESS_
                     </div>
 				</section>
 <!--  CONTENT END  -->
-			</div>
+			
 			<footer>
 				<p>Subscribe to
 					our <a href="http://webcodebuilder.com/feed/">blog</a> and follow us
 					on <a href="https://twitter.com/#!/Fuuzik">Twitter</a>
 				</p>
 			</footer>
-
+</div>
 <!--  WRAP END -->
 		</div>
 	</body>
