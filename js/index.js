@@ -386,8 +386,8 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 	
 	
 	function wresonsHTML() {
-var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
-		return html;
+var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width='600' height='600' /> <h3>" + this.title + "</h3><a id='' class='aaa'></a><a id='' class='bbb'></a><a id='' class='ccc' onclick=\"like('"+this.id+"')\" href='#request-box'></a><div style='clear:right;'></div><h1 style='{font-style:italic;}'>By:"+ this.by + "</h1><audio src='"+this.mix+"'preload='none'  controls></audio><a class='more' onclick='more(this);'>More</a><span class='respond' onclick=\"respopup('"+this.id+"')\">respond</span></li>";
+		return resonshtml;
 	}
 	
 
@@ -400,10 +400,10 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		query.find({
 		success: function(results) {
 		for(i=0 ; i<results.length ; i++){
-		    var tags= new Array();
-		    tags[0]=results[i].get('tag1');
-		    tags[1]=results[i].get('tag2');
-		    tags[2]=results[i].get('tag3');
+		    var resonsetags= new Array();
+		    resonsetags[0]=results[i].get('tag1');
+		    resonsetags[1]=results[i].get('tag2');
+		    resonsetags[2]=results[i].get('tag3');
 		      
 		    var date= new Date(results[i].createdAt);
 		    ResonseList.push(new ResonseTile(results[i].id,date, results[i].get('by'),results[i].get('title1'),results[i].get('description'),results[i].get('cover'),tags,results[i].get('likes'),
