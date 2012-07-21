@@ -353,10 +353,10 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.track3=track3;
 		this.track4=track4;
 		this.track5=track5;
-		this.resonsetags = new Array();
-		this.resonsetags[0]= tags[0];
-		this.resonsetags[1]= tags[1];
-		this.resonsetags[2]= tags[2];
+		this.tags = new Array();
+		this.tags[0]= tags[0];
+		this.tags[1]= tags[1];
+		this.tags[2]= tags[2];
 		this.cover = cover;
 		this.mix = mix;
 		this.wresonsHTML = wresonsHTML;
