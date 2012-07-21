@@ -265,6 +265,8 @@ section ul#list-req {
 	overflow-y: scroll;
 	border-radius:2px;
 	position: static;
+	z-index:-10000;
+	float:left;
 	-moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
  
