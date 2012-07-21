@@ -362,7 +362,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.wresonseHTML = wresonseHTML;
 		this.mresonseHTML = mresonseHTML;
 		//this.respond = respond;
-		this.render = render;
+		this.renderresonse = renderresonse;
 		}
 	
 	function more(more){
@@ -374,7 +374,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 						    }else{
 						        $(more).parent().animate({"height":300}).addClass("open");
 							 $(more).html("Less...");
-							 $(more).parent().append(findReq(id).mresonseHTML());			    
+							 $(more).parent().append(findReq(id).mHTML());			    
 }
 						}
 
