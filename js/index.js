@@ -359,7 +359,7 @@ var html ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" width=
 		this.tags[2]= tags[2];
 		this.cover = cover;
 		this.mix = mix;
-		this.wresonseHTML = wresonsHTML;
+		this.wresonseHTML = wresonseHTML;
 		this.mresonseHTML = mresonseHTML;
 		//this.respond = respond;
 		this.render = render;
