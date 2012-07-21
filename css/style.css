@@ -264,12 +264,11 @@ section ul#list-req {
 	float:left;
 	overflow-y: scroll;
 	border-radius:2px;
-	position: relative;
+	position: static;
 	-moz-box-shadow: 0 0 10px #fff; -webkit-box-shadow: 0 0 10px #fff; box-shadow: 0 0 10px #fff;
 
  
 }
-
 section ul li[class~=box]{
 	float: left;
 	width: 90%;
