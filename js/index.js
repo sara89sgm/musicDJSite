@@ -406,7 +406,7 @@ var resonshtml ="<li class='box' id="+this.id+"><img src="+"'"+this.cover+"'"+" 
 		    resonsetags[2]=results[i].get('tag3');
 		      
 		    var date= new Date(results[i].createdAt);
-		    ResonseList.push(new ResonseTile(results[i].id,date, results[i].get('by'),results[i].get('title1'),results[i].get('description'),results[i].get('cover'),tags,results[i].get('likes'),
+		    ResonseList.push(new ResonseTile(results[i].id,date, results[i].get('by'),results[i].get('title1'),results[i].get('description'),results[i].get('cover'),resonsetags,results[i].get('likes'),
 								results[i].get('track1'),
 								results[i].get('track2'),
 								results[i].get('track3'),
